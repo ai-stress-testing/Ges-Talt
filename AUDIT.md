@@ -79,9 +79,9 @@ Advisory bench (academic) consults across all steps without write access.
    work starts.
 6. **Analytics/BI** — `academic/statistician` reviews metrics but nobody
    *builds* the metrics pipelines/dashboards it would review.
-7. **Data governance** — residency advice (geographer) and framework
-   audits (compliance-auditor) exist, but no owner for data
-   classification, retention, or deletion obligations.
+7. **Data governance** — closed by issue #1: `legal/data-protection-officer`
+   now owns classification, retention, and DSR/deletion obligations, with
+   `legal/privacy-engineer` verifying code reality ("true to code").
 
 ### Critical-systems slots (for the next wave of hyper-specialized agents)
 

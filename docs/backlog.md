@@ -13,3 +13,4 @@ per issue. Status: todo / in-progress / blocked / done.
 | GT-6 | environments/ build-out: MCP tunnels, allowlists, session reaping | networking/network-engineer | (next) | todo | — |
 | GT-7 | Hyper-specialized critical-systems agents | (owner) | (next) | todo | — |
 | GT-8 | CI workflow running build_index.py lint | devops/devops-automator | (next) | todo | — |
+| GT-9 | Legal team: privacy-engineer, DPO, product-counsel, general-counsel | main session (spec-driven flow, issue #1) | sprint-7-26-12-19 | done | [#1](https://github.com/ai-stress-testing/Ges-Talt/issues/1) |
