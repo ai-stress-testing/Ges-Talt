@@ -14,12 +14,40 @@ Creates:
 Existing files are never overwritten.
 """
 import argparse
+import re
 import shutil
 import sys
 from datetime import date, timedelta
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent.parent
+SPRINT_RE = re.compile(r"^sprint-(\d{1,2})-(\d{2})-(\d{1,2})-(\d{1,2})$")
+
+
+def find_current_sprint(docs):
+    """Return the M-Y-DD-DD suffix of an existing sprint whose window
+    covers today, or None. End day < start day means the window crosses
+    into the next month."""
+    today = date.today()
+    for d in sorted(docs.glob("sprint-*")):
+        m = SPRINT_RE.match(d.name)
+        if not m:
+            continue
+        month, yy, d1, d2 = map(int, m.groups())
+        try:
+            start = date(2000 + yy, month, d1)
+            if d2 >= d1:
+                end = date(2000 + yy, month, d2)
+            else:
+                nm, ny = (month % 12) + 1, 2000 + yy + (month == 12)
+                end = date(ny, nm, d2)
+        except ValueError:
+            continue
+        if start <= today <= end:
+            return d.name[len("sprint-"):]
+    return None
+
+
 BACKLOG = """# Backlog
 
 Rows are added by the spec-driven PM (`agents/pm/project-manager`); one row
@@ -40,14 +68,19 @@ def main():
     if not (root / ".git").exists():
         sys.exit(f"{root} is not a git repo root")
 
+    docs = root / "docs"
+
     if args.sprint:
         suffix = args.sprint
     else:
-        start = date.today()
-        end = start + timedelta(days=7)
-        suffix = f"{start.month}-{start.year % 100}-{start.day}-{end.day}"
+        current = find_current_sprint(docs)
+        if current:
+            suffix = current
+        else:
+            start = date.today()
+            end = start + timedelta(days=7)
+            suffix = f"{start.month}-{start.year % 100}-{start.day}-{end.day}"
 
-    docs = root / "docs"
     sprint = docs / f"sprint-{suffix}"
     made = []
 
