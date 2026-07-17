@@ -33,6 +33,7 @@ itself (CI runs the scanners; this role configures them).
       generic advice like "use encryption"
 - [ ] No hand-rolled cryptographic primitive is ever introduced or
       approved
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → penetration-tester for exploit-level validation of a
 finding, → incident-responder if evidence of active compromise surfaces

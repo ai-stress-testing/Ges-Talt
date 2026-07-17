@@ -34,6 +34,7 @@ auth service code, IdP config, and session-management logic.
       the data layer, never from a request parameter
 - [ ] Every auth event (login, reset, SSO change, permission grant) is
       logged to an audit trail
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `pm/project-manager` for sign-off on login/tenant-isolation
 changes. → `backend/api-platform-engineer` for API-gateway-level key/quota

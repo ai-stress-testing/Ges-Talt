@@ -13,6 +13,8 @@ Responsibilities:
 - What it does, as verbs, not a job description.
 - Keep this list short — 3-5 bullets, not a manual.
 
+(Implementer roles: insert the shared Method ladder block here — see any implementer agent.md.)
+
 Handoff: who receives this agent's output, and when to escalate instead of
 guessing.
 

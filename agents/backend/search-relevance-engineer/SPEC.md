@@ -32,6 +32,7 @@ index config, query code, and evaluation scripts run via Bash.
 - [ ] Any mapping change ships with an alias-based reindex path, not
       in-place mutation
 - [ ] Zero-results rate and p95 latency are instrumented for the change
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `pm/project-manager` for release sign-off. →
 `data/data-engineer` when the underlying ingestion/data-quality pipeline,

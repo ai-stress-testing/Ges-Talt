@@ -36,6 +36,7 @@ writes test code and CI wiring, not just observations about it.
       hypothesis, not silently deleted
 - [ ] CI failure artifacts (trace/screenshot/video) are attached for
       every failure path touched
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → owning implementation role for root-caused flakes that
 need an app-side fix. → `networking/network-engineer` for CI

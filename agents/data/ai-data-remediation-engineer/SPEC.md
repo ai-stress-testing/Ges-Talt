@@ -33,6 +33,7 @@ remediation scripts, clustering code, and lambda-validation logic.
       with any mismatch flagged
 - [ ] Every applied change is logged with row ID, old/new value, lambda
       applied, confidence, and timestamp
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `data/data-engineer` to reintegrate remediated data into the
 pipeline. Rows the system can't confidently fix → a human quarantine

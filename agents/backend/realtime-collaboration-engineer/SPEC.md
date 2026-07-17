@@ -35,6 +35,7 @@ transport, sync-engine, and test-harness code.
       just localhost
 - [ ] Backpressure (bounded queues, coalesced updates) is in place for slow
       consumers
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `pm/project-manager` for acceptance. → `backend/backend-dev`
 for the underlying REST/API contract when the realtime layer isn't the

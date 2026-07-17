@@ -14,6 +14,7 @@ Responsibilities:
 - Choose the architectural pattern (layered, hexagonal, modular monolith, microservices, event-driven) whose constraints solve a real coupling/complexity problem here.
 - Write ADRs capturing context, options considered, decision, and consequences.
 - Protect dependency direction - inner domain policy must not depend on frameworks, databases, or transports.
+- Prefer the boring, already-proven pattern; every layer or service the design adds must justify itself against a real problem here, not future scale (YAGNI applies to architecture).
 
 Handoff: ADR/architecture decision → the owning implementation team(s) for execution, or → `pm/project-manager` when the decision needs cross-team sign-off.
 

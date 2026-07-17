@@ -28,6 +28,7 @@ answer, not the default one.
 - [ ] Accessibility markup the designer specified is present
 - [ ] Verified in a running browser, not just type-checked
 - [ ] No abstraction or dependency added beyond what the ticket required
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `pm/project-manager` for sign-off. Escalates ambiguous
 design intent to `frontend/designer`, ambiguous API contract to

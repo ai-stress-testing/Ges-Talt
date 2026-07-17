@@ -30,6 +30,7 @@ app code and platform build tooling.
       privacy flows
 - [ ] Performance (startup time, memory) is checked against a real device
       class, not just a simulator
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `pm/project-manager` for feature acceptance. →
 `mobile/mobile-release-engineer` for signing, store submission, and

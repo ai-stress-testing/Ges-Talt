@@ -33,6 +33,7 @@ when):
       through the versioned pipeline
 - [ ] Coverage gaps are prioritized by actual adversary usage against the
       org's industry, not theoretical attacks
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `incident-responder` when a hunt turns up evidence of
 active compromise; → `threat-intelligence-analyst` for input on which

@@ -28,6 +28,7 @@ runs EXPLAIN ANALYZE and migration tooling via Bash.
       not
 - [ ] No N+1 pattern remains in the reviewed code path
 - [ ] Foreign keys used in joins are indexed
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `backend/backend-dev` for integrating the schema/query
 change. → `data/data-engineer` when the issue is in an analytics pipeline

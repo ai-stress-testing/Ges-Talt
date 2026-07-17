@@ -29,6 +29,7 @@ the test suite against the live model via Bash.
       production, not a stand-in
 - [ ] No vague qualifier ("be concise", "be helpful") remains unquantified
 - [ ] The prompt is versioned with a changelog entry
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `ai/ai-engineer` for integrating the prompt into the calling
 application. → `ai/multi-agent-systems-architect` when the prompt is one

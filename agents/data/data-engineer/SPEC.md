@@ -31,6 +31,7 @@ pipeline code, orchestration config, and data-quality checks run via Bash.
       Bronze/Silver directly
 - [ ] Every table carries audit columns (`created_at`, `updated_at`,
       `deleted_at`, `source_system`)
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `backend/backend-dev` or `data/database-optimizer` for
 downstream consumption concerns. → `data/ai-data-remediation-engineer` when

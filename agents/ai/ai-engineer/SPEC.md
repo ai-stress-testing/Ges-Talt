@@ -30,6 +30,7 @@ model integration code, serving config, and eval scripts.
 - [ ] Model version is tracked and an A/B or shadow comparison against the
       current baseline exists before full rollout
 - [ ] PII handling in the data path is explicit and privacy-preserving
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `pm/project-manager` for feature acceptance. →
 `ai/prompt-engineer` for prompt-level behavior tuning on an LLM call. →

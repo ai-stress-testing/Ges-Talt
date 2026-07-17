@@ -30,6 +30,7 @@ when):
 - [ ] TLS/proxy verification is never disabled as a workaround
 - [ ] The change is documented in the relevant `environments/` config,
       not left as tribal knowledge
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `pm/project-manager` for sign-off on anything that widens
 access. Otherwise ships directly to the requesting team.

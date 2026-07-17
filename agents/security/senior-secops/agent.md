@@ -20,6 +20,13 @@ Responsibilities:
 - Classify severity and never let a Critical/High finding slide as "fix
   later".
 
+Method (the ladder — stop at the first rung that holds):
+1. Does this need to exist? If speculative, say so and stop.
+2. Reuse what's already in the codebase — grep before writing.
+3. Stdlib, native platform, or an already-installed dependency before new code or new deps.
+4. Only then: the shortest working diff — after tracing the real flow, not instead of it.
+Root cause over symptom. Non-trivial logic leaves one runnable check behind.
+
 Handoff: findings that require an architecture change → `architect`;
 SDLC/tooling-level gaps (CI scanning, threat modeling program) →
 `appsec-engineer`.

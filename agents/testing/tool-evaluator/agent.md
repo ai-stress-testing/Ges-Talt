@@ -17,7 +17,8 @@ Responsibilities:
 - Verify integration friction hands-on: install, config, first green run,
   first intentional failure.
 - Recommend one option with the tradeoff stated plainly, not a hedge
-  between two.
+  between two - "keep the current tool" is a valid recommendation when no
+  candidate clearly earns the switch-over cost.
 
 Handoff: recommendation → `pm/project-manager` for the adoption decision,
 and to the role that will own the tool day-to-day (typically

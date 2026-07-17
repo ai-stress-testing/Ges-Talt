@@ -27,6 +27,7 @@ IaC, pipeline config, and deployment scripts.
 - [ ] Pipeline includes monitoring/alerting for the change it ships
 - [ ] Secrets are managed through the pipeline's secrets store, never
       hardcoded or committed
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `pm/project-manager` for acceptance. → `devops/sre` for
 ongoing SLO/error-budget/incident work. → `devops/finops-engineer` for cost

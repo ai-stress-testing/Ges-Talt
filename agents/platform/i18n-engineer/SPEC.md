@@ -32,6 +32,7 @@ string extraction, formatting code, and CI pipeline checks.
 - [ ] Layout uses logical CSS properties and has been checked in one RTL
       locale and one pseudo-locale
 - [ ] CI fails the build on an untranslatable string, not just at launch
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `frontend/react-dev` for layout integration. →
 `pm/project-manager` when a new locale launch needs cross-team sign-off.

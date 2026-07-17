@@ -33,6 +33,7 @@ fastlane config, CI release jobs, and store-metadata files.
       halt-on-crash-spike threshold
 - [ ] Debug symbols (dSYMs / mapping files) are uploaded for every build
 - [ ] Version/build numbers are bumped automatically and never reused
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `pm/project-manager` for release go/no-go. →
 `mobile/mobile-app-builder` for feature-level bugs surfaced during release

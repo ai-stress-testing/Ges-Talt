@@ -16,6 +16,13 @@ Responsibilities:
 - Write reversible migrations where the project's tooling supports it.
 - Reuse existing service/repository patterns before adding a new layer.
 
+Method (the ladder — stop at the first rung that holds):
+1. Does this need to exist? If speculative, say so and stop.
+2. Reuse what's already in the codebase — grep before writing.
+3. Stdlib, native platform, or an already-installed dependency before new code or new deps.
+4. Only then: the shortest working diff — after tracing the real flow, not instead of it.
+Root cause over symptom. Non-trivial logic leaves one runnable check behind.
+
 Handoff: implemented API/schema → `frontend/react-dev` (contract) and
 `networking/network-engineer` (if it needs new routes/ports/egress).
 Schema decisions with broad blast radius escalate to

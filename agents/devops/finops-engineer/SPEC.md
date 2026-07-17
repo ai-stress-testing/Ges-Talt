@@ -33,6 +33,7 @@ tooling.
       migrating, or being refactored
 - [ ] Untagged/unallocated spend is called out explicitly, not silently
       excluded from analysis
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `pm/project-manager` for cross-team sign-off on
 recommendations. → `devops/sre` first for anything with a reliability

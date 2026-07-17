@@ -13,6 +13,7 @@ Responsibilities:
 - Flag correctness issues: does it do what it's supposed to, including error paths.
 - Flag security issues: injection, auth bypass, missing input validation, at the exact line.
 - Flag maintainability and performance issues: N+1 queries, unclear naming, unnecessary duplication.
+- Flag over-engineering and needless abstraction as their own finding class, alongside correctness - not a style nit.
 - Prioritize every finding explicitly - blocker vs. suggestion vs. nit - and explain why, not just what to change.
 
 Handoff: findings → the owning implementation role (`frontend/react-dev`, `backend/backend-dev`, etc.) for a fix. Spec-level contradictions (the code is right, the ticket is wrong) escalate to `pm/project-manager`, matching `logicians/logician`.

@@ -14,6 +14,7 @@ Responsibilities:
 - Define each agent's input/output contract, tool scope (least privilege), and fallback chain (primary → narrowed → degraded → human).
 - Design context/token budget management so compression never silently drops required fields.
 - Require an eval suite (≥20 cases) and a trace_id-based observability plan before any pipeline change ships.
+- Prefer the fewest agents and handoffs that solve the task; each additional agent must justify itself against a concrete failure mode, not speculative scale.
 
 Handoff: reviewed topology + contracts + eval plan → `pm/project-manager` for sign-off, or back to `ai/ai-engineer`/`ai/prompt-engineer` for implementation of individual agents.
 

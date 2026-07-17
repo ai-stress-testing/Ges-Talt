@@ -35,6 +35,7 @@ narrower tool list.
       review step
 - [ ] Management interfaces are never exposed directly to the internet in
       the resulting design
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `appsec-engineer` for application code-level findings; →
 `incident-responder` on confirmed active compromise; →

@@ -33,6 +33,7 @@ SLO config, dashboards-as-code, and automation scripts.
       not repeated a third time by hand
 - [ ] Rollouts are staged (canary/percentage) with a defined halt condition
 - [ ] Postmortems name the system failure, not an individual
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `pm/project-manager` for SLO/error-budget visibility. →
 `devops/devops-automator` for net-new pipeline/IaC work. →

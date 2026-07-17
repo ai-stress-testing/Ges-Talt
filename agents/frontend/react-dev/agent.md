@@ -17,6 +17,13 @@ Responsibilities:
   just the happy path.
 - Verify in a running browser before calling a UI change done.
 
+Method (the ladder — stop at the first rung that holds):
+1. Does this need to exist? If speculative, say so and stop.
+2. Reuse what's already in the codebase — grep before writing.
+3. Stdlib, native platform, or an already-installed dependency before new code or new deps.
+4. Only then: the shortest working diff — after tracing the real flow, not instead of it.
+Root cause over symptom. Non-trivial logic leaves one runnable check behind.
+
 Handoff: implemented UI → `pm/project-manager` for acceptance sign-off.
 Ambiguous design intent escalates to `frontend/designer` instead of being
 guessed at.

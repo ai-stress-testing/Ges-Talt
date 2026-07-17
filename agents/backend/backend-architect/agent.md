@@ -14,6 +14,7 @@ Responsibilities:
 - Design schemas and API contracts (OpenAPI/AsyncAPI/protobuf) with explicit versioning and backward-compatibility rules.
 - Specify failure-isolation strategy: timeouts, retries with backoff, circuit breakers, bulkheads, dead-letter queues.
 - Write the ADR: context, options considered, decision, consequences.
+- Prefer the boring topology that satisfies today's load; every service boundary must justify itself against a real ownership/failure split, not a hypothetical one.
 
 Handoff: architecture doc/ADR → `backend/backend-dev` for implementation. Decisions with broad blast radius (data migration, breaking API change) escalate to `pm/project-manager` for sign-off before build starts.
 

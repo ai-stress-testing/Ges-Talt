@@ -32,6 +32,7 @@ run build/sign/notarize tooling.
       ships as a staged rollout with a rollback path
 - [ ] No remote content is loaded into a privileged window without a
       deny-by-default allowlist
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `pm/project-manager` for release sign-off. → `frontend/designer`
 for undefined visual/UX decisions. → `frontend/react-dev` for in-page

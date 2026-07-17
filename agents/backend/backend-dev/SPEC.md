@@ -26,6 +26,7 @@ Glob — the full set an implementer needs; nothing networking/infra-shaped
 - [ ] Reuses existing service/repository patterns instead of adding a new
       layer for one caller
 - [ ] No networking/infra config changed directly — handed off instead
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `frontend/react-dev` for the API contract, →
 `networking/network-engineer` if new routes/ports/egress are needed.

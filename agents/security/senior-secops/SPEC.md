@@ -35,6 +35,7 @@ when):
       owner and date
 - [ ] Implemented controls match the standard's specification, not just a
       generic best practice
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `architect` when a finding requires an architecture-level
 change; → `appsec-engineer` for SDLC/tooling-level gaps (CI scanning

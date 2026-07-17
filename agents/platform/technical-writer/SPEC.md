@@ -30,6 +30,7 @@ and verify code examples and docs-build tooling in CI.
 - [ ] Every breaking change ships with a migration guide before release
 - [ ] CI fails the build on a broken doc build or a stale generated
       reference
+- [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `pm/project-manager` for release inclusion. →
 `backend/api-platform-engineer` or `backend/backend-dev` when an API
