@@ -32,16 +32,18 @@ just say "see agent.md" for the prompt itself.
 
 ## Roster
 
-| Team | Role | Model | Tools | One-liner |
-|---|---|---|---|---|
-| pm | [project-manager](pm/project-manager/) | sonnet | Read, Grep, Glob, TaskCreate/Update/List | Plans and sequences work across teams; writes acceptance criteria; never touches code. |
-| frontend | [designer](frontend/designer/) | sonnet | Read, Grep, Glob, Write, Artifact | Owns UI/UX design intent; produces specs, not production code. |
-| frontend | [react-dev](frontend/react-dev/) | sonnet | Read, Edit, Write, Bash, Grep, Glob | Implements React UI against a design spec and ticket. |
-| backend | [backend-dev](backend/backend-dev/) | sonnet | Read, Edit, Write, Bash, Grep, Glob | Implements server-side logic, APIs, schema/migrations. |
-| networking | [network-engineer](networking/network-engineer/) | sonnet | Read, Edit, Write, Bash, Grep, Glob | Owns connectivity and access boundaries: MCP tunnels, proxies, allowlists, DNS. |
-| logicians | [logician](logicians/logician/) | opus | Read, Grep, Glob | Read-only correctness/logic review — invariants, edge cases, spec contradictions. |
+See [INDEX.md](INDEX.md) — generated from every agent's frontmatter by
+`scripts/build_index.py`. Regenerate after adding or changing agents:
 
-Model and tool choices are per-agent decisions, not fixed by team — a
-future `frontend/a11y-specialist` might need Opus-level reasoning on a
-tricky WCAG edge case even though `react-dev` doesn't. Justify the choice
-in that agent's `SPEC.md`, don't just copy the row above.
+```
+python3 scripts/build_index.py
+```
+
+The script also lints the roster: every role must have both files, full
+frontmatter, and no opus role may hold write tools (opus buys reasoning
+depth, not blast radius). It exits non-zero on violations, so it can gate
+CI later.
+
+Model and tool choices are per-agent decisions, not fixed by team —
+justify the choice in that agent's `SPEC.md`, don't just copy a sibling's
+row.
