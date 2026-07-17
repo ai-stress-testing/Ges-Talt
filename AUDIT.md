@@ -106,3 +106,85 @@ Per the repo's philosophy these should nest under existing teams (or a
 model + tools in its SPEC — the two established patterns to reach for are
 opus/read-only for reasoning-bound review roles and sonnet/full-tools for
 implementers.
+
+---
+
+# Audit 2 — enterprise weaknesses & knowledge gaps (2026-07-17, post-merge to main)
+
+State: 71 agents / 15 teams (sonnet 60, opus 7, haiku 4); legal team live;
+spec-driven flow proven end-to-end on issue #1. Evidence gathered for this
+audit: a referential-integrity scan of every `team/role` handoff mention
+(0 broken references — the graph is consistent across seven different
+authors) and a dependency count on the PM (94 file-mentions of
+`pm/project-manager` across the roster).
+
+## Weaknesses (structural / process)
+
+1. **The PM is a chokepoint.** 94 references: acceptance sign-offs,
+   access-widening approvals, spec ambiguity, and cross-team conflicts
+   all route through one opus role with no delegation rule. Under
+   parallel work this serializes everything. Fix is cheap: name which
+   sign-offs delegate to `pm/delivery-lead` (portfolio) and
+   `pm/program-tracker` (initiative), and let acceptance verification
+   ride on `testing/reality-checker`'s verdict instead of PM re-review.
+2. **The verdict loop is still prose.** What a testing FAIL hands back,
+   the retry cap, and when escalation fires remain undefined — the last
+   big hole in the build→verify cycle (carried from Audit 1).
+3. **Every guardrail is convention, not mechanism.** The opus-Write
+   exception, sprint-log discipline, negative prompts, and today's
+   handoff integrity are all enforced by prose and good behavior.
+   Nothing runs in CI (GT-8 open). Today's 0-broken-refs result is a
+   snapshot, not a guarantee — the reference check belongs inside
+   `build_index.py`.
+4. **The org is documentation until it's wired to a runtime.** agents/
+   specs aren't installed anywhere loadable (no `.claude/agents/`
+   render), and environments/ is still empty: 71 brains, 0 hands.
+5. **Two sources of truth for work.** `docs/backlog.md` GT-rows and
+   GitHub issues overlap (GT-9 ↔ #1) with manual sync. Declare issues
+   canonical and make the backlog a generated view, or accept drift.
+6. **The roster has never been reviewed by its own reviewers.** Seven
+   authors wrote 71 roles quickly; consistency held (see scan), but
+   `logicians/logician` has never audited the charters for overlap or
+   contradiction the way it would audit any other spec.
+7. **No threat model for the agent org itself.** The security team
+   points at product code; nobody owns prompt-injection, tool-misuse,
+   or data-exfiltration risk *of the agent system* — acute before
+   environments/ adds MCP tunnels and egress config. Natural first
+   ticket for `security/architect` (read-only, already reasoning-tier).
+
+## Knowledge gaps (questions the enterprise can't currently answer)
+
+Carried from Audit 1, still open: release management for web/backend;
+networking depth (CDN/edge, service mesh, DNS ops); analytics/BI;
+the critical-systems wave (secrets/crypto, DR/backup + DBA, distributed
+correctness, regulated data, capacity) — queued by the owner.
+
+New:
+
+8. **AI evaluation & safety.** The ai team builds (`ai-engineer`,
+   `prompt-engineer`, `multi-agent-systems-architect`) but nobody
+   evaluates: no LLM-eval / model-QA / red-teaming role, and the testing
+   team is classic software QA. For an agent-heavy org this is the
+   sharpest gap on the board.
+9. **Supply-chain security.** `appsec-engineer` wires SCA scanning, but
+   SBOM, dependency provenance, and third-party/vendor risk have no
+   owner (`testing/tool-evaluator` only evaluates QA tooling).
+10. **Operational readiness.** SLOs (`devops/sre`) and breach response
+    (`security/incident-responder`) exist, but there's no on-call/paging
+    definition and no decision rule for routing an ambiguous page
+    (broken vs. malicious) — the Audit 1 overlap watch is now a gap
+    because both roles are live.
+11. **Support intake.** No role owns user-reported defects → triage into
+    the PM flow; `design/ux-researcher` covers research, not tickets.
+
+## Recommended order (laziest sufficient fix first)
+
+1. Fold the handoff-reference check into `build_index.py` and stand up
+   the GT-8 CI workflow — turns today's manual honesty into enforcement.
+2. Write the verdict-loop convention (PASS/FAIL handback, retry cap,
+   escalation) — one doc closes weakness 2 and half of weakness 1.
+3. Declare GitHub issues canonical; backlog becomes a generated view.
+4. Add `ai/model-evaluator` (gap 8) and cut the agent-org threat model
+   ticket to `security/architect` (weakness 7) before environments work
+   begins.
+5. Then GT-6 (environments) and the owner's critical-systems wave (GT-7).

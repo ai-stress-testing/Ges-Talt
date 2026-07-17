@@ -14,3 +14,6 @@ per issue. Status: todo / in-progress / blocked / done.
 | GT-7 | Hyper-specialized critical-systems agents | (owner) | (next) | todo | — |
 | GT-8 | CI workflow running build_index.py lint | devops/devops-automator | (next) | todo | — |
 | GT-9 | Legal team: privacy-engineer, DPO, product-counsel, general-counsel | main session (spec-driven flow, issue #1) | sprint-7-26-12-19 | done | [#1](https://github.com/ai-stress-testing/Ges-Talt/issues/1) |
+| GT-10 | Verdict-loop convention (FAIL handback, retry cap, escalation) | pm/team-operations | (next) | todo | — |
+| GT-11 | ai/model-evaluator role + agent-org threat model ticket | main session + security/architect | (next) | todo | — |
+| GT-12 | Issues-canonical backlog (generated view) + handoff-ref check in lint | devops/devops-automator | (next) | todo | — |
