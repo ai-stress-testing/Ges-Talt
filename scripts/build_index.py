@@ -12,7 +12,12 @@ ROOT = "agents"
 OUT = f"{ROOT}/INDEX.md"
 # ponytail: naive frontmatter split, swap for a YAML parser if fields grow
 FM = re.compile(r"^---\n(.*?)\n---", re.S)
-WRITE_TOOLS = {"Edit", "Write", "Bash", "NotebookEdit"}
+MUTATION_TOOLS = {"Edit", "Bash", "NotebookEdit"}  # forbidden for opus, no exceptions
+# Write is also forbidden for opus, except roles listed here with a reason.
+OPUS_WRITE_EXCEPTIONS = {
+    "agents/pm/project-manager/agent.md":
+        "spec-driven PM: Write is docs/-scoped (specs, backlog, PRD drafts), never code",
+}
 
 
 def parse(path):
@@ -42,11 +47,15 @@ def main():
         if not glob.glob(spec):
             problems.append(f"{path}: missing SPEC.md sibling")
         tools = {t.strip() for t in fm.get("tools", "").split(",")}
-        if fm.get("model") == "opus" and tools & WRITE_TOOLS:
-            problems.append(
-                f"{path}: opus paired with write tools {sorted(tools & WRITE_TOOLS)}"
-                " — opus buys reasoning depth, not blast radius"
-            )
+        if fm.get("model") == "opus":
+            bad = tools & MUTATION_TOOLS
+            if "Write" in tools and path not in OPUS_WRITE_EXCEPTIONS:
+                bad = bad | {"Write"}
+            if bad:
+                problems.append(
+                    f"{path}: opus paired with write tools {sorted(bad)}"
+                    " — opus buys reasoning depth, not blast radius"
+                )
         one_liner = re.split(r"(?<=[.!?]) ", fm.get("description", ""))[0]
         teams.setdefault(team, []).append(
             (role, fm.get("model", "?"), fm.get("tools", "?"), one_liner)

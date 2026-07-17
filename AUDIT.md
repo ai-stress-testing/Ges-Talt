@@ -53,13 +53,14 @@ Advisory bench (academic) consults across all steps without write access.
 
 ### Structural (blocking the workflow from actually running)
 
-1. **No dispatch/QA-loop protocol.** pm decomposes and every SPEC has
-   acceptance criteria, but nothing defines the verdict cycle: who runs a
-   ticket through build → review → verify, what a FAIL hands back, how
-   many retries before escalation. agency-agents' handoff/escalation
-   templates (PASS/FAIL verdicts, 3-attempt escalation) are the obvious
-   source to port as a lightweight `agents/WORKFLOW.md` convention — or
-   an orchestrator role, but a convention doc is the lazier rung.
+1. **Dispatch: partially closed; QA verdict loop still open.** The
+   spec-driven PM upgrade (opus `pm/project-manager` + CLAUDE.md +
+   `docs/templates/issue-spec.md`) now covers assignment: every sub-issue
+   carries an assignee, acceptance criteria, and a negative prompt.
+   Still undefined: the verdict cycle — what a testing FAIL hands back
+   to the implementer, how many retries before escalation. agency-agents'
+   PASS/FAIL/escalation templates remain the source to port as a
+   lightweight convention.
 2. **Environments (the hands) still don't exist.** `environments/` is a
    stub; `networking/network-engineer`'s charter references configs that
    aren't there. MCP tunnels, egress allowlists, and proactive session
