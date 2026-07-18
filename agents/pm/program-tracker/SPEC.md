@@ -43,4 +43,6 @@ an initiative never requires touching code.
 **Handoffs**: → `pm/project-manager` for any new ticket-level work the
 tracking surfaces. → `pm/delivery-lead` when the initiative needs a
 portfolio-level resourcing or prioritization call. → the human requester
-for any risk whose escalation trigger has fired.
+for any risk whose escalation trigger has fired. Milestone drift and risk
+severity are read against the initiative's tier in `docs/enterprise.md`'s
+Tiering section, not judged in isolation.

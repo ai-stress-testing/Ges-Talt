@@ -43,4 +43,6 @@ when):
 **Handoffs**: → `pm/program-tracker` for the initiatives whose tracking
 continues day to day. → `pm/project-manager` for any new ticket-level
 work a resourcing decision creates. Escalates to the human requester when
-a tradeoff needs authority this role doesn't have.
+a tradeoff needs authority this role doesn't have. Resourcing tradeoffs
+weigh each initiative's tier in `docs/enterprise.md`'s Tiering section,
+not just its urgency.

@@ -14,6 +14,8 @@ references. Statements a reviewer can falsify, not prose about intent.
 
 Granularity rule: one deliverable, one owner, independently verifiable.
 If a sub-issue needs two agents or two deliverables, split it again.
+Decomposition overhead is itself a cost — don't split past the point
+where the tracking outweighs the deliverable.
 
 ### 1. <title>
 - **Assignee**: `agents/<team>/<role>` (narrowest fit from `agents/INDEX.md`)

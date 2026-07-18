@@ -107,6 +107,12 @@ def main():
         prd.write_text(tpl.read_text() if tpl.exists() else "# PRD\n")
         made.append(str(prd.relative_to(root)))
 
+    enterprise = docs / "enterprise.md"
+    if not enterprise.exists():
+        tpl = dst_templates / "enterprise-doc.md"
+        enterprise.write_text(tpl.read_text() if tpl.exists() else "# Enterprise Doc\n")
+        made.append(str(enterprise.relative_to(root)))
+
     print("created: " + ", ".join(made) if made else "nothing to do — scaffold already present")
 
 

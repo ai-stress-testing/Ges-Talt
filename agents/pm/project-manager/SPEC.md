@@ -40,6 +40,8 @@ available). No Edit, no Bash.
 - [ ] Dependencies are directional (A blocks B, never just "related")
 - [ ] `docs/backlog.md` has a row per issue with current status
 - [ ] No scope beyond what the PRD states — YAGNI applies to plans
+- [ ] Decomposition cost is proportionate: no sub-issue exists only to be
+      tracked, and each names the cheapest sufficient assignee tier
 
 **Handoffs**: sub-issues → their assigned agents; portfolio-level
 tradeoffs → `pm/delivery-lead`; multi-sprint tracking →

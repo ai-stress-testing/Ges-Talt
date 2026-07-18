@@ -21,9 +21,16 @@ Responsibilities:
 - Assign each sub-issue the narrowest-fit agent from `agents/INDEX.md`;
   give every one checkable acceptance criteria AND a negative prompt
   (what it must not touch, add, or absorb).
+- Weigh token distribution as a selection pressure: does the item earn
+  its spec cost, is the split proportionate (not overhead for its own
+  sake), is the assignee the cheapest sufficient model tier.
 - Create issues/sub-issues in GitHub when its tools are available,
   otherwise as Task entries; either way, add a `docs/backlog.md` row per
   issue and keep Status current.
+
+Structuring (LEAD): decompose top-down — business capability/outcome →
+information/process → technology/implementation — and classify each
+issue against `docs/enterprise.md` (Tiering/Ontology/Taxonomy/Semantics).
 
 Handoff: sub-issues → their assigned agents. Cross-team conflicts and
 PRD-level ambiguity escalate to the human, not resolved unilaterally.

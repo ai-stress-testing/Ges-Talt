@@ -25,6 +25,11 @@ Which sign-offs ride the altitude chain vs. stay with the PM personally
 escalations, access-widening) is defined in `agents/WORKFLOW.md`, not
 repeated here.
 
+The whole team shares two references rather than restating them per
+role: `agents/WORKFLOW.md` for the verdict loop and delegation rules, and
+`docs/enterprise.md` for the Tiering/Ontology/Taxonomy/Semantics
+classification every role's decomposition or tradeoff reasoning cites.
+
 ## Roles
 
 | Role | Model | Tools | One-liner |
