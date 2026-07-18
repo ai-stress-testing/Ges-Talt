@@ -34,13 +34,41 @@ def parse(path):
     return fm
 
 
+def check_handoff_references(team_names, roles):
+    """Scan agent.md/SPEC.md/team-README files for backticked `team/role`
+    mentions and flag any that don't resolve to a real role. `README` as
+    the second segment (e.g. `pm/README`) is a file reference, not a
+    handoff, and is never flagged."""
+    problems = []
+    paths = sorted(
+        glob.glob(f"{ROOT}/*/*/agent.md")
+        + glob.glob(f"{ROOT}/*/*/SPEC.md")
+        + glob.glob(f"{ROOT}/*/README.md")
+    )
+    for path in paths:
+        text = open(path).read()
+        for team, ref in HANDOFF_RE.findall(text):
+            if team not in team_names or ref == "README":
+                continue
+            if f"{team}/{ref}" not in roles:
+                problems.append(f"{path}: broken handoff reference `{team}/{ref}`")
+    return problems
+
+
 def main():
     problems = []
     teams = {}
+    team_names = {
+        p.rstrip("/").split("/")[-1]
+        for p in glob.glob(f"{ROOT}/*/")
+        if p.rstrip("/").split("/")[-1] != "TEMPLATE"
+    }
+    roles = set()
     for path in sorted(glob.glob(f"{ROOT}/*/*/agent.md")):
         _, team, role, _ = path.split("/")
         if team == "TEMPLATE":
             continue
+        roles.add(f"{team}/{role}")
         fm = parse(path)
         for field in ("name", "description", "tools", "model"):
             if not fm.get(field):
@@ -89,6 +117,8 @@ def main():
 
     open(OUT, "w").write("\n".join(lines))
     print(f"wrote {OUT}: {total} agents, {len(teams)} teams ({model_summary})")
+
+    problems.extend(check_handoff_references(team_names, roles))
 
     if problems:
         print(f"\n{len(problems)} lint problem(s):", file=sys.stderr)
