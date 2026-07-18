@@ -1,0 +1,10 @@
+{"task": "convert design division", "role": "design/ux-architect", "model": "sonnet", "tokens": 83038, "sprint": "sprint-7-26-12-19"}
+{"task": "split engineering division into subclass teams", "role": "platform/software-architect", "model": "sonnet", "tokens": 160889, "sprint": "sprint-7-26-12-19"}
+{"task": "ponytail method pass across roster", "role": "logicians/code-reviewer", "model": "sonnet", "tokens": 116034, "sprint": "sprint-7-26-12-19"}
+{"task": "agent-org threat model", "role": "security/architect", "model": "opus", "tokens": 52696, "sprint": "sprint-7-26-12-19"}
+{"task": "lint enforcement and CI tooling", "role": "devops/devops-automator", "model": "sonnet", "tokens": 66697, "sprint": "sprint-7-26-12-19"}
+{"task": "enterprise-enhancements triage", "role": "pm/team-operations", "model": "sonnet", "tokens": 76016, "sprint": "sprint-7-26-12-19"}
+{"task": "ai/model-evaluator role", "role": "ai/model-evaluator", "model": "sonnet", "tokens": 54575, "sprint": "sprint-7-26-12-19"}
+{"task": "verdict-loop + delegation conventions", "role": "pm/team-operations", "model": "sonnet", "tokens": 62389, "sprint": "sprint-7-26-12-19"}
+{"task": "Enterprise-Doc template + scaffold", "role": "platform/technical-writer", "model": "sonnet", "tokens": 64751, "sprint": "sprint-7-26-12-19"}
+{"task": "platform/lifecycle-manager role", "role": "platform/lifecycle-manager", "model": "sonnet", "tokens": 48758, "sprint": "sprint-7-26-12-19"}

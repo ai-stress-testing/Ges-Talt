@@ -34,7 +34,9 @@ assigned agents; static review is `agents/logicians/`, empirical
 verification `agents/testing/`, security `agents/security/`. Don't hand
 work to an agent outside its charter — check the index first. See
 `agents/WORKFLOW.md` for the verdict loop (PASS/FAIL handback, retry
-cap, escalation) and PM delegation rules.
+cap, escalation) and PM delegation rules, and `agents/COMMS.md` for the
+quoted-attribution reporting format (every relay/handoff closes with a
+code-verified token cost via `scripts/verify_comms.py`).
 
 ## Roster rules
 
