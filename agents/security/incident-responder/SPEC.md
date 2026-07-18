@@ -40,4 +40,7 @@ when):
 **Handoffs**: → devops/on-call for containment-related infrastructure or
 access changes; → `pm/project-manager` to track remediation items to
 completion; → `architect` when the root cause is a design-level gap, not
-a one-off bug.
+a one-off bug. Receives from `devops/sre` on any page where malice is
+suspected and owns the incident from that point forward, including
+notifying `legal/data-protection-officer` for the breach-notification
+clock (see `agents/WORKFLOW.md` §3).

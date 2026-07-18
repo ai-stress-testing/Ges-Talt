@@ -32,7 +32,9 @@ every sub-issue has one assignee from `agents/INDEX.md`, checkable
 acceptance criteria, and a negative prompt. Implementation flows to the
 assigned agents; static review is `agents/logicians/`, empirical
 verification `agents/testing/`, security `agents/security/`. Don't hand
-work to an agent outside its charter — check the index first.
+work to an agent outside its charter — check the index first. See
+`agents/WORKFLOW.md` for the verdict loop (PASS/FAIL handback, retry
+cap, escalation) and PM delegation rules.
 
 ## Roster rules
 

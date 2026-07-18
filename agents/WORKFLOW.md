@@ -1,0 +1,69 @@
+# Workflow — verdict loop + delegation
+
+Closes GT-10 and Audit-2 weaknesses 1, 2, 10. Convention, not a new
+agent — no roster changes required to follow it.
+
+## 1. Verdict loop
+
+Path: sub-issue → implementer (per its `agent.md`) → static review
+(`logicians/`) → empirical verification (`testing/`) → verdict.
+
+A verdict is **PASS** or **FAIL**. Nothing else — no "PASS with notes,"
+no numeric score.
+
+**FAIL handback** — one entry per issue found, each carrying:
+- `expected` — the acceptance criterion, quoted verbatim
+- `actual` — what was observed instead
+- `evidence` — file path, command output, or screenshot ref
+- `fix instruction` — the specific change to make
+- `files to touch` — exact paths
+
+Plus an `attempt` counter (N of 3), carried forward on every handback.
+
+**Retry rule**: the implementer fixes only the listed issues. No new
+scope, no drive-by refactors, no "while I'm in here." Re-submit for the
+same review → verify cycle.
+
+**Escalation**: attempt 4 auto-escalates to `pm/project-manager` with
+the full failure history (what was tried each attempt, why it still
+failed). PM picks one of: reassign, decompose, revise approach,
+accept-with-limitations, defer — and informs the human of the call.
+
+**PASS path**: static review + empirical verification both PASS on the
+stated acceptance criteria → `testing/reality-checker` re-verifies the
+evidence as the final gate → done. Reality-checker can still bounce it
+back to FAIL; its verdict is the one that ships.
+
+## 2. Delegation rules (de-chokepoint the PM)
+
+The PM does not personally re-review work that already has a
+reality-checker PASS — that verdict *is* the acceptance sign-off.
+
+Route by altitude, not habit:
+- Portfolio-level tradeoffs (competing initiatives, resourcing) →
+  `pm/delivery-lead`
+- Initiative/multi-sprint milestone decisions → `pm/program-tracker`
+- Everything else implementation-shaped → the assigned agent, per its
+  own handoff
+
+`pm/project-manager` personally arbitrates only:
+- spec ambiguity (PRD doesn't say)
+- cross-team conflict (two roles, one deliverable, disagreement)
+- scope changes (mid-flight addition to an issue)
+- retry-cap escalations (§1)
+- access-widening sign-offs (security-relevant — stays with PM, not
+  delegated to delivery-lead or program-tracker)
+
+## 3. Incident routing rule
+
+An ambiguous page (broken vs. malicious, not yet known) goes to
+`devops/sre` first — availability triage.
+
+The moment malice is suspected: hand off to
+`security/incident-responder` and stop making ops changes on the
+affected system. Containment from that point is IR's call, not SRE's —
+further live changes can destroy evidence.
+
+`incident-responder` owns the incident from handoff forward, including
+notifying `legal/data-protection-officer` (the 72h breach-notification
+clock starts at confirmed breach, not at page time).

@@ -38,4 +38,6 @@ SLO config, dashboards-as-code, and automation scripts.
 **Handoffs**: → `pm/project-manager` for SLO/error-budget visibility. →
 `devops/devops-automator` for net-new pipeline/IaC work. →
 `devops/finops-engineer` when a reliability fix has a material cost
-trade-off.
+trade-off. → `security/incident-responder` the moment an ambiguous page
+looks malicious — stop making ops changes on the affected system once
+handed off (see `agents/WORKFLOW.md` §3).

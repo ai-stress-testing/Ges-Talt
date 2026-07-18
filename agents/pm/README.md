@@ -20,6 +20,11 @@ tradeoffs). Each of `experiment-tracker`, `ticket-workflow-steward`,
 `meeting-notes-specialist`, and `team-operations` is a narrow specialist
 that feeds tickets or decisions into that chain rather than sitting in it.
 
+Which sign-offs ride the altitude chain vs. stay with the PM personally
+(spec ambiguity, cross-team conflict, scope changes, retry-cap
+escalations, access-widening) is defined in `agents/WORKFLOW.md`, not
+repeated here.
+
 ## Roles
 
 | Role | Model | Tools | One-liner |
