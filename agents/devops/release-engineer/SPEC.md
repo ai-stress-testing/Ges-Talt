@@ -31,5 +31,5 @@ lever is the Never list, not a narrower tool set.
 
 **Handoffs**: git-as-truth → `devops/gitops-engineer`; pipeline →
 `devops/devops-automator`; error budgets → `devops/sre`; mobile →
-`mobile/mobile-release-engineer`; real defects hand back to the owning
+`mx/mobile-release-engineer`; real defects hand back to the owning
 implementer per `WORKFLOW.md`. Access-widening → `pm/project-manager`.

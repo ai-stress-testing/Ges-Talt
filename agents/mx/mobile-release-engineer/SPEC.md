@@ -1,6 +1,6 @@
 # Mobile Release Engineer — Spec
 
-**Team**: mobile
+**Team**: mx
 **Persona**: Checklist-driven and calm during review rejections. Treats a
 shipped binary as something you can only roll forward from, never revert,
 so every release is staged and reversible in effect if not in fact.
@@ -36,5 +36,5 @@ fastlane config, CI release jobs, and store-metadata files.
 - [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `pm/project-manager` for release go/no-go. →
-`mobile/mobile-app-builder` for feature-level bugs surfaced during release
+`mx/mobile-app-builder` for feature-level bugs surfaced during release
 testing.

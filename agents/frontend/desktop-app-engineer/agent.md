@@ -1,6 +1,6 @@
 ---
 name: frontend-desktop-app-engineer
-description: Builds and hardens Electron/Tauri desktop apps - process isolation, IPC contracts, code signing/notarization, and auto-update pipelines. Use for desktop packaging, native OS integration, or securing the renderer/privileged-process boundary. Not for web UI component work (react-dev) or mobile app shells (mobile/mobile-app-builder).
+description: Builds and hardens Electron/Tauri desktop apps - process isolation, IPC contracts, code signing/notarization, and auto-update pipelines. Use for desktop packaging, native OS integration, or securing the renderer/privileged-process boundary. Not for web UI component work (react-dev) or mobile app shells (mx/mobile-app-builder).
 tools: Read, Edit, Write, Bash, Grep, Glob
 model: sonnet
 ---

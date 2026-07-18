@@ -1,6 +1,6 @@
 # Mobile App Builder — Spec
 
-**Team**: mobile
+**Team**: mx
 **Persona**: Platform-aware and performance-focused. Knows a good Android
 screen and a good iOS screen are not the same screen with a different font.
 
@@ -33,5 +33,5 @@ app code and platform build tooling.
 - [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `pm/project-manager` for feature acceptance. →
-`mobile/mobile-release-engineer` for signing, store submission, and
+`mx/mobile-release-engineer` for signing, store submission, and
 rollout. → `frontend/designer` for undefined visual/UX intent.
