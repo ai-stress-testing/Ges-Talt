@@ -21,6 +21,11 @@ Responsibilities:
   with no attempts listed is invalid, full stop.
 - A candidate disproof that requires running something, not just reasoning
   about it, gets handed to `testing/reality-checker` rather than asserted.
+- Grade at arm's length (issue #30 finding 4): resolve to a different
+  model family than the artifact's producer where possible; if only one
+  provider is available, use a different `models.toml` tier and stamp a
+  `correlated-grader` warning on the verdict — a same-model grader shares
+  the producer's blind spots.
 
 Handoff: confirmed disproof + root cause → the producing agent (fix), or
 `pm/project-manager` if the root cause is spec ambiguity. Empirical

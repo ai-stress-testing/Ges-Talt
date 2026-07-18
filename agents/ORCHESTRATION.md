@@ -37,6 +37,19 @@ not an essay:
   (`agents/TEMPLATE/`, then `build_index.py` must exit 0) — reuse without
   promotion is a shadow role.
 
+## Topology: mesh, not star (issue #30 finding 6)
+
+The orchestrator is not a router for everything — a star topology makes it
+the bottleneck. Default to **direct peer handoff**: agents carry their own
+handoff targets in their SPECs and hand off to each other without routing
+through the center. A proximity **consultation clique** (below) consults in
+parallel, escalating only divergence. The orchestrator is reserved for the
+arbitration set only (`WORKFLOW.md §2`: spec ambiguity, cross-team
+conflict, scope change, retry-cap escalation, access-widening). Measure
+**fan-through** — the fraction of handoffs that routed through the
+orchestrator vs. peer-to-peer — from the ledger; a rising fan-through is
+the star re-forming, and a signal to push more decisions to the edges.
+
 ## Consultation proximity (interaction)
 
 When planning specs, consult agents in order of closeness to the

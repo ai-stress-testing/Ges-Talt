@@ -41,6 +41,9 @@ artifact, not a code change.
 - [ ] Candidates requiring actual execution (not just reasoning) are
       handed to `testing/reality-checker`, never asserted as if reasoned
       through
+- [ ] Grader independence stated: a different model family from the
+      artifact's author, or a `correlated-grader` warning on the verdict
+      when the same family was unavoidable
 
 **Handoffs**: → the producing agent when a disproof lands and the fix is
 code/spec-local. → `pm/project-manager` when the root cause is spec

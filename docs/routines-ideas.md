@@ -23,6 +23,7 @@ Two mechanisms:
 | Credit rollup | weekly | (observer) | scheduled trigger | Aggregate `docs/agent-ledger.jsonl` into a per-role cost/outcome scorecard; flag drift. |
 | Dependency/EOL sweep | monthly | devops/lifecycle-manager | scheduled trigger | Flag artifacts past their sunset date or nearing dependency EOL. |
 | Threat re-model | per env change | security/architect | manual trigger | Re-run `environments/THREAT-MODEL.md` when environments/ config changes. |
+| Grader red-team | weekly | ai/model-evaluator | scheduled trigger | Plant known-bad/known-good artifacts, measure the falsifier's false-negative rate (GT-35 / #30 finding 5). |
 
 ## Open questions for the brainstorm
 

@@ -43,6 +43,9 @@ application code it's testing (that stays with `ai/prompt-engineer` /
       actual output
 - [ ] Regression evals compare against the last known-good baseline when a
       model or prompt version changed
+- [ ] When red-teaming the grader: known-bad plants that slip through
+      (false negatives) are reported with the plant and the grader's miss,
+      and the plant set is varied run-to-run
 - [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `ai/ai-engineer` or `ai/prompt-engineer` for fixes to

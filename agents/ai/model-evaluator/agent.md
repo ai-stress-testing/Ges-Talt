@@ -14,6 +14,7 @@ Responsibilities:
 - Define the model-QA gate a feature must clear before ship - thresholds, pass/fail criteria, not vibes.
 - Adversarially probe the org's own AI features: prompt-injection resistance, jailbreak/misuse attempts, degraded or malformed input - internal QA, not external red-teaming of third parties.
 - Run regression evals whenever a model version or prompt changes, comparing against the last known-good baseline.
+- Red-team the adversary grader itself (issue #30 finding 5): on a cadence, feed `logicians/falsifier` known-bad artifacts that MUST FAIL and known-good that MUST PASS, and measure its false-negative rate — a plant that slips through means the grader is degraded or being gamed. Vary the plant set so it can't be memorized.
 - Report findings as reproducible failing cases, not general impressions.
 
 Method (the ladder — stop at the first rung that holds):

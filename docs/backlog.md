@@ -41,9 +41,9 @@ Status: todo / in-progress / blocked / done.
 | GT-31 | Nous-Research-lens review of the MCP/orchestration | main session | sprint-7-26-12-19 | done | [#30](https://github.com/ai-stress-testing/Ges-Talt/issues/30) |
 | GT-32 | Acting controller: selection-score per role from ledger (reward=pass−cost−retries) that the PM reads (from #30 sol.2) | ai/model-evaluator | sprint-7-26-12-19 | done | — |
 | GT-33 | Model sovereignty: capability-tier (reason/build/cheap) + models.toml + open-model swap eval (from #30 sol.1) | ai/ai-engineer | sprint-7-26-12-19 | done | — |
-| GT-34 | Grader independence: adversary grader resolves to a different model family; correlated-grader warning (sol.4) | logicians/falsifier | (next) | todo | — |
-| GT-35 | Anti-grader-gaming: model-evaluator red-teams the grader on cadence with plants (sol.5) | ai/model-evaluator | (next) | todo | — |
-| GT-36 | Mesh topology: peer handoff default, orchestrator only for arbitration; measure fan-through (sol.6) | main session | (next) | todo | — |
+| GT-34 | Grader independence: adversary grader resolves to a different model family; correlated-grader warning (sol.4) | logicians/falsifier | sprint-7-26-12-19 | done | — |
+| GT-35 | Anti-grader-gaming: model-evaluator red-teams the grader on cadence with plants (sol.5) | ai/model-evaluator | sprint-7-26-12-19 | done | — |
+| GT-36 | Mesh topology: peer handoff default, orchestrator only for arbitration; measure fan-through (sol.6) | main session | sprint-7-26-12-19 | done | — |
 | GT-37 | Ephemeral-agent governance: declare frontmatter, tool-boundary check at spawn, log ephemeral:true (sol.8) | main session | sprint-7-26-12-19 | done | — |
 | GT-38 | Run manifest: run-id + structured sprint-chat header for replayability (sol.10) | pm/team-operations | sprint-7-26-12-19 | done | — |
 | GT-39 | Depth×economy joint optimum: L0 charter + on-demand L1 DEPTH.md + depth-trigger; exemplar-encoded; compounding memory (sol.9, marquee) | main session + design | sprint-7-26-12-19 | done | — |
