@@ -5,6 +5,7 @@
 
 Creates:
     docs/backlog.md                     — the backlog table
+    docs/enterprise.md                  — tiering/ontology/taxonomy/semantics
     docs/sprint-<m>-<y>-<dd>-<dd>/      — current sprint (default: today,
         prd.md                            7-day window)
         sprint-log/
