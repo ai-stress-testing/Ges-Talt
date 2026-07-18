@@ -42,6 +42,19 @@ work is off-mission for this enterprise-engineering workspace; no cloud/
 web-app system here has a smart-contract attack surface to credibly
 reframe it around.
 
+## OPSEC playbook (issue #21)
+
+The team's applied controls live in [`docs/opsec/`](../../docs/opsec/) —
+defensive checklists organized against the MITRE ATT&CK matrix, one file
+per tactic, each row owned by a specific role at a specific phase
+(prevent/detect/respond). The gate rule: **every major output passes
+through OPSEC** — the relevant tactic checklist is run before the output
+ships, as the security step of the verdict loop. `architect` runs it at
+design time, `senior-secops` at the PR gate, `threat-detection-engineer`
+builds the detections, `incident-responder` owns the response playbooks.
+The first seven tactics (Reconnaissance → Defense Evasion) are in place;
+the second half is the next security sprint.
+
 Add more roles the same way — one folder per role, `agent.md` + `SPEC.md`,
 narrowest tools and cheapest sufficient model, and a row added to this
 list.

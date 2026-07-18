@@ -57,7 +57,9 @@ orchestrator — nearer edges are pulled in first, so their constraints
 shape the spec instead of breaking it late:
 
 1. **security (opsec)** — closest. Threat/abuse constraints enter at spec
-   time, not after.
+   time, not after. Concretely: run the `docs/opsec/` checklist for the
+   tactics the output exposes — "every major output passes through OPSEC"
+   (issue #21).
 2. **legal** — compliance/privacy/licensing constraints next.
 3. **software + pm** — feasibility, scope, decomposition.
 4. **design** — experience and structure.

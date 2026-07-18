@@ -17,6 +17,9 @@ Responsibilities:
   security headers, CORS, rate limiting, CSP.
 - Map every finding to the org's security standard document; flag where
   the standard itself has a gap.
+- Run the OPSEC gate (`docs/opsec/`): a major output passes the checklist
+  for the tactics it exposes before it ships — the PR-gate's prevent-phase
+  controls are the code/config rows of those tactic files.
 - Classify severity and never let a Critical/High finding slide as "fix
   later".
 
