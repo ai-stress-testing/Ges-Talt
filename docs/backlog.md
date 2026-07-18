@@ -21,3 +21,10 @@ Status: todo / in-progress / blocked / done.
 | GT-11 | ai/model-evaluator role + agent-org threat model (environments/THREAT-MODEL.md; control C7 applied) | main session + security/architect | sprint-7-26-12-19 | done | — |
 | GT-12 | Issues-canonical backlog + handoff-ref check in lint (auto-generated view deferred until manual sync actually drifts) | devops/devops-automator | sprint-7-26-12-19 | done | — |
 | GT-13 | Lint: flag tool-set widening on roster diffs (threat-model C6) | devops/devops-automator + security/architect | (next) | todo | — |
+| GT-14 | PM upgrades: token-distribution pressure + LEAD structuring | pm charters (sonnet subagent) | sprint-7-26-12-19 | done | [#14](https://github.com/ai-stress-testing/Ges-Talt/issues/14), [#20](https://github.com/ai-stress-testing/Ges-Talt/issues/20) |
+| GT-15 | Logicians charter README + falsifier role | logicians (sonnet subagent) | sprint-7-26-12-19 | done | [#15](https://github.com/ai-stress-testing/Ges-Talt/issues/15), [#18](https://github.com/ai-stress-testing/Ges-Talt/issues/18) |
+| GT-16 | platform/lifecycle-manager role | platform (sonnet subagent) | sprint-7-26-12-19 | done | [#17](https://github.com/ai-stress-testing/Ges-Talt/issues/17) |
+| GT-17 | Enterprise-Doc: template, scaffold, seeded docs/enterprise.md | docs tooling (sonnet subagent) | sprint-7-26-12-19 | done | [#19](https://github.com/ai-stress-testing/Ges-Talt/issues/19) |
+| GT-18 | Enterprise-enhancements triage (28 categories) | main session (sonnet subagent) | sprint-7-26-12-19 | done | [#16](https://github.com/ai-stress-testing/Ges-Talt/issues/16) |
+| GT-19 | Token-cost sustainability tracking (from #16 triage) | devops/finops-engineer | (next) | todo | — |
+| GT-20 | Blueprinting convention (from #16 triage) | design/ux-architect | (next) | todo | — |
