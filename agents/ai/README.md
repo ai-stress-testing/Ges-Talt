@@ -12,6 +12,10 @@ correctness, not model behavior).
 - [`multi-agent-systems-architect/`](multi-agent-systems-architect/) -
   topology, contracts, and failure-mode design for pipelines of more than
   one agent.
+- [`model-evaluator/`](model-evaluator/) - eval harnesses, model-QA gates,
+  and adversarial probing (prompt-injection, jailbreak/misuse, degraded
+  input) of the org's own AI features; regression evals on model/prompt
+  change.
 
 Same `agent.md` + `SPEC.md` convention as every other team in this repo. Add
 a role here when it owns a durable subclass of AI/ML-system work.
