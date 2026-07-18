@@ -31,4 +31,4 @@ Status: todo / in-progress / blocked / done.
 | GT-21 | Agent comms convention: quoted attribution + code-verified tokens | main session | sprint-7-26-12-19 | done | — |
 | GT-22 | devops/gitops-engineer role (git-as-truth, drift, rollback) | devops | sprint-7-26-12-19 | done | [#13](https://github.com/ai-stress-testing/Ges-Talt/issues/13) |
 | GT-23 | Routines: convention + registry (brainstorm) — see docs/routines-ideas.md | (owner, brainstorming) | (next) | todo | — |
-| GT-24 | Shift-left release-gate/progressive-delivery owner (devops error-handling-off-prod gap) | (undecided — see AskUserQuestion) | (next) | todo | — |
+| GT-24 | devops/release-engineer: progressive delivery / release-gate (shift-left error-handling-off-prod) | devops | sprint-7-26-12-19 | done | — |

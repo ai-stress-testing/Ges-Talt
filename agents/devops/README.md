@@ -11,6 +11,9 @@ it after. Distinct from `backend/` (what the service does) and
 - [`gitops-engineer/`](gitops-engineer/) - git as the source of truth for
   deployable state: declarative manifests, drift detection, PR-as-deploy,
   rollback-by-revert. Keeps bad state from reaching prod out-of-band.
+- [`release-engineer/`](release-engineer/) - progressive delivery: canary/
+  blue-green gates, staging parity, rollback-on-error-signal. Moves failure
+  to a canary slice, not the fleet.
 - [`sre/`](sre/) - SLOs, error budgets, observability, toil reduction,
   chaos/capacity engineering.
 - [`finops-engineer/`](finops-engineer/) - cloud cost allocation, waste
@@ -21,11 +24,10 @@ it after. Distinct from `backend/` (what the service does) and
 The shift-left goal is shared, not one role's job: `testing/` verifies
 empirically before ship, `security/appsec-engineer` + `senior-secops`
 gate the PR, `gitops-engineer` makes prod a reflection of reviewed git
-(so nothing lands un-reviewed and rollback is one revert), and `sre` owns
-the error budget that decides when to stop shipping. What is **not yet
-owned**: progressive-delivery / release-gate discipline (canary, staging
-parity, failing a release before full rollout) — tracked as a gap, see
-the backlog.
+(so nothing lands un-reviewed and rollback is one revert), `release-engineer`
+exposes a change to a canary slice and halts/rolls back on error signals
+before full rollout, and `sre` owns the error budget that decides when to
+stop shipping.
 
 Same `agent.md` + `SPEC.md` convention as every other team in this repo. Add
 a role here when it owns a durable subclass of production-operations work,
