@@ -47,3 +47,6 @@ Status: todo / in-progress / blocked / done.
 | GT-37 | Ephemeral-agent governance: declare frontmatter, tool-boundary check at spawn, log ephemeral:true (sol.8) | main session | sprint-7-26-12-19 | done | — |
 | GT-38 | Run manifest: run-id + structured sprint-chat header for replayability (sol.10) | pm/team-operations | sprint-7-26-12-19 | done | — |
 | GT-39 | Depth×economy joint optimum: L0 charter + on-demand L1 DEPTH.md + depth-trigger; exemplar-encoded; compounding memory (sol.9, marquee) | main session + design | sprint-7-26-12-19 | done | — |
+| GT-40 | OPSEC framework (issue #21): gate + MITRE matrix hub, security team wiring | main session | sprint-7-26-12-19 | done | [#21](https://github.com/ai-stress-testing/Ges-Talt/issues/21) |
+| GT-41 | OPSEC checklists, first 7 MITRE tactics (recon→defense-evasion) | 3 sonnet subagents | sprint-7-26-12-19 | done | #22–#25, #31–#33 |
+| GT-42 | OPSEC checklists, second half (cred-access→impact) | security team | (next) | todo | [#12](https://github.com/ai-stress-testing/Ges-Talt/issues/12) |
