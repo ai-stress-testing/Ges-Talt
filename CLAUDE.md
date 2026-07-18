@@ -33,10 +33,14 @@ acceptance criteria, and a negative prompt. Implementation flows to the
 assigned agents; static review is `agents/logicians/`, empirical
 verification `agents/testing/`, security `agents/security/`. Don't hand
 work to an agent outside its charter — check the index first. See
-`agents/WORKFLOW.md` for the verdict loop (PASS/FAIL handback, retry
-cap, escalation) and PM delegation rules, and `agents/COMMS.md` for the
-quoted-attribution reporting format (every relay/handoff closes with a
-code-verified token cost via `scripts/verify_comms.py`).
+`agents/ORCHESTRATION.md` for the orchestrator model (consultation
+proximity, ephemeral agents, the user journey, "Finished view chat log"),
+`agents/WORKFLOW.md` for the verdict loop (PASS/FAIL handback, retry cap,
+escalation, issue-closing) and PM delegation rules, `agents/COMMS.md` for
+the quoted-attribution reporting format (every relay/handoff closes with a
+code-verified token cost via `scripts/verify_comms.py`), and
+`docs/feedback-loop.md` for the closed-loop discipline (verdicts revise
+the setpoint, not just gate).
 
 ## Roster rules
 

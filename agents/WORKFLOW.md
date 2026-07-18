@@ -34,6 +34,13 @@ stated acceptance criteria → `testing/reality-checker` re-verifies the
 evidence as the final gate → done. Reality-checker can still bounce it
 back to FAIL; its verdict is the one that ships.
 
+**Closing the issue** (issue #28): a PASS is not done until the issue is
+closed. The assigned agent (or the orchestrator on its behalf) posts the
+closing `COMMS.md` attribution and closes the GitHub issue with
+`state_reason: completed`. An issue left open after a reality-checker PASS
+is unfinished work, not a formality — the loop's terminal state is a
+closed issue, not a green verdict. A FAIL never closes; it hands back.
+
 ## 2. Delegation rules (de-chokepoint the PM)
 
 The PM does not personally re-review work that already has a
