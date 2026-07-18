@@ -1,0 +1,56 @@
+{
+  "ai/model-evaluator": {
+    "mean_tokens": 54575.0,
+    "pass_rate": null,
+    "sample_count": 1,
+    "score": 0.4568
+  },
+  "design/technical-writer": {
+    "mean_tokens": 64751.0,
+    "pass_rate": null,
+    "sample_count": 1,
+    "score": 0.3811
+  },
+  "design/ux-architect": {
+    "mean_tokens": 83038.0,
+    "pass_rate": null,
+    "sample_count": 1,
+    "score": 0.2452
+  },
+  "devops/devops-automator": {
+    "mean_tokens": 72961.3,
+    "pass_rate": 1.0,
+    "sample_count": 3,
+    "score": 0.1701
+  },
+  "devops/lifecycle-manager": {
+    "mean_tokens": 48758.0,
+    "pass_rate": null,
+    "sample_count": 1,
+    "score": 0.5
+  },
+  "logicians/code-reviewer": {
+    "mean_tokens": 116034.0,
+    "pass_rate": null,
+    "sample_count": 1,
+    "score": 0.0
+  },
+  "logicians/software-architect": {
+    "mean_tokens": 102819.0,
+    "pass_rate": 1.0,
+    "sample_count": 2,
+    "score": -0.0518
+  },
+  "pm/team-operations": {
+    "mean_tokens": 64574.3,
+    "pass_rate": 1.0,
+    "sample_count": 3,
+    "score": 0.2325
+  },
+  "security/architect": {
+    "mean_tokens": 52696.0,
+    "pass_rate": null,
+    "sample_count": 1,
+    "score": 0.4707
+  }
+}

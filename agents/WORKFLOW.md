@@ -74,3 +74,11 @@ further live changes can destroy evidence.
 `incident-responder` owns the incident from handoff forward, including
 notifying `legal/data-protection-officer` (the 72h breach-notification
 clock starts at confirmed breach, not at page time).
+
+## 4. Run manifest
+
+Every run's sprint-log entry opens with a structured run-manifest header —
+run-id, prompt, agents spawned, specs, verdicts, commits (`ORCHESTRATION.md`
+"Run manifest"). The verdict loop's outcome (§1 — PASS, or the FAIL history
+up to escalation) is the `verdicts` field of that header; write it once the
+loop settles, not mid-retry.

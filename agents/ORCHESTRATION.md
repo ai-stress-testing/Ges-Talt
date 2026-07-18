@@ -22,6 +22,21 @@ signal to promote it to a real role via the PM flow (this is the PDF's
 "what mechanisms should create new agents"). Don't grow the roster to
 cover a one-off; don't refuse work because the exact role is absent.
 
+**Ephemeral-agent governance** (issue #30 finding 8) — a spawn-time check,
+not an essay:
+- Must still declare inline frontmatter — `name`/`description`/`tools`/
+  `model` — same shape as a roster `agent.md`, just uncommitted.
+- The orchestrator applies the tool-boundary rule (opus/reason-tier never
+  holds Edit/Bash/Write, except documented exceptions) *before* spawning —
+  the same check `build_index.py` runs on the roster, done by hand here
+  because the persona never touches the repo file.
+- Every ephemeral spawn is logged to the run (its run-manifest header,
+  below) and to `docs/agent-ledger.jsonl` with `ephemeral: true` — an
+  ungoverned ephemeral is one that skipped this line.
+- A persona reused **≥3 times** is promoted to the roster via the PM flow
+  (`agents/TEMPLATE/`, then `build_index.py` must exit 0) — reuse without
+  promotion is a shadow role.
+
 ## Consultation proximity (interaction)
 
 When planning specs, consult agents in order of closeness to the
@@ -85,3 +100,31 @@ criteria pass the adversary grader and any gitops step lands, the
 assigned agent (or the orchestrator on its behalf) posts the closing
 `COMMS.md` attribution and closes the GitHub issue. An issue nobody closes
 is an issue nobody finished — see `WORKFLOW.md`.
+
+## Run manifest
+
+Reproducibility (issue #30 finding 10). Every run gets a `run-id` — date +
+short slug, e.g. `2026-07-18-ephemeral-governance`. The run's sprint-log
+entry (`docs/templates/sprint-log-entry.md`) opens with a structured
+header before the prose: prompt (1 line), agents spawned (role +
+model/tier + tokens), specs produced, verdicts, commits. A replayable
+*decision* manifest, not a full transcript — paired with
+`docs/agent-ledger.jsonl` and the retained traces of
+`docs/reviews/nous-research-mcp-solutions.md` #3, it's enough to
+reconstruct a run after the fact without replaying it.
+
+Example header:
+
+```
+run-id: 2026-07-18-ephemeral-governance
+prompt: "Add ephemeral-agent governance + run manifest conventions (GT-37, GT-38)."
+agents:
+  - pm/team-operations (sonnet, 61,204 tok)
+  - logicians/logician (opus, 18,900 tok)
+specs: docs/sprint-7-26-12-19/prd.md §11, §12
+verdicts: PASS (reality-checker)
+commits: 4af9c12
+```
+
+Prose (Done / Decisions / Blocked, per the template) follows the header —
+the header is what makes a run *replayable*, the prose is why.

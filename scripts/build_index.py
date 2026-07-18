@@ -5,8 +5,10 @@ Run from the repo root: python3 scripts/build_index.py
 Fails (exit 1) on lint violations so CI can gate on it later.
 """
 import glob
+import json
 import re
 import sys
+import tomllib
 
 ROOT = "agents"
 OUT = f"{ROOT}/INDEX.md"
@@ -20,6 +22,75 @@ OPUS_WRITE_EXCEPTIONS = {
     "agents/pm/project-manager/agent.md":
         "spec-driven PM: Write is docs/-scoped (specs, backlog, PRD drafts), never code",
 }
+
+# GT-33: model sovereignty. Frontmatter `model:` may be a concrete model id
+# (unchanged, existing behavior) or a capability tier from MODELS_TOML,
+# resolved here for lint/display. See docs/model-tiers.md.
+MODELS_TOML = "scripts/models.toml"
+
+# GT-13 / threat-model C6: tool-set widening lint. Baseline snapshot of each
+# role's tools as of the last intentional refresh; a role's current tools
+# strictly widening that snapshot is a lint problem. Refresh intentionally
+# with `python3 scripts/build_index.py --update-tools-baseline`.
+TOOLS_BASELINE = "scripts/tools-baseline.json"
+
+
+def load_tiers(path=MODELS_TOML):
+    """Load {tier_name: concrete_model} from models.toml. Missing file ->
+    no tiers known (every `model:` value must then be a concrete id, same
+    as pre-GT-33 behavior)."""
+    try:
+        with open(path, "rb") as f:
+            data = tomllib.load(f)
+    except FileNotFoundError:
+        return {}
+    return data.get("tiers", {})
+
+
+def resolve_model(raw, tiers, concrete_models):
+    """Resolve a frontmatter `model:` value to (resolved_model, tier_used).
+    tier_used is None when `raw` was already a concrete model. Returns
+    (None, None) if `raw` is neither a known concrete model nor a known
+    tier — the caller treats that as a lint problem."""
+    if raw in concrete_models:
+        return raw, None
+    if raw in tiers:
+        return tiers[raw], raw
+    return None, None
+
+
+def load_tools_baseline(path=TOOLS_BASELINE):
+    try:
+        with open(path) as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {}
+
+
+def collect_role_tools():
+    """{"team/role": sorted [tools]} for every current role. Shared by the
+    baseline-refresh routine and (indirectly, via parse()) the lint."""
+    baseline = {}
+    for path in sorted(glob.glob(f"{ROOT}/*/*/agent.md")):
+        _, team, role, _ = path.split("/")
+        if team == "TEMPLATE":
+            continue
+        fm = parse(path)
+        tools = sorted({t.strip() for t in fm.get("tools", "").split(",") if t.strip()})
+        baseline[f"{team}/{role}"] = tools
+    return baseline
+
+
+def update_tools_baseline():
+    """Intentional refresh: `python3 scripts/build_index.py --update-tools-baseline`.
+    Snapshots the CURRENT roster's tools as the new baseline — use this
+    after a reviewed, deliberate tool grant, not to silence the lint."""
+    baseline = collect_role_tools()
+    with open(TOOLS_BASELINE, "w") as f:
+        json.dump(baseline, f, indent=2, sort_keys=True)
+        f.write("\n")
+    print(f"wrote {TOOLS_BASELINE}: {len(baseline)} roles")
+    return 0
 
 
 def parse(path):
@@ -56,8 +127,15 @@ def check_handoff_references(team_names, roles):
 
 
 def main():
+    if "--update-tools-baseline" in sys.argv[1:]:
+        return update_tools_baseline()
+
     problems = []
     teams = {}
+    models = {}
+    tiers = load_tiers()
+    concrete_models = set(tiers.values())
+    tools_baseline = load_tools_baseline()
     team_names = {
         p.rstrip("/").split("/")[-1]
         for p in glob.glob(f"{ROOT}/*/")
@@ -77,7 +155,20 @@ def main():
         if not glob.glob(spec):
             problems.append(f"{path}: missing SPEC.md sibling")
         tools = {t.strip() for t in fm.get("tools", "").split(",")}
-        if fm.get("model") == "opus":
+
+        # GT-33: `model:` is either a concrete model (unchanged) or a tier
+        # from models.toml, resolved here for lint + display.
+        raw_model = fm.get("model", "")
+        resolved_model, tier_used = (None, None)
+        if raw_model:
+            resolved_model, tier_used = resolve_model(raw_model, tiers, concrete_models)
+            if resolved_model is None:
+                problems.append(
+                    f"{path}: unknown model '{raw_model}' — not a concrete model"
+                    f" ({sorted(concrete_models)}) or a known tier ({sorted(tiers)})"
+                )
+
+        if resolved_model == "opus":
             bad = tools & MUTATION_TOOLS
             if "Write" in tools and path not in OPUS_WRITE_EXCEPTIONS:
                 bad = bad | {"Write"}
@@ -86,16 +177,38 @@ def main():
                     f"{path}: opus paired with write tools {sorted(bad)}"
                     " — opus buys reasoning depth, not blast radius"
                 )
+
+        # GT-13 / threat-model C6: flag tool-set widening vs the committed
+        # baseline. A role missing from the baseline (new role since the
+        # last refresh) is not flagged — there's nothing to compare against
+        # yet. Tools removed or unchanged never trigger this.
+        key = f"{team}/{role}"
+        baseline_tools = tools_baseline.get(key)
+        if baseline_tools is not None:
+            baseline_set = set(baseline_tools)
+            if tools > baseline_set:
+                added = sorted(tools - baseline_set)
+                problems.append(
+                    f"{path}: tool-set widening vs baseline (added {added})"
+                    " — needs security review; update baseline intentionally via"
+                    " `python3 scripts/build_index.py --update-tools-baseline`"
+                )
+
+        model_count_key = resolved_model or raw_model or "?"
+        models[model_count_key] = models.get(model_count_key, 0) + 1
+
+        model_display = raw_model or "?"
+        if resolved_model and tier_used:
+            model_display = f"{resolved_model} ({tier_used})"
+        elif resolved_model:
+            model_display = resolved_model
+
         one_liner = re.split(r"(?<=[.!?]) ", fm.get("description", ""))[0]
         teams.setdefault(team, []).append(
-            (role, fm.get("model", "?"), fm.get("tools", "?"), one_liner)
+            (role, model_display, fm.get("tools", "?"), one_liner)
         )
 
     total = sum(len(v) for v in teams.values())
-    models = {}
-    for rows in teams.values():
-        for _, m, _, _ in rows:
-            models[m] = models.get(m, 0) + 1
     model_summary = ", ".join(f"{k}: {v}" for k, v in sorted(models.items()))
 
     lines = [

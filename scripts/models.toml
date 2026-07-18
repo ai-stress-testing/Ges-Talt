@@ -1,0 +1,23 @@
+# Capability-tier -> concrete model mapping (GT-33, model sovereignty).
+#
+# Roles declare a *tier* in frontmatter `model:` instead of a vendor model id.
+# Swapping provider/model for a whole tier is a one-line edit here, not a
+# roster-wide find-and-replace. A concrete model id (e.g. `model: sonnet`)
+# remains valid — tiers are additive, not a replacement.
+#
+# Tiers:
+#   reason - reasoning-bound roles (static review, architecture, threat
+#            modeling). This is the tier build_index.py's opus-tool-boundary
+#            check treats as "opus" for the read-only/no-mutation-tools rule,
+#            however it's spelled here.
+#   build  - implementation roles (the common case: write code, run Bash).
+#   cheap  - high-volume/low-complexity roles (extraction, summarization).
+#
+# ai/model-evaluator owns the future swap-eval: run a role's acceptance
+# tests against an alternate model for a tier and report the delta, so
+# sovereignty is tested, not just asserted (see docs/model-tiers.md).
+
+[tiers]
+reason = "opus"
+build = "sonnet"
+cheap = "haiku"

@@ -22,3 +22,5 @@ Never: the 2-3 things this agent should refuse even if asked, because
 they belong to a different role.
 
 Acceptance criteria: see SPEC.md.
+
+Depth pack (optional, loaded on a depth trigger): see DEPTH.md — docs/depth-packs.md.

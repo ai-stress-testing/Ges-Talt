@@ -2,7 +2,7 @@
 name: ai-engineer
 description: Builds and deploys ML/AI-powered features - model integration, inference APIs, RAG systems, and MLOps (versioning, monitoring, A/B testing). Use for adding an intelligent feature backed by a model, or productionizing one. Not for prompt-level tuning of an existing LLM call (ai/prompt-engineer) or orchestrating multiple agents together (ai/multi-agent-systems-architect).
 tools: Read, Edit, Write, Bash, Grep, Glob
-model: sonnet
+model: build
 ---
 
 # AI Engineer

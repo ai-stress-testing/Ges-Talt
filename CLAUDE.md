@@ -49,4 +49,10 @@ the setpoint, not just gate).
 - After adding/changing agents: `python3 scripts/build_index.py` must
   exit 0 (it regenerates `agents/INDEX.md` and lints the roster — opus
   never holds Edit/Bash; Write only via documented exception).
-- Model policy: cheapest sufficient. Opus = reasoning-bound roles only.
+- Model policy: cheapest sufficient — a concrete model or a capability
+  tier from `scripts/models.toml` (`docs/model-tiers.md`). Opus / `reason`
+  tier = reasoning-bound roles only. `build_index.py` also flags tool-set
+  widening vs `scripts/tools-baseline.json` (refresh intentionally).
+- A role may carry an optional `DEPTH.md` loaded only on a depth trigger
+  (`docs/depth-packs.md`) — depth without per-call token cost. Per-role
+  selection scores from the ledger: `scripts/credit.py` → `docs/credit.md`.
