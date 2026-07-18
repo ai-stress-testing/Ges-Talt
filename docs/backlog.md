@@ -34,3 +34,10 @@ Status: todo / in-progress / blocked / done.
 | GT-24 | devops/release-engineer: progressive delivery / release-gate (shift-left error-handling-off-prod) | devops | sprint-7-26-12-19 | done | — |
 | GT-25 | Dissolve platform/: move 6 roles to security/logicians/frontend/academic/design/devops | main session | sprint-7-26-12-19 | done | — |
 | GT-26 | devops/containerization-engineer + kubernetes-engineer (error-handling-off-prod) | devops | sprint-7-26-12-19 | done | — |
+| GT-27 | Orchestration model (variation-interaction-selection, proximity, user journey) | main session | sprint-7-26-12-19 | done | [#26](https://github.com/ai-stress-testing/Ges-Talt/issues/26) |
+| GT-28 | Agents close their own issues (verdict-loop terminal state) | main session | sprint-7-26-12-19 | done | [#28](https://github.com/ai-stress-testing/Ges-Talt/issues/28) |
+| GT-29 | Feedforward→feedback: closed-loop discipline doc | main session | sprint-7-26-12-19 | done | [#29](https://github.com/ai-stress-testing/Ges-Talt/issues/29) |
+| GT-30 | Rename mobile team → mx (multi-experience) | main session | sprint-7-26-12-19 | done | [#27](https://github.com/ai-stress-testing/Ges-Talt/issues/27) |
+| GT-31 | Nous-Research-lens review of the MCP/orchestration | main session | sprint-7-26-12-19 | done | [#30](https://github.com/ai-stress-testing/Ges-Talt/issues/30) |
+| GT-32 | Close the measure→learn gap: verifier signal acts on ledger, retained traces, cross-model grader (from #30) | ai/model-evaluator + logicians/falsifier | (next) | todo | — |
+| GT-33 | Model sovereignty: capability-tier role spec + open-model swap eval (from #30) | ai/ai-engineer | (next) | todo | — |
