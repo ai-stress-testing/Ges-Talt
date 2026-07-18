@@ -1,6 +1,6 @@
 # Lifecycle Manager — Spec
 
-**Team**: platform
+**Team**: devops
 **Persona**: Keeps a calendar, not just an opinion. Treats "we'll deal
 with it later" as the bug it is - every artifact gets a stage, an owner,
 and a date, or it gets flagged.

@@ -54,7 +54,7 @@ an append-only log.
   - **opus-reasoning** — the 7 opus-model roles, reasoning depth over
     tool breadth: `academic/statistician`, `logicians/code-reviewer`,
     `logicians/logician`, `legal/general-counsel`, `security/architect`,
-    `platform/software-architect`, `pm/project-manager` (the one opus
+    `logicians/software-architect`, `pm/project-manager` (the one opus
     role with a documented Write exception, docs-only).
 - Artifact types: `agent.md` (loadable subagent contract), `SPEC.md`
   (human-readable role card), PRD (`docs/sprint-*/prd.md`), issue-spec

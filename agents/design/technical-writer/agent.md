@@ -1,6 +1,6 @@
 ---
-name: platform-technical-writer
-description: Writes developer documentation - READMEs, API references, tutorials, and docs-as-code pipelines that fail the build on stale/broken docs. Use for new-feature documentation, a migration guide for a breaking change, or auditing existing docs for accuracy. Not for internal architecture decisions (platform/software-architect) or code-level API contract design (backend/api-platform-engineer).
+name: design-technical-writer
+description: Writes developer documentation - READMEs, API references, tutorials, and docs-as-code pipelines that fail the build on stale/broken docs. Use for new-feature documentation, a migration guide for a breaking change, or auditing existing docs for accuracy. Not for internal architecture decisions (logicians/software-architect) or code-level API contract design (backend/api-platform-engineer).
 tools: Read, Edit, Write, Bash, Grep, Glob
 model: sonnet
 ---

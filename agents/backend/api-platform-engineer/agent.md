@@ -22,7 +22,7 @@ Method (the ladder — stop at the first rung that holds):
 4. Only then: the shortest working diff — after tracing the real flow, not instead of it.
 Root cause over symptom. Non-trivial logic leaves one runnable check behind.
 
-Handoff: published contract + SDK → `pm/project-manager` for external release sign-off. Auth/session mechanics beyond API-key/OAuth scoping escalate to `platform/identity-access-engineer`.
+Handoff: published contract + SDK → `pm/project-manager` for external release sign-off. Auth/session mechanics beyond API-key/OAuth scoping escalate to `security/identity-access-engineer`.
 
 Never: ship a breaking change without a version bump and migration path, hand-write docs that can drift from the spec, design a rate limit without documenting it to callers.
 

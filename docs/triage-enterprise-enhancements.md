@@ -25,7 +25,7 @@ key: **covered** (exists, file named), **landing now** (cite the issue),
 | enterprise Meta model | covered | Same as above — `agents/TEMPLATE/` plus `docs/templates/` is the meta-model every doc/agent instance is stamped from. |
 | artifacts and templates | covered | `docs/templates/` (prd, issue-spec, sprint-log-entry, user-journey, enterprise-doc) + `agents/TEMPLATE/`. |
 | L E A D way of structuring | landing now | #20 — LEAD structuring folded into the PM charters. |
-| information and system systems engineering [information & systems engineering] | covered | Split across the roster's three architects: `agents/platform/software-architect`, `agents/backend/backend-architect`, `agents/security/architect` (domains disjoint on paper per `AUDIT.md`'s "Three architects" watch-item). |
+| information and system systems engineering [information & systems engineering] | covered | Split across the roster's three architects: `agents/logicians/software-architect`, `agents/backend/backend-architect`, `agents/security/architect` (domains disjoint on paper per `AUDIT.md`'s "Three architects" watch-item). |
 | data monetization | defer/off-mission | No data product, no customers, nothing to monetize — this is a personal staging repo (`README.md` line 3). |
 | multi experience | defer/off-mission | No omnichannel product surface (voice/wearable/chat); `frontend/`, `mobile/`, `design/` each own one surface at a time, and there's no cross-channel product to unify. |
 | user democratization | defer/off-mission | Needs a BI/self-serve data surface to democratize access *to* — none exists (`AUDIT.md` Audit-1 gap 6, analytics/BI unowned); a democratization layer on top of a gap that doesn't exist yet is two hops of speculation. |

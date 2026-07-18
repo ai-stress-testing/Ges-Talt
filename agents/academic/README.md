@@ -23,6 +23,12 @@ ask about a codebase, a team, and its metrics — not a university seminar.
 | [psychologist](psychologist/) | sonnet | Read, Grep, Glob | Diagnoses developer-experience friction and cognitive load; sanity-checks user-research claims. |
 | [geographer](geographer/) | sonnet | Read, Grep, Glob | Reviews data locality/residency, regional infrastructure placement, and i18n/l10n coverage. |
 | [narratologist](narratologist/) | sonnet | Read, Grep, Glob | Audits whether docs, product narrative, and naming stay internally consistent. |
+| [codebase-onboarding-engineer](codebase-onboarding-engineer/) | haiku | Read, Grep, Glob | Explains an unfamiliar codebase by reading source and tracing execution paths — facts grounded in code actually inspected. |
+
+`codebase-onboarding-engineer` moved here when `platform/` was dissolved:
+it extends the same read-only investigative charter as the six disciplines
+above — reconstructing how a system actually works, rather than shipping
+changes to it.
 
 Every role here is advisory: it reports findings to the owning team (or to
 `pm/project-manager` when the finding is a scope/priority/legal call), and

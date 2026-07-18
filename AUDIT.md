@@ -2,7 +2,7 @@
 
 State at audit time: 67 agents / 14 teams (sonnet 58, opus 5, haiku 4).
 All five opus roles are read-only (`logician`, `code-reviewer`,
-`academic/statistician`, `security/architect`, `platform/software-architect`)
+`academic/statistician`, `security/architect`, `logicians/software-architect`)
 — the "reasoning depth, not blast radius" invariant holds roster-wide and
 is now machine-checked by `scripts/build_index.py`. Ponytail method is
 baked into all 26 implementer roles (identical ladder block + SPEC
@@ -44,7 +44,7 @@ Advisory bench (academic) consults across all steps without write access.
   `devops/sre` (availability). Fine while the distinction is "malicious
   vs broken," but a paged agent must pick one fast — worth one line in
   each SPEC eventually.
-- **Three architects** (`platform/software-architect`,
+- **Three architects** (`logicians/software-architect`,
   `backend/backend-architect`, `security/architect`): domains are
   disjoint on paper; watch that cross-cutting decisions (e.g. authN
   topology) don't get triple-owned.

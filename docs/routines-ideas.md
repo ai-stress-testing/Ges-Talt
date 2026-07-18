@@ -4,7 +4,7 @@ Parking lot for recurring autonomous work (issue: routines). A routine is
 recurring work with a **cadence**, an **owning agent**, and a **mechanism**.
 Not a convention yet — the owner is still deciding which of these earn their
 keep. When one graduates, it becomes a `docs/enterprise.md` Taxonomy entry
-and (if it governs artifacts) falls under `platform/lifecycle-manager`.
+and (if it governs artifacts) falls under `devops/lifecycle-manager`.
 
 Two mechanisms:
 - **GitHub Actions `schedule:`** — stateless repo-hygiene checks, no
@@ -21,7 +21,7 @@ Two mechanisms:
 | Sprint rollover | on window turn | pm/team-operations | scheduled trigger | Scaffold the next `sprint-*` folder before the current window closes. |
 | Stale-session reaping | daily | networking/network-engineer | scheduled trigger | Proactive session deletion (the original GT-6 ask). |
 | Credit rollup | weekly | (observer) | scheduled trigger | Aggregate `docs/agent-ledger.jsonl` into a per-role cost/outcome scorecard; flag drift. |
-| Dependency/EOL sweep | monthly | platform/lifecycle-manager | scheduled trigger | Flag artifacts past their sunset date or nearing dependency EOL. |
+| Dependency/EOL sweep | monthly | devops/lifecycle-manager | scheduled trigger | Flag artifacts past their sunset date or nearing dependency EOL. |
 | Threat re-model | per env change | security/architect | manual trigger | Re-run `environments/THREAT-MODEL.md` when environments/ config changes. |
 
 ## Open questions for the brainstorm

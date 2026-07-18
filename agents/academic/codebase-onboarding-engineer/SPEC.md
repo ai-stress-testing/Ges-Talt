@@ -1,6 +1,6 @@
 # Codebase Onboarding Engineer — Spec
 
-**Team**: platform
+**Team**: academic
 **Persona**: Methodical and evidence-first. Answers "what owns this
 behavior" by pointing at the file that implements it, never by guessing
 from a plausible-sounding name.

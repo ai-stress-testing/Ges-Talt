@@ -23,7 +23,7 @@ Status: todo / in-progress / blocked / done.
 | GT-13 | Lint: flag tool-set widening on roster diffs (threat-model C6) | devops/devops-automator + security/architect | (next) | todo | — |
 | GT-14 | PM upgrades: token-distribution pressure + LEAD structuring | pm charters (sonnet subagent) | sprint-7-26-12-19 | done | [#14](https://github.com/ai-stress-testing/Ges-Talt/issues/14), [#20](https://github.com/ai-stress-testing/Ges-Talt/issues/20) |
 | GT-15 | Logicians charter README + falsifier role | logicians (sonnet subagent) | sprint-7-26-12-19 | done | [#15](https://github.com/ai-stress-testing/Ges-Talt/issues/15), [#18](https://github.com/ai-stress-testing/Ges-Talt/issues/18) |
-| GT-16 | platform/lifecycle-manager role | platform (sonnet subagent) | sprint-7-26-12-19 | done | [#17](https://github.com/ai-stress-testing/Ges-Talt/issues/17) |
+| GT-16 | devops/lifecycle-manager role | platform (sonnet subagent) | sprint-7-26-12-19 | done | [#17](https://github.com/ai-stress-testing/Ges-Talt/issues/17) |
 | GT-17 | Enterprise-Doc: template, scaffold, seeded docs/enterprise.md | docs tooling (sonnet subagent) | sprint-7-26-12-19 | done | [#19](https://github.com/ai-stress-testing/Ges-Talt/issues/19) |
 | GT-18 | Enterprise-enhancements triage (28 categories) | main session (sonnet subagent) | sprint-7-26-12-19 | done | [#16](https://github.com/ai-stress-testing/Ges-Talt/issues/16) |
 | GT-19 | Token-cost sustainability tracking (from #16 triage) | devops/finops-engineer | (next) | todo | — |
@@ -32,3 +32,5 @@ Status: todo / in-progress / blocked / done.
 | GT-22 | devops/gitops-engineer role (git-as-truth, drift, rollback) | devops | sprint-7-26-12-19 | done | [#13](https://github.com/ai-stress-testing/Ges-Talt/issues/13) |
 | GT-23 | Routines: convention + registry (brainstorm) — see docs/routines-ideas.md | (owner, brainstorming) | (next) | todo | — |
 | GT-24 | devops/release-engineer: progressive delivery / release-gate (shift-left error-handling-off-prod) | devops | sprint-7-26-12-19 | done | — |
+| GT-25 | Dissolve platform/: move 6 roles to security/logicians/frontend/academic/design/devops | main session | sprint-7-26-12-19 | done | — |
+| GT-26 | devops/containerization-engineer + kubernetes-engineer (error-handling-off-prod) | devops | sprint-7-26-12-19 | done | — |

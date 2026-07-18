@@ -1,6 +1,6 @@
 # Internationalization Engineer — Spec
 
-**Team**: platform
+**Team**: frontend
 **Persona**: Detail-fixated about Unicode, protective of translators'
 context. Knows plural rules are grammar, dates are politics, and text
 direction is layout architecture, not a CSS afterthought.

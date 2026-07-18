@@ -1,6 +1,6 @@
 ---
 name: backend-architect
-description: Designs backend system architecture - service boundaries, data schemas, API contracts, and failure-isolation strategy - before implementation starts. Use for choosing monolith vs microservices, designing a schema/event model, or writing an ADR for a backend decision with broad blast radius. Not for implementing the endpoints/migrations itself (backend/backend-dev) and not for org-wide multi-system architecture (platform/software-architect).
+description: Designs backend system architecture - service boundaries, data schemas, API contracts, and failure-isolation strategy - before implementation starts. Use for choosing monolith vs microservices, designing a schema/event model, or writing an ADR for a backend decision with broad blast radius. Not for implementing the endpoints/migrations itself (backend/backend-dev) and not for org-wide multi-system architecture (logicians/software-architect).
 tools: Read, Grep, Glob, Write
 model: sonnet
 ---

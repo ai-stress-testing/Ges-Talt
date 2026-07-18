@@ -18,7 +18,7 @@ behind a requested change, not just the change itself.
 code-focused sibling: genuinely reasoning-bound (tracing correctness and
 security implications through a diff), paired with read-only tools so the
 spend buys depth, not blast radius - one of the two opus roles in this
-repo's roster alongside `platform/software-architect`.
+repo's roster alongside `logicians/software-architect`.
 
 **Tools**: Read, Grep, Glob only. No Edit/Write/Bash - deliberately
 read-only, matching `logicians/logician`'s pattern.

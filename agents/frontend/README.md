@@ -12,6 +12,10 @@ the reference example for **nested roles under one team**:
   UI micro-interactions: duration, easing, trigger, reduced-motion fallback.
 - [`section-508-specialist/`](section-508-specialist/) — accessibility
   audit and remediation against Section 508 / ADA Title II / WCAG AA.
+- [`i18n-engineer/`](i18n-engineer/) — internationalization: string
+  externalization/ICU, CLDR plural rules, RTL/bidi layout, locale-aware
+  formatting. Moved here when `platform/` was dissolved — i18n is
+  mostly presentation.
 
 Add more roles the same way — one folder per role, same `agent.md` +
 `SPEC.md` convention as everywhere else in this repo. A role doesn't need a

@@ -16,8 +16,18 @@ it after. Distinct from `backend/` (what the service does) and
   to a canary slice, not the fleet.
 - [`sre/`](sre/) - SLOs, error budgets, observability, toil reduction,
   chaos/capacity engineering.
+- [`containerization-engineer/`](containerization-engineer/) - reproducible,
+  hardened container images; dev-prod parity so a staging failure means a
+  prod failure, caught before ship.
+- [`kubernetes-engineer/`](kubernetes-engineer/) - orchestration: probes,
+  resource limits, and rollout strategy that gate a bad pod before it
+  takes traffic.
 - [`finops-engineer/`](finops-engineer/) - cloud cost allocation, waste
   elimination, rightsizing, commitment planning.
+- [`lifecycle-manager/`](lifecycle-manager/) - lifecycle policy for
+  long-lived artifacts (API versions, container images, dependencies,
+  schemas, sessions) - states, owners, and dates, not implementation.
+  Moved here when `platform/` was dissolved.
 
 ## Where error-handling gets moved off prod
 

@@ -16,7 +16,7 @@ scale rather than building it prematurely.
 
 **Model**: `sonnet` (claude-sonnet-5) - architecture decisions here are
 scoped to one backend domain, not the reasoning-bound, cross-system class
-of problem reserved for `platform/software-architect` at opus.
+of problem reserved for `logicians/software-architect` at opus.
 
 **Tools**: Read, Grep, Glob, Write - advisory role; produces schemas, ADRs,
 and contract specs as documents, never touches implementation code (no

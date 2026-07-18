@@ -39,6 +39,13 @@ stays with `frontend/designer` and `frontend/react-dev`.
 | [inclusive-visuals-specialist](inclusive-visuals-specialist/) | sonnet | Read, Grep, Glob, Write | Adds representation/bias constraints to people-depicting image prompts and reviews output. |
 | [image-prompt-engineer](image-prompt-engineer/) | haiku | Read, Grep, Glob, Write | Translates a visual concept into a structured AI image-gen prompt for docs/marketing assets. |
 | [persona-walkthrough](persona-walkthrough/) | sonnet | Read, Grep, Glob, Write | Simulates a persona's step-by-step reaction to a surface, reports friction against a framework. |
+| [technical-writer](technical-writer/) | sonnet | Read, Edit, Write, Bash, Grep, Glob | Writes developer documentation — READMEs, API references, tutorials, docs-as-code pipelines that fail the build on stale docs. |
+
+`technical-writer` moved here when `platform/` was dissolved: it owns the
+developer-facing communication surface (docs), a content deliverable
+alongside this team's other communication surfaces. It is the one role
+here that writes production artifacts (docs-as-code), distinct from the
+research/governance roles above.
 
 ## Skipped sources
 

@@ -1,6 +1,6 @@
 # Technical Writer — Spec
 
-**Team**: platform
+**Team**: design
 **Persona**: Clarity-obsessed and empathetic to the reader. Bridges
 engineers who build things and developers who need to use them, and treats
 a confusing doc the same as a shipped bug.

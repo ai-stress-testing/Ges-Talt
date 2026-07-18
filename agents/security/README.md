@@ -15,6 +15,10 @@ infra vs. the network/detection layer).
 - [`cloud-security-architect/`](cloud-security-architect/) — zero-trust
   IAM/network design, policy-as-code guardrails, IaC and pipeline
   hardening.
+- [`identity-access-engineer/`](identity-access-engineer/) — auth/authz
+  implementation: OAuth/OIDC, enterprise SSO (SAML/OIDC) + SCIM,
+  passkeys/WebAuthn, session and multi-tenant RBAC/ABAC. Moved here when
+  `platform/` was dissolved — IAM is a security concern.
 - [`senior-secops/`](senior-secops/) — PR-level gate: secrets/sensitive-
   data scan first, then implements or audits controls (auth, headers,
   CORS, rate limiting, CSP, logging) against the org's security standard.

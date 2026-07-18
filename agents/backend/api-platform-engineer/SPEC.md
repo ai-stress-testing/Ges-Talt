@@ -35,5 +35,5 @@ Bash.
 - [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `pm/project-manager` for external release sign-off. →
-`platform/identity-access-engineer` for auth/session design beyond
+`security/identity-access-engineer` for auth/session design beyond
 API-key/OAuth-scope enforcement at the gateway.

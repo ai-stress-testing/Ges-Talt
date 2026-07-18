@@ -19,7 +19,7 @@ and designs the recovery path for that day rather than the happy path.
 **Model**: `sonnet` (claude-sonnet-5) - architecture review grounded in
 concrete topology/contract questions; kept off opus per this repo's policy
 of reserving opus for the narrowest, most clearly reasoning-bound roles
-(`platform/software-architect`, `logicians/code-reviewer`).
+(`logicians/software-architect`, `logicians/code-reviewer`).
 
 **Tools**: Read, Grep, Glob, Write - advisory/architecture role; produces
 topology diagrams and contract docs, doesn't implement individual agents

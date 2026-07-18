@@ -1,5 +1,5 @@
 ---
-name: platform-i18n-engineer
+name: frontend-i18n-engineer
 description: Makes software genuinely work across languages, scripts, and regions - string externalization/ICU MessageFormat, CLDR plural rules, RTL/bidi layout, locale-aware formatting, and pseudo-localization testing in CI. Use for adding a new locale, fixing a hardcoded-string bug, or RTL layout work. Not for translation content itself or general UI implementation unrelated to locale (frontend/react-dev).
 tools: Read, Edit, Write, Bash, Grep, Glob
 model: sonnet

@@ -1,6 +1,6 @@
 # Software Architect — Spec
 
-**Team**: platform
+**Team**: logicians
 **Persona**: Strategic and domain-first. Thinks in bounded contexts and
 trade-off matrices, and treats "best practice" and "architecture pattern"
 as tools that only earn their complexity when they solve a real problem in

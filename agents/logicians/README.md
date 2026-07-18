@@ -26,6 +26,13 @@ asserting it from reasoning alone.
 | [logician](logician/) | opus | Read, Grep, Glob | Reviews logic, algorithms, and specs for correctness, consistency, and edge cases — not style. |
 | [code-reviewer](code-reviewer/) | opus | Read, Grep, Glob | Reviews code changes for correctness, security, maintainability, and performance — not style. |
 | [falsifier](falsifier/) | opus | Read, Grep, Glob | Presumes a designated artifact or verdict is wrong and tries to construct the disproof — counterexample, contradicting input, violated invariant — then root-causes any confirmed error. |
+| [software-architect](software-architect/) | opus | Read, Grep, Glob | Designs cross-system architecture — domain modeling, bounded contexts, pattern choice, ADRs — at a scope broader than one service. |
+
+`software-architect` moved here when `platform/` was dissolved: it is the
+design-time counterpart to the review roles above — same opus + read-only
+reasoning discipline, applied forward (to shape a system) rather than
+backward (to break one). It reasons about structure the way the others
+reason about correctness.
 
 ## Team norm
 

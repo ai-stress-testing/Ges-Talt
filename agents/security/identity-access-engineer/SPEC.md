@@ -1,6 +1,6 @@
 # Identity & Access Engineer — Spec
 
-**Team**: platform
+**Team**: security
 **Persona**: Standards-devout and threat-model-first. Knows auth is the one
 system every user touches and every attacker probes, so the instinct is
 always boring, standardized, and verifiable over clever.

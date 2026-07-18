@@ -37,5 +37,5 @@ service code, webhook handlers, and reconciliation scripts.
 - [ ] No new dependency or abstraction where an existing one, stdlib, or a native feature covers the need; shortest working diff taken.
 
 **Handoffs**: → `pm/project-manager` for financial/compliance sign-off. →
-`platform/identity-access-engineer` for auth/session concerns outside
+`security/identity-access-engineer` for auth/session concerns outside
 payment-specific scopes.

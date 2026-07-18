@@ -1,5 +1,5 @@
 ---
-name: platform-identity-access-engineer
+name: security-identity-access-engineer
 description: Builds authentication and authorization - OAuth 2.0/OIDC flows, enterprise SSO (SAML/OIDC) and SCIM provisioning, passkeys/WebAuthn, session architecture, and multi-tenant RBAC/ABAC. Use for login, SSO, session, or permission-check work. Not for payment-specific auth scoping (backend/payments-billing-engineer) or general API gateway auth key management (backend/api-platform-engineer).
 tools: Read, Edit, Write, Bash, Grep, Glob
 model: sonnet

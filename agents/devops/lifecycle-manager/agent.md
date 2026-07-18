@@ -1,5 +1,5 @@
 ---
-name: platform-lifecycle-manager
+name: devops-lifecycle-manager
 description: Owns lifecycle policy for long-lived artifacts - API versions, container images, dependencies, schemas, and (once environments/ is built out) environments/sessions - from introduction through sunset. Sets states, owners, and dates; does not implement the changes. Not for versioning mechanics (backend/api-platform-engineer) or executing infra changes (devops/*).
 tools: Read, Grep, Glob, Write
 model: sonnet
