@@ -12,6 +12,8 @@ ROOT = "agents"
 OUT = f"{ROOT}/INDEX.md"
 # ponytail: naive frontmatter split, swap for a YAML parser if fields grow
 FM = re.compile(r"^---\n(.*?)\n---", re.S)
+# Backticked `team/role`-shaped handoff mentions, e.g. `pm/project-manager`.
+HANDOFF_RE = re.compile(r"`([a-z][a-z0-9-]*)/([a-z0-9-]+)`")
 MUTATION_TOOLS = {"Edit", "Bash", "NotebookEdit"}  # forbidden for opus, no exceptions
 # Write is also forbidden for opus, except roles listed here with a reason.
 OPUS_WRITE_EXCEPTIONS = {
