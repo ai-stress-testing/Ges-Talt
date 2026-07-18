@@ -15,6 +15,9 @@ documentation/onboarding surface that makes the rest of the org legible.
   read-only repo exploration and execution tracing for new contributors.
 - [`technical-writer/`](technical-writer/) - developer documentation and
   docs-as-code pipelines.
+- [`lifecycle-manager/`](lifecycle-manager/) - lifecycle policy for
+  long-lived artifacts (API versions, containers, dependencies, schemas,
+  environments/sessions) - states, owners, and dates, not implementation.
 
 Same `agent.md` + `SPEC.md` convention as every other team in this repo. Add
 a role here when it's a durable cross-cutting concern rather than a single
