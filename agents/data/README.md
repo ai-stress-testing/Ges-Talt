@@ -8,6 +8,9 @@ this data) and `ai/` (which owns the models that consume it).
   lakehouse architecture, streaming ingestion, data contracts.
 - [`database-optimizer/`](database-optimizer/) - operational database
   schema, indexing, and query performance.
+- [`database-administrator/`](database-administrator/) - operational
+  database availability and recoverability: replication/failover, backup
+  and point-in-time recovery, connection pooling, schema-change safety.
 - [`ai-data-remediation-engineer/`](ai-data-remediation-engineer/) -
   surgical, pattern-level fixes for data broken at scale, via local SLMs.
 

@@ -12,3 +12,6 @@
 {"task": "GT-32 acting feedback controller (credit.py)", "role": "devops/devops-automator", "model": "sonnet", "tokens": 70042, "sprint": "sprint-7-26-12-19", "verdict": "PASS", "retries": 0}
 {"task": "GT-33 model tiers + GT-13 tool-widening lint", "role": "devops/devops-automator", "model": "sonnet", "tokens": 82145, "sprint": "sprint-7-26-12-19", "verdict": "PASS", "retries": 0}
 {"task": "GT-37 ephemeral governance + GT-38 run manifest", "role": "pm/team-operations", "model": "sonnet", "tokens": 55318, "sprint": "sprint-7-26-12-19", "verdict": "PASS", "retries": 0}
+{"task": "GT-7 secrets-crypto + regulated-data roles", "role": "security/architect", "model": "sonnet", "tokens": 81529, "sprint": "sprint-7-26-12-19", "verdict": "PASS", "retries": 0}
+{"task": "GT-7 database-administrator + disaster-recovery roles", "role": "logicians/software-architect", "model": "sonnet", "tokens": 60183, "sprint": "sprint-7-26-12-19", "verdict": "PASS", "retries": 0}
+{"task": "GT-7 distributed-systems-verifier role", "role": "logicians/software-architect", "model": "sonnet", "tokens": 52260, "sprint": "sprint-7-26-12-19", "verdict": "PASS", "retries": 0}

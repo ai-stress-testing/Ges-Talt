@@ -83,29 +83,25 @@ Advisory bench (academic) consults across all steps without write access.
    now owns classification, retention, and DSR/deletion obligations, with
    `legal/privacy-engineer` verifying code reality ("true to code").
 
-### Critical-systems slots (for the next wave of hyper-specialized agents)
+### Critical-systems slots — FILLED (GT-7)
 
-The natural insertion points, most already adjacent to existing roles:
+Built and nested under existing teams, each justifying model + tools:
 
-- **Secrets & cryptography** — key management, rotation, envelope
-  encryption; adjacent to `identity-access-engineer` + `cloud-security-architect`.
-- **Disaster recovery / backup** — RPO/RTO ownership, restore drills;
-  currently nobody's job. Pairs with a proper **database administrator**
-  (operational: replication/backup) distinct from `database-optimizer`
-  (tuning).
-- **Distributed-systems correctness** — consensus, exactly-once,
-  partition behavior; a strong candidate for the opus + read-only
-  pattern, reviewing designs the way `logician` reviews logic.
-- **Regulated-data handling** — PCI/PHI scoping beside
-  `payments-billing-engineer` and `compliance-auditor`.
-- **Capacity & performance engineering** — load modeling beyond
-  `performance-benchmarker`'s measurement.
-
-Per the repo's philosophy these should nest under existing teams (or a
-`critical-systems/` team if they need a shared charter), each justifying
-model + tools in its SPEC — the two established patterns to reach for are
-opus/read-only for reasoning-bound review roles and sonnet/full-tools for
-implementers.
+- **Secrets & cryptography** → `security/secrets-crypto-engineer` (KMS/HSM,
+  key lifecycle, envelope encryption, crypto-agility).
+- **Disaster recovery / backup** → `devops/disaster-recovery-engineer`
+  (RPO/RTO, immutable backups, restore drills, ransomware resilience) +
+  `data/database-administrator` (replication/backup/PITR, distinct from
+  `database-optimizer`'s tuning).
+- **Distributed-systems correctness** → `logicians/distributed-systems-verifier`
+  (opus + read-only — consistency model, delivery semantics, idempotency,
+  split-brain, producing the failing interleaving as counterexample).
+- **Regulated-data handling** → `security/regulated-data-specialist`
+  (PCI/PHI scoping + tokenization, distinct from `compliance-auditor`'s
+  assessment and `legal/dpo`'s program).
+- **Capacity & performance engineering** — deliberately NOT a new role:
+  `devops/sre` already charters capacity engineering and
+  `testing/performance-benchmarker` the measurement. Split would duplicate.
 
 ---
 
@@ -138,7 +134,11 @@ authors) and a dependency count on the PM (94 file-mentions of
    `build_index.py`.
 4. **The org is documentation until it's wired to a runtime.** agents/
    specs aren't installed anywhere loadable (no `.claude/agents/`
-   render), and environments/ is still empty: 71 brains, 0 hands.
+   render). *Partly closed (GT-6):* `environments/` now carries real
+   substrate — egress allowlists, MCP scoping, path-scoped writes,
+   secrets policy, and a session-reaping spec (unarmed) — implementing
+   threat-model C1–C5. Still declarative until a runtime enforces it, but
+   no longer 0 hands.
 5. **Two sources of truth for work.** `docs/backlog.md` GT-rows and
    GitHub issues overlap (GT-9 ↔ #1) with manual sync. Declare issues
    canonical and make the backlog a generated view, or accept drift.

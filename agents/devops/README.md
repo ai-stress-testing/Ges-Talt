@@ -16,6 +16,9 @@ it after. Distinct from `backend/` (what the service does) and
   to a canary slice, not the fleet.
 - [`sre/`](sre/) - SLOs, error budgets, observability, toil reduction,
   chaos/capacity engineering.
+- [`disaster-recovery-engineer/`](disaster-recovery-engineer/) -
+  catastrophic recovery: RPO/RTO targets, immutable/WORM backups, tested
+  restore and region-failover drills, ransomware resilience, DR runbooks.
 - [`containerization-engineer/`](containerization-engineer/) - reproducible,
   hardened container images; dev-prod parity so a staging failure means a
   prod failure, caught before ship.

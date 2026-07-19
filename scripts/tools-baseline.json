@@ -127,6 +127,14 @@
     "Read",
     "Write"
   ],
+  "data/database-administrator": [
+    "Bash",
+    "Edit",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
   "data/database-optimizer": [
     "Bash",
     "Edit",
@@ -198,6 +206,14 @@
     "Write"
   ],
   "devops/devops-automator": [
+    "Bash",
+    "Edit",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "devops/disaster-recovery-engineer": [
     "Bash",
     "Edit",
     "Glob",
@@ -321,6 +337,11 @@
     "Write"
   ],
   "logicians/code-reviewer": [
+    "Glob",
+    "Grep",
+    "Read"
+  ],
+  "logicians/distributed-systems-verifier": [
     "Glob",
     "Grep",
     "Read"
@@ -460,6 +481,20 @@
   ],
   "security/penetration-tester": [
     "Bash",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "security/regulated-data-specialist": [
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "security/secrets-crypto-engineer": [
+    "Bash",
+    "Edit",
     "Glob",
     "Grep",
     "Read",

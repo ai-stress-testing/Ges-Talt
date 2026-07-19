@@ -19,11 +19,23 @@ infra vs. the network/detection layer).
   implementation: OAuth/OIDC, enterprise SSO (SAML/OIDC) + SCIM,
   passkeys/WebAuthn, session and multi-tenant RBAC/ABAC. Moved here when
   `platform/` was dissolved — IAM is a security concern.
+- [`secrets-crypto-engineer/`](secrets-crypto-engineer/) — key material
+  and secrets lifecycle: KMS/HSM integration, key generation/rotation/
+  revocation, envelope encryption (DEK wrapped by KEK), secrets storage
+  and injection, crypto-agility. Distinct from `identity-access-engineer`
+  (authN/authZ, not key material).
 - [`senior-secops/`](senior-secops/) — PR-level gate: secrets/sensitive-
   data scan first, then implements or audits controls (auth, headers,
   CORS, rate limiting, CSP, logging) against the org's security standard.
 - [`compliance-auditor/`](compliance-auditor/) — SOC 2 / ISO 27001 /
   HIPAA / PCI-DSS readiness assessment, gap tracking, evidence packages.
+- [`regulated-data-specialist/`](regulated-data-specialist/) — technical
+  scoping of regulated data: maps PCI-DSS cardholder-data/PHI flows,
+  shrinks the compliance boundary via tokenization and data minimization.
+  Distinct from `compliance-auditor` (readiness assessment) and
+  `legal/data-protection-officer` (privacy program/obligations) — this
+  role does the technical scoping and tokenization design, then hands
+  implementation to the owning backend role.
 - [`penetration-tester/`](penetration-tester/) — authorized offensive
   testing of the org's own systems, strictly within a signed engagement
   scope.

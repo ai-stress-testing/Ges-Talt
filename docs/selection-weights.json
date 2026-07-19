@@ -36,10 +36,16 @@
     "score": 0.0
   },
   "logicians/software-architect": {
-    "mean_tokens": 102819.0,
+    "mean_tokens": 85966.0,
     "pass_rate": 1.0,
-    "sample_count": 2,
-    "score": -0.0518
+    "sample_count": 3,
+    "score": 0.0735
+  },
+  "platform/software-architect": {
+    "mean_tokens": 60183.0,
+    "pass_rate": 1.0,
+    "sample_count": 1,
+    "score": 0.2651
   },
   "pm/team-operations": {
     "mean_tokens": 64574.3,
@@ -48,9 +54,9 @@
     "score": 0.2325
   },
   "security/architect": {
-    "mean_tokens": 52696.0,
-    "pass_rate": null,
-    "sample_count": 1,
-    "score": 0.4707
+    "mean_tokens": 67112.5,
+    "pass_rate": 1.0,
+    "sample_count": 2,
+    "score": 0.2136
   }
 }
