@@ -36,16 +36,10 @@
     "score": 0.0
   },
   "logicians/software-architect": {
-    "mean_tokens": 85966.0,
+    "mean_tokens": 79520.2,
     "pass_rate": 1.0,
-    "sample_count": 3,
-    "score": 0.0735
-  },
-  "platform/software-architect": {
-    "mean_tokens": 60183.0,
-    "pass_rate": 1.0,
-    "sample_count": 1,
-    "score": 0.2651
+    "sample_count": 4,
+    "score": 0.1214
   },
   "pm/team-operations": {
     "mean_tokens": 64574.3,

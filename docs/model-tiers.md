@@ -12,29 +12,38 @@ the tier resolves to a concrete model in one place. Provider sovereignty
 
 ## The mapping
 
-See `scripts/models.toml` for the authoritative source. Today:
+`scripts/models.toml` is the authoritative source. Current generation
+(the Claude 5 family + Opus 4.8):
 
 | Tier | Resolves to | Used for |
 |---|---|---|
-| `reason` | `opus` | reasoning-bound roles: static review, architecture, threat modeling |
-| `build` | `sonnet` | implementation roles — the common case |
-| `cheap` | `haiku` | high-volume/low-complexity roles |
+| `reason` | `claude-opus-4-8` | reasoning-bound roles: static review, architecture, threat modeling |
+| `build` | `claude-sonnet-5` | implementation roles — the common case |
+| `cheap` | `claude-haiku-4-5-20251001` | high-volume/low-complexity roles |
 
-## Backward compatibility
+Aliases (readable shorthands, resolve to the same current ids):
+`opus` → `claude-opus-4-8`, `sonnet` → `claude-sonnet-5`,
+`haiku` → `claude-haiku-4-5-20251001`, `fable` → `claude-fable-5`.
 
-A role's frontmatter `model:` may be **either**:
+**Updating for a new model generation** is a one-line-per-tier edit in
+`scripts/models.toml` — nothing in the roster changes, because roles
+declare tiers/aliases, not raw ids. That is the model-sovereignty payoff
+the Nous review asked for, made concrete.
 
-- a concrete model id (`sonnet`, `opus`, `haiku`) — existing behavior,
-  unchanged, and still the majority of the roster today; or
-- a tier name (`reason`, `build`, `cheap`) from `scripts/models.toml`,
-  resolved by `scripts/build_index.py` for display and for lint purposes
-  (the opus-tool-boundary check fires on a role whose tier resolves to
-  the reasoning/opus tier exactly as it would for a literal `model: opus`).
+## What a role may write
 
-An unrecognized `model:` value — neither a known concrete model nor a
-known tier — is a lint problem (`build_index.py` flags it), since a typo
-here would otherwise silently drop a role out of the opus tool-boundary
-check.
+A role's frontmatter `model:` may be **any** of:
+
+- an **alias** (`opus`/`sonnet`/`haiku`/`fable`) — the readable default the
+  roster uses today, so a model bump doesn't churn 80+ files;
+- a **tier** (`reason`/`build`/`cheap`) — declares intent, not a vendor;
+- a **concrete id** (`claude-opus-4-8`, …) — when a role must pin a model.
+
+All three resolve to the canonical id; `build_index.py` displays the
+readable label and counts by it. An unrecognized value is a lint problem —
+a typo would otherwise silently drop a role out of the **reason-tier**
+read-only check (the check keys on whichever id `reason` maps to, not the
+literal string "opus", so it survives a generation bump).
 
 `agents/ai/ai-engineer/agent.md` is converted as the demonstration role
 (`model: sonnet` -> `model: build`). All other roles keep their concrete

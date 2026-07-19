@@ -35,27 +35,28 @@ MODELS_TOML = "scripts/models.toml"
 TOOLS_BASELINE = "scripts/tools-baseline.json"
 
 
-def load_tiers(path=MODELS_TOML):
-    """Load {tier_name: concrete_model} from models.toml. Missing file ->
-    no tiers known (every `model:` value must then be a concrete id, same
-    as pre-GT-33 behavior)."""
+def load_model_config(path=MODELS_TOML):
+    """Load ({tier: id}, {alias: id}) from models.toml. Missing file ->
+    empty maps (every `model:` value must then be a concrete id already)."""
     try:
         with open(path, "rb") as f:
             data = tomllib.load(f)
     except FileNotFoundError:
-        return {}
-    return data.get("tiers", {})
+        return {}, {}
+    return data.get("tiers", {}), data.get("aliases", {})
 
 
-def resolve_model(raw, tiers, concrete_models):
-    """Resolve a frontmatter `model:` value to (resolved_model, tier_used).
-    tier_used is None when `raw` was already a concrete model. Returns
-    (None, None) if `raw` is neither a known concrete model nor a known
-    tier — the caller treats that as a lint problem."""
+def resolve_model(raw, tiers, aliases, concrete_models):
+    """Resolve a frontmatter `model:` value to (resolved_id, tier_used).
+    A tier name resolves via [tiers] (tier_used set); an alias via
+    [aliases]; a concrete id is used as-is (tier_used None). Returns
+    (None, None) if `raw` is none of these — a lint problem."""
     if raw in concrete_models:
         return raw, None
     if raw in tiers:
         return tiers[raw], raw
+    if raw in aliases:
+        return aliases[raw], None
     return None, None
 
 
@@ -133,8 +134,10 @@ def main():
     problems = []
     teams = {}
     models = {}
-    tiers = load_tiers()
-    concrete_models = set(tiers.values())
+    tiers, aliases = load_model_config()
+    concrete_models = set(tiers.values()) | set(aliases.values())
+    reason_model = tiers.get("reason")  # the read-only tier, whatever its id
+    short_name = {v: k for k, v in aliases.items()}  # id -> readable label
     tools_baseline = load_tools_baseline()
     team_names = {
         p.rstrip("/").split("/")[-1]
@@ -161,21 +164,24 @@ def main():
         raw_model = fm.get("model", "")
         resolved_model, tier_used = (None, None)
         if raw_model:
-            resolved_model, tier_used = resolve_model(raw_model, tiers, concrete_models)
+            resolved_model, tier_used = resolve_model(
+                raw_model, tiers, aliases, concrete_models
+            )
             if resolved_model is None:
                 problems.append(
-                    f"{path}: unknown model '{raw_model}' — not a concrete model"
-                    f" ({sorted(concrete_models)}) or a known tier ({sorted(tiers)})"
+                    f"{path}: unknown model '{raw_model}' — not a known id"
+                    f" ({sorted(concrete_models)}), tier ({sorted(tiers)}),"
+                    f" or alias ({sorted(aliases)})"
                 )
 
-        if resolved_model == "opus":
+        if reason_model and resolved_model == reason_model:
             bad = tools & MUTATION_TOOLS
             if "Write" in tools and path not in OPUS_WRITE_EXCEPTIONS:
                 bad = bad | {"Write"}
             if bad:
                 problems.append(
-                    f"{path}: opus paired with write tools {sorted(bad)}"
-                    " — opus buys reasoning depth, not blast radius"
+                    f"{path}: reason-tier model paired with write tools {sorted(bad)}"
+                    " — reasoning depth, not blast radius"
                 )
 
         # GT-13 / threat-model C6: flag tool-set widening vs the committed
@@ -194,14 +200,16 @@ def main():
                     " `python3 scripts/build_index.py --update-tools-baseline`"
                 )
 
-        model_count_key = resolved_model or raw_model or "?"
-        models[model_count_key] = models.get(model_count_key, 0) + 1
-
-        model_display = raw_model or "?"
-        if resolved_model and tier_used:
-            model_display = f"{resolved_model} ({tier_used})"
-        elif resolved_model:
-            model_display = resolved_model
+        # Display/count by a readable label (opus/sonnet/haiku/fable), while
+        # models.toml holds the real ids — the id churns on a model bump, the
+        # roster's labels don't.
+        label = (
+            short_name.get(resolved_model, resolved_model)
+            if resolved_model
+            else (raw_model or "?")
+        )
+        models[label] = models.get(label, 0) + 1
+        model_display = f"{label} ({tier_used})" if tier_used else label
 
         one_liner = re.split(r"(?<=[.!?]) ", fm.get("description", ""))[0]
         teams.setdefault(team, []).append(

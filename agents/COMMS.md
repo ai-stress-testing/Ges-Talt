@@ -36,9 +36,9 @@ so the check is code, not courtesy.
 
 ## Example
 
-> "I split the 51-source engineering division into eight project-subclass
-> teams and skipped 26 off-mission sources with recorded reasons." —
-> `main` relaying the engineering split (sonnet), 160,889 tokens ✓
+> "I turned the ledger into a per-role selection score the PM can read — the feedback loop now acts, not just measures." — `devops/devops-automator` (sonnet), 70,042 tokens ✓
 
-The 160,889 came from that run's usage block and matches the ledger —
-hence the check. Had it been hand-typed, it would carry none.
+Keep it one line — `verify_comms.py` matches a single line, so a wrapped
+quote is silently skipped, not verified. The 70,042 is `devops/devops-automator`'s
+real row in `docs/agent-ledger.jsonl`, so the ✓ survives the check; a
+hand-typed number would fail it. Verify with `python3 scripts/verify_comms.py`.
