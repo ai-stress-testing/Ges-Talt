@@ -26,11 +26,11 @@ a control; every row names one.
 - **Perimeter/network** — `networking/network-engineer` owns segmentation,
   egress, DNS, reverse-proxy controls.
 
-## The MITRE matrix — first half (this sprint)
+## The MITRE matrix — complete
 
-The 14 enterprise ATT&CK tactics, in order; issues #22–#33 deliver the
-first seven. The second half (Credential Access → Impact) is the next
-security sprint (issue #12 lists the remaining classes).
+The full ATT&CK kill chain, in order. Issues #22–#33 delivered the first
+seven tactics; #34–#41 complete the second half (issue #12's 15-class
+scheme, splitting Defense Evasion from Defense Impairment).
 
 | # | Tactic (MITRE) | Issue | Checklist | Primary owner |
 |---|---|---|---|---|
@@ -41,9 +41,14 @@ security sprint (issue #12 lists the remaining classes).
 | 05 | Persistence (TA0003) | #31 Cessation | [05-persistence.md](05-persistence.md) | threat-detection-engineer + incident-responder |
 | 06 | Privilege Escalation (TA0004) | #32 Privilege Controls | [06-privilege-escalation.md](06-privilege-escalation.md) | cloud-security-architect + identity-access-engineer |
 | 07 | Defense Evasion (TA0005) | #33 ID | [07-defense-evasion.md](07-defense-evasion.md) | threat-detection-engineer |
-
-Second half (queued): Credential Access, Discovery, Lateral Movement,
-Collection, Command & Control, Exfiltration, Impact.
+| 08 | Defense Impairment (T1562) | #34 Defense | [08-defense-impairment.md](08-defense-impairment.md) | threat-detection-engineer + senior-secops |
+| 09 | Credential Access (TA0006) | #35 Credential Fortification | [09-credential-access.md](09-credential-access.md) | identity-access-engineer + threat-detection-engineer |
+| 10 | Discovery (TA0007) | #36 Discontinuity | [10-discovery.md](10-discovery.md) | threat-detection-engineer |
+| 11 | Lateral Movement (TA0008) | #37 Lateral Barriers | [11-lateral-movement.md](11-lateral-movement.md) | identity-access-engineer + networking |
+| 12 | Collection (TA0009) | #38 Hoarding | [12-collection.md](12-collection.md) | threat-detection-engineer |
+| 13 | Command & Control (TA0011) | #39 Command & Control | [13-command-and-control.md](13-command-and-control.md) | networking + threat-detection-engineer |
+| 14 | Exfiltration (TA0010) | #40 Stagnant | [14-exfiltration.md](14-exfiltration.md) | networking + legal/privacy-engineer |
+| 15 | Impact (TA0040) | #41 Coloumb | [15-impact.md](15-impact.md) | incident-responder + devops/sre |
 
 ## Checklist format
 
