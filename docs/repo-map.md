@@ -27,12 +27,12 @@ Agent roster detail is in [`agents/INDEX.md`](../agents/INDEX.md).
 | [`data`](agents/data/) | 4 | Data Team |
 | [`design`](agents/design/) | 8 | Design |
 | [`frontend`](agents/frontend/) | 6 | Frontend Team |
-| [`legal`](agents/legal/) | 4 | Legal Team |
+| [`legal`](agents/legal/) | 5 | Legal Team |
 | [`logicians`](agents/logicians/) | 6 | Logicians |
 | [`mx`](agents/mx/) | 2 | MX — Multi-Experience |
-| [`networking`](agents/networking/) | 2 | Networking Team |
+| [`networking`](agents/networking/) | 4 | Networking Team |
 | [`pm`](agents/pm/) | 7 | PM Team |
-| [`security`](agents/security/) | 17 | Security Team |
+| [`security`](agents/security/) | 19 | Security Team |
 | [`testing`](agents/testing/) | 8 | Testing |
 
 ## Scripts (`scripts/`)
@@ -81,5 +81,5 @@ Agent roster detail is in [`agents/INDEX.md`](../agents/INDEX.md).
 | `docs/opsec/` | OPSEC — security management |
 | `docs/reviews/` | 2 file(s) |
 | `docs/sprint-7-26-12-19/` | 19 file(s) |
-| `docs/sprint-7-26-20-27/` | 3 file(s) |
+| `docs/sprint-7-26-20-27/` | 4 file(s) |
 | `docs/templates/` | 5 file(s) |

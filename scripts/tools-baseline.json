@@ -353,6 +353,12 @@
     "Read",
     "Write"
   ],
+  "legal/accessibility-counsel": [
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
   "legal/data-protection-officer": [
     "Glob",
     "Grep",
@@ -422,7 +428,23 @@
     "Read",
     "Write"
   ],
+  "networking/network-automation-engineer": [
+    "Bash",
+    "Edit",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
   "networking/network-engineer": [
+    "Bash",
+    "Edit",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "networking/network-reliability-engineer": [
     "Bash",
     "Edit",
     "Glob",
@@ -523,8 +545,22 @@
     "Read",
     "Write"
   ],
+  "security/ids-ips-architect": [
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
   "security/incident-responder": [
     "Bash",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "security/network-detection-engineer": [
+    "Bash",
+    "Edit",
     "Glob",
     "Grep",
     "Read",

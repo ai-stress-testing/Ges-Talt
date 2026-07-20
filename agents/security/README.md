@@ -41,6 +41,15 @@ infra vs. the network/detection layer).
   scope.
 - [`threat-detection-engineer/`](threat-detection-engineer/) — builds and
   tunes the SIEM detection layer, maps MITRE ATT&CK coverage, runs hunts.
+  Owns the SOC/correlation/ML layer that network-layer alerts feed into.
+- [`network-detection-engineer/`](network-detection-engineer/) — network-layer
+  detection content per NIST SP 800-94: the three methods (signature,
+  anomaly, stateful protocol analysis), NetFlow/IPFIX behavior analytics (the
+  off-hours exfil flow), wireless rogue-AP/evil-twin/WiFi-Pineapple
+  detection, and dynamic firewall/blacklist rules — feeding high-fidelity
+  alerts to `threat-detection-engineer`'s SIEM. From issue
+  [#54](https://github.com/ai-stress-testing/Ges-Talt/issues/54);
+  tool-agnostic (Suricata/Snort/Zeek/WIDS are instances).
 - [`threat-intelligence-analyst/`](threat-intelligence-analyst/) — tracks
   adversary groups/campaigns, produces confidence-rated intelligence,
   drafts candidate detection rules.
@@ -68,6 +77,13 @@ issue #50, then hand implementation to the owning role):
   `logicians/falsifier` pattern aimed at defenses; the 1:1 blue↔red pairing
   is in [`docs/opsec/red-team.md`](../../docs/opsec/red-team.md)). Distinct
   from `penetration-tester` (active, authorized testing).
+- [`ids-ips-architect/`](ids-ips-architect/) — designs the network IDPS
+  architecture per NIST SP 800-94: the inline (IPS) vs passive (IDS) placement
+  decision, sensor topology coverage, the segregated out-of-band management
+  network, FIPS 140-validated management crypto, and dynamic-firewall/border
+  enforcement points → `network-detection-engineer` writes the content,
+  `networking/*` builds the OOB network. From issue
+  [#54](https://github.com/ai-stress-testing/Ges-Talt/issues/54).
 
 **Skipped**: `blockchain-security-auditor` — smart-contract/DeFi audit
 work is off-mission for this enterprise-engineering workspace; no cloud/

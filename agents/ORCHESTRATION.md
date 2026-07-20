@@ -77,13 +77,15 @@ an org chart.
 **Specialist consultants** (issue #50) are pulled in *on demand* during
 spec modeling, not on every run: `security/rbac-abac-consultant`,
 `security/rls-consultant`, `security/pq-crypto-consultant`,
-`security/side-channel-analyst`, `security/red-team-critic`, and
-`networking/nginx-specialist` advise on the design when the spec touches
+`security/side-channel-analyst`, `security/red-team-critic`,
+`security/ids-ips-architect`, `networking/nginx-specialist`, and
+`legal/accessibility-counsel` advise on the design when the spec touches
 their domain, then hand implementation to the owning implementer. They are
 consultants, not builders — a spec that touches access-control models,
 row-level isolation, key exchange, side channels, adversarial critique of a
-defense, or reverse-proxy design should consult the matching specialist
-before it's cut into issues.
+defense, IDPS/sensor placement, reverse-proxy design, or accessibility-law
+obligation should consult the matching specialist before it's cut into
+issues.
 
 ## The user journey
 
