@@ -261,6 +261,14 @@
     "Read",
     "Write"
   ],
+  "data/evolutionary-data-engineer": [
+    "Bash",
+    "Edit",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
   "design/brand-guardian": [
     "Artifact",
     "Glob",
@@ -427,6 +435,14 @@
     "Glob",
     "Grep",
     "Read"
+  ],
+  "mx/feature-flag-engineer": [
+    "Bash",
+    "Edit",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
   ],
   "mx/mobile-app-builder": [
     "Bash",

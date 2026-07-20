@@ -24,12 +24,12 @@ Agent roster detail is in [`agents/INDEX.md`](../agents/INDEX.md).
 | [`backend`](agents/backend/) | 6 | Backend Team |
 | [`cd`](agents/cd/) | 8 | CD Team — safely deliver and operate |
 | [`ci`](agents/ci/) | 6 | CI Team — make a trustworthy artifact |
-| [`data`](agents/data/) | 5 | Data Team |
+| [`data`](agents/data/) | 6 | Data Team |
 | [`design`](agents/design/) | 8 | Design |
 | [`frontend`](agents/frontend/) | 7 | Frontend Team |
 | [`legal`](agents/legal/) | 5 | Legal Team |
 | [`logicians`](agents/logicians/) | 6 | Logicians |
-| [`mx`](agents/mx/) | 2 | MX — Multi-Experience |
+| [`mx`](agents/mx/) | 3 | MX — Multi-Experience |
 | [`networking`](agents/networking/) | 4 | Networking Team |
 | [`pm`](agents/pm/) | 7 | PM Team |
 | [`security`](agents/security/) | 20 | Security Team |
@@ -46,7 +46,7 @@ Agent roster detail is in [`agents/INDEX.md`](../agents/INDEX.md).
 | `init_docs.py` | Scaffold the Ges-Talt docs convention into a repo. Idempotent. |
 | `verify.py` | Hard-verifier registry runner (GT-43). |
 | `verify_comms.py` | Verify agent attribution lines (agents/COMMS.md convention). |
-| `verifiers/` | 10 single-property machines run by `verify.py` — see `verify.py --list`. |
+| `verifiers/` | 11 single-property machines run by `verify.py` — see `verify.py --list`. |
 
 ## Environments (`environments/`)
 
@@ -70,6 +70,7 @@ Agent roster detail is in [`agents/INDEX.md`](../agents/INDEX.md).
 | `depth-packs.md` | Depth packs — depth without a per-call token tax |
 | `enterprise.md` | Enterprise Doc — Ges-Talt |
 | `feedback-loop.md` | From feedforward to feedback |
+| `fitness-functions.md` | Architectural fitness functions |
 | `model-tiers.md` | Model tiers (GT-33) |
 | `repo-map.md` | Repo map |
 | `routines-ideas.md` | Routines — brainstorm |
@@ -81,5 +82,5 @@ Agent roster detail is in [`agents/INDEX.md`](../agents/INDEX.md).
 | `docs/opsec/` | OPSEC — security management |
 | `docs/reviews/` | 2 file(s) |
 | `docs/sprint-7-26-12-19/` | 19 file(s) |
-| `docs/sprint-7-26-20-27/` | 5 file(s) |
+| `docs/sprint-7-26-20-27/` | 6 file(s) |
 | `docs/templates/` | 5 file(s) |

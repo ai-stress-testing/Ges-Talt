@@ -15,6 +15,15 @@ same `agent.md` + `SPEC.md` convention as everywhere else.
   offline-first data, native feature integration.
 - [`mobile-release-engineer/`](mobile-release-engineer/) - signing,
   fastlane pipelines, store submission, phased rollouts, release health.
+- [`feature-flag-engineer/`](feature-flag-engineer/) - feature toggles /
+  flags as the engine of evolutionary, incremental delivery across surfaces:
+  toggle taxonomy (release/experiment/ops/permission), staged & cohort
+  rollout, kill switches, A/B experimentation, and the toggle-debt discipline
+  (a flag is born with a removal plan). Grounded in the feature-toggle
+  literature (Rahman et al., MSR 2016). From issue
+  [#58](https://github.com/ai-stress-testing/Ges-Talt/issues/58); pairs with
+  `data/evolutionary-data-engineer` and the fitness-function convention
+  (`docs/fitness-functions.md`).
 
 ## Boundaries
 

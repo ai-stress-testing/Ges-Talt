@@ -21,6 +21,13 @@ this data) and `ai/` (which owns the models that consume it).
   on lawfully-collected data, IP/PII encrypted and fraud-scoped; pairs with
   `frontend/client-telemetry-engineer`. From issue
   [#55](https://github.com/ai-stress-testing/Ges-Talt/issues/55).
+- [`evolutionary-data-engineer/`](evolutionary-data-engineer/) - the data
+  controls that make evolutionary software safe: expand-contract (parallel-
+  change) schema evolution, backward/forward-compatible data contracts,
+  versioned and reversible migrations, and experiment/cohort data governance,
+  so code can ship in toggled increments without a broken read at any ramp
+  step. From issue [#58](https://github.com/ai-stress-testing/Ges-Talt/issues/58);
+  pairs with `mx/feature-flag-engineer` and `docs/fitness-functions.md`.
 
 Same `agent.md` + `SPEC.md` convention as every other team in this repo. Add
 a role here when it owns a durable subclass of data-infrastructure work.
