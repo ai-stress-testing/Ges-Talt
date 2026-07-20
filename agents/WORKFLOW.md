@@ -30,7 +30,8 @@ failed). PM picks one of: reassign, decompose, revise approach,
 accept-with-limitations, defer — and informs the human of the call.
 
 **PASS path**: static review + empirical verification both PASS on the
-stated acceptance criteria → `testing/reality-checker` re-verifies the
+stated acceptance criteria → the **hard-verifier gate** (§5) is green for
+the properties the change touches → `testing/reality-checker` re-verifies the
 evidence as the final gate → done. Reality-checker can still bounce it
 back to FAIL; its verdict is the one that ships.
 
@@ -82,3 +83,34 @@ run-id, prompt, agents spawned, specs, verdicts, commits (`ORCHESTRATION.md`
 "Run manifest"). The verdict loop's outcome (§1 — PASS, or the FAIL history
 up to escalation) is the `verdicts` field of that header; write it once the
 loop settles, not mid-retry.
+
+## 5. Hard-verifier gate (GT-43)
+
+The efficacy arm of the loop. Where §1's review roles reason about whether a
+change is right, the **hard verifiers** in `scripts/verifiers/` *decide* one
+property each — binary, with a counterexample, fail-closed
+(`docs/opsec/hard-verifiers.md`). `scripts/verify.py` composes them; a major
+output does not take the PASS path (§1) until the verifiers for the
+properties it touches are green, the same way `build_index.py` /
+`verify_comms.py` already gate the roster.
+
+- **One property, one machine.** Each `scripts/verifiers/<name>.py` exposes
+  `PROPERTY` / `METHOD` / `OWNER` / `check() -> (status, detail)`; the runner
+  prints failures first and exits non-zero on any FAIL. `SKIP` means the
+  property is N/A here (e.g. not a git repo) and does not fail the gate.
+- **Fail closed.** A verifier that raises is a FAIL, never a silent pass —
+  absence of a PASS is a FAIL.
+- **The security/PM team writes and owns verifiers; it is not the verifier.**
+  A persona reasons and maintains the machine; the machine gates. Add a
+  verifier when a property is worth enforcing every run, not narrating once.
+- **Deterministic > probe > reason.** Prefer a static assertion that always
+  answers; a `reason`-method verifier (`logicians/falsifier`,
+  `ai/model-evaluator`) is only for properties code can't decide.
+
+Seed registry (run `python3 scripts/verify.py --list`): roster pairing,
+reason-tier read-only boundary, handoff-reference resolution, INDEX
+freshness, ledger well-formedness, tools-baseline containment, current
+sprint window, branch taxonomy (`docs/branching.md`), and repo-map
+freshness. These secure the agent org itself (`hard-verifiers.md`: "the
+machine that secures the machines"); target repos drop their own
+domain verifiers into the same `scripts/verifiers/` registry.

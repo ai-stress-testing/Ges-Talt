@@ -134,6 +134,17 @@ touches are green — the same way `build_index.py`/`verify_comms.py` already
 gate the roster. Most belong in CI as deterministic checks; the `reason`
 ones are the falsifier/model-evaluator doing what code can't. The security
 team's job shifts accordingly: **write and own verifiers**, don't be the
-verifier. Next step if pursued: a `scripts/verifiers/` registry, one
-single-property machine per file, each emitting PASS/FAIL + counterexample,
-composed by a runner the WORKFLOW gate calls.
+verifier.
+
+**Built (GT-43).** The registry exists: `scripts/verifiers/`, one
+single-property machine per file (`PROPERTY`/`METHOD`/`OWNER`/`check()`),
+composed by `scripts/verify.py` — failures first, fail-closed, exit non-zero
+on any FAIL (`WORKFLOW.md §5`). The seed set secures the **agent org
+itself** (the "org as target" class above): roster pairing, reason-tier
+read-only boundary, handoff-reference resolution, INDEX + repo-map
+freshness, ledger well-formedness, tools-baseline containment, current
+sprint window, and branch taxonomy. The security/domain verifiers listed in
+the sections above (egress allowlist, BOLA/IDOR, banned crypto primitives,
+…) are the same shape — a target repo drops them into the same
+`scripts/verifiers/` directory and the runner picks them up. Run
+`python3 scripts/verify.py --list` to see the registered machines.

@@ -12,6 +12,11 @@ Read `README.md` for philosophy; this file is what you *do*.
    (month, 2-digit year, start day, end day — e.g. `sprint-7-26-12-19`
    = 2026-07-12 → 07-19). If today falls outside every sprint window,
    scaffold the next one before starting work.
+3. Run the gate: `python3 scripts/verify.py` (the hard-verifier registry —
+   roster, INDEX/repo-map freshness, sprint window, branch taxonomy, …). A
+   red verifier is a to-do, not noise. `docs/repo-map.md` is the token-cheap
+   where-is-everything index — read it before grepping the tree; regenerate
+   with `python3 scripts/build_repo_index.py` after moving/adding files.
 
 ## Docs convention
 
