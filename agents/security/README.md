@@ -69,6 +69,13 @@ issue #50, then hand implementation to the owning role):
 - [`pq-crypto-consultant/`](pq-crypto-consultant/) — hybrid classical+PQ
   key exchange (X25519/P-256 + ML-KEM/Kyber) and migration path →
   `secrets-crypto-engineer` implements.
+- [`e2ee-protocol-consultant/`](e2ee-protocol-consultant/) — asynchronous
+  end-to-end-encrypted messaging to the Signal paradigm: X3DH/PQXDH handshake
+  with identity/signed/one-time prekeys, the Double Ratchet (forward secrecy +
+  post-compromise security), Sesame multi-device, HKDF discipline, and offline
+  deniability → PQ leg to `pq-crypto-consultant`, implementation to
+  `secrets-crypto-engineer`. Carries a `DEPTH.md` (worked handshake/ratchet).
+  From issue [#57](https://github.com/ai-stress-testing/Ges-Talt/issues/57).
 - [`side-channel-analyst/`](side-channel-analyst/) — flags timing/cache/
   oracle/response-distinguishability leaks, specifies constant-time /
   indistinguishable-response requirements → `testing/` measures, implementer fixes.

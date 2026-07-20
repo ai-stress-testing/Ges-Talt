@@ -253,6 +253,14 @@
     "Read",
     "Write"
   ],
+  "data/device-intelligence-engineer": [
+    "Bash",
+    "Edit",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
   "design/brand-guardian": [
     "Artifact",
     "Glob",
@@ -302,6 +310,14 @@
   ],
   "design/ux-researcher": [
     "Artifact",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "frontend/client-telemetry-engineer": [
+    "Bash",
+    "Edit",
     "Glob",
     "Grep",
     "Read",
@@ -532,6 +548,12 @@
     "Write"
   ],
   "security/compliance-auditor": [
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "security/e2ee-protocol-consultant": [
     "Glob",
     "Grep",
     "Read",

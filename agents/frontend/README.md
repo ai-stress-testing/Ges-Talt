@@ -16,6 +16,13 @@ the reference example for **nested roles under one team**:
   externalization/ICU, CLDR plural rules, RTL/bidi layout, locale-aware
   formatting. Moved here when `platform/` was dissolved — i18n is
   mostly presentation.
+- [`client-telemetry-engineer/`](client-telemetry-engineer/) — consent-gated,
+  first-party client-side signal collection for analytics and fraud/bot
+  detection: stateless + stateful identifiers, the browser device-signal set
+  (navigator/canvas/WebGL/AudioContext), and async encrypted transmission
+  (sendBeacon/pixel, ECDH). Gated on legal's consent decision; hands
+  server-side resolution to `data/device-intelligence-engineer`. From issue
+  [#55](https://github.com/ai-stress-testing/Ges-Talt/issues/55).
 
 Add more roles the same way — one folder per role, same `agent.md` +
 `SPEC.md` convention as everywhere else in this repo. A role doesn't need a
