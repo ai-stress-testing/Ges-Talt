@@ -31,7 +31,7 @@ playbook actions are always `respond`, owned by the incident responder.
 | 4. Password Protection → Identity Threat Detection | User and Entity Behavior Analytics (UEBA) | `agents/security/threat-detection-engineer` | detect |
 | 4. Password Protection → Identity Threat Detection | Playbook: rotate credentials, review privileged group membership, run identity forensics against Azure AD/Okta logs | `agents/security/incident-responder` | respond |
 | 5. Procurement → Continuous Verification | Require SBOM from vendors for all delivered software | `agents/security/appsec-engineer` | prevent |
-| 5. Procurement → Continuous Verification | Sign and verify all updates before install | `agents/devops/gitops-engineer` | prevent |
+| 5. Procurement → Continuous Verification | Sign and verify all updates before install | `agents/cd/gitops-engineer` | prevent |
 | 5. Procurement → Continuous Verification | Code integrity enforcement (WDAC) on endpoints | `agents/security/senior-secops` | prevent |
 | 5. Procurement → Continuous Verification | Playbook: isolate, revert to known-good images, notify stakeholders, review vendor security posture/SLAs | `agents/security/incident-responder` | respond |
 | 6. Block Malicious Sites → Browser Hardening | Remote browser isolation for high-risk browsing | `agents/security/senior-secops` | prevent |

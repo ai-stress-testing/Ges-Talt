@@ -20,7 +20,7 @@ same `agent.md` + `SPEC.md` convention as everywhere else.
 
 - Web UI is `frontend/`; MX covers non-web / cross-surface experiences and
   the surface-specific packaging (stores, devices) web doesn't have.
-- Service progressive-delivery gating is `devops/release-engineer`;
+- Service progressive-delivery gating is `cd/release-engineer`;
   `mx/mobile-release-engineer` owns the app-store-specific release path.
 - Design intent comes from `design/` and `frontend/designer`; MX builds
   the surface, it doesn't set the UX.

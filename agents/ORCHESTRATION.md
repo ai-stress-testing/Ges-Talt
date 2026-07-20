@@ -63,7 +63,7 @@ shape the spec instead of breaking it late:
 2. **legal** — compliance/privacy/licensing constraints next.
 3. **software + pm** — feasibility, scope, decomposition.
 4. **design** — experience and structure.
-5. **the rest** — domain specialists (data, ai, devops, testing, mx,
+5. **the rest** — domain specialists (data, ai, ci, cd, testing, mx,
    networking, academic) as the problem demands.
 6. **logicians** — last for final rigor, but **close to everyone**: a
    logician (or the falsifier) can be pulled in at any stage where a
@@ -103,7 +103,7 @@ human. (Bad: "Working on it." / a narration. Good: the terse close.)
 5. Call the **adversary grader** (`logicians/falsifier`) to spec the QA;
    implement the QA with the relevant sub-agents.
 6. Each agent updates the sprint chat log at every stage.
-7. `devops/gitops-engineer` finishes the path to prod, or the run is done.
+7. `cd/gitops-engineer` finishes the path to prod, or the run is done.
 8. Return **"Finished view chat log"**.
 
 **Path B — prompt already well laid out:**

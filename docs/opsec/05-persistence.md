@@ -22,7 +22,7 @@ the rest so a resurrection attempt is caught the moment it's planted, not the ne
 | Event Triggered Execution (T1546) | Disable unnecessary WMI event subscriptions; monitor IFEO/AppInit_DLLs; audit udev rules | `agents/security/threat-detection-engineer` | detect |
 | Exclusive Control (T1668) | EDR to detect/terminate other threat actor activity; isolate hosts | `agents/security/incident-responder` | respond |
 | External Remote Services (T1133) | MFA + Conditional Access for VPN/Citrix/RDP | `agents/security/identity-access-engineer` | prevent |
-| Implant Internal Image (T1525) | Harden CI/CD; scan container images for malware; approved base images only | `agents/devops/containerization-engineer` | prevent |
+| Implant Internal Image (T1525) | Harden CI/CD; scan container images for malware; approved base images only | `agents/ci/containerization-engineer` | prevent |
 | Modify Authentication Process (T1556) | Credential Guard; monitor LSASS for unauthorized DLLs; audit PAM configs | `agents/security/identity-access-engineer` | prevent |
 | Modify Registry (T1112) | Audit critical Registry keys; EDR to block unauthorized writes | `agents/security/threat-detection-engineer` | detect |
 | Office Application Startup (T1137) | Disable Office macros by default; ASR rules; monitor Outlook rules | `agents/security/senior-secops` | prevent |

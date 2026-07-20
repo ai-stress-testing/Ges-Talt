@@ -111,6 +111,116 @@
     "Read",
     "Write"
   ],
+  "cd/disaster-recovery-engineer": [
+    "Bash",
+    "Edit",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "cd/finops-engineer": [
+    "Bash",
+    "Edit",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "cd/gitops-engineer": [
+    "Bash",
+    "Edit",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "cd/lifecycle-manager": [
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "cd/orchestration-engineer": [
+    "Bash",
+    "Edit",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "cd/release-engineer": [
+    "Bash",
+    "Edit",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "cd/runtime-security-engineer": [
+    "Bash",
+    "Edit",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "cd/sre": [
+    "Bash",
+    "Edit",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "ci/code-security-analyst": [
+    "Bash",
+    "Edit",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "ci/containerization-engineer": [
+    "Bash",
+    "Edit",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "ci/dynamic-security-tester": [
+    "Bash",
+    "Edit",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "ci/pipeline-engineer": [
+    "Bash",
+    "Edit",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "ci/quality-gate-engineer": [
+    "Bash",
+    "Edit",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "ci/supply-chain-engineer": [
+    "Bash",
+    "Edit",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
   "data/ai-data-remediation-engineer": [
     "Bash",
     "Edit",
@@ -192,76 +302,6 @@
   ],
   "design/ux-researcher": [
     "Artifact",
-    "Glob",
-    "Grep",
-    "Read",
-    "Write"
-  ],
-  "devops/containerization-engineer": [
-    "Bash",
-    "Edit",
-    "Glob",
-    "Grep",
-    "Read",
-    "Write"
-  ],
-  "devops/devops-automator": [
-    "Bash",
-    "Edit",
-    "Glob",
-    "Grep",
-    "Read",
-    "Write"
-  ],
-  "devops/disaster-recovery-engineer": [
-    "Bash",
-    "Edit",
-    "Glob",
-    "Grep",
-    "Read",
-    "Write"
-  ],
-  "devops/finops-engineer": [
-    "Bash",
-    "Edit",
-    "Glob",
-    "Grep",
-    "Read",
-    "Write"
-  ],
-  "devops/gitops-engineer": [
-    "Bash",
-    "Edit",
-    "Glob",
-    "Grep",
-    "Read",
-    "Write"
-  ],
-  "devops/kubernetes-engineer": [
-    "Bash",
-    "Edit",
-    "Glob",
-    "Grep",
-    "Read",
-    "Write"
-  ],
-  "devops/lifecycle-manager": [
-    "Glob",
-    "Grep",
-    "Read",
-    "Write"
-  ],
-  "devops/release-engineer": [
-    "Bash",
-    "Edit",
-    "Glob",
-    "Grep",
-    "Read",
-    "Write"
-  ],
-  "devops/sre": [
-    "Bash",
-    "Edit",
     "Glob",
     "Grep",
     "Read",

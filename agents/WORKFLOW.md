@@ -64,7 +64,7 @@ Route by altitude, not habit:
 ## 3. Incident routing rule
 
 An ambiguous page (broken vs. malicious, not yet known) goes to
-`devops/sre` first — availability triage.
+`cd/sre` first — availability triage.
 
 The moment malice is suspected: hand off to
 `security/incident-responder` and stop making ops changes on the

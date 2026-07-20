@@ -28,5 +28,5 @@ token/cookie replay).
 | Steal/Forge Auth Certificates (T1649) | Cert transparency logs; monitor unauthorized cert requests; HSMs | `agents/security/cloud-security-architect` | detect |
 | Steal/Forge Kerberos Tickets (T1558) | AES encryption; rotate KRBTGT; monitor anomalous ticket requests (Golden Ticket) | `agents/security/identity-access-engineer` | prevent |
 | Steal Web Session Cookie (T1539) | HttpOnly/Secure flags; re-auth for sensitive transactions | `agents/security/appsec-engineer` | prevent |
-| Unsecured Credentials (T1552) | No plaintext passwords in files/scripts; credential mgmt tools; scan repos for secrets | `agents/devops/gitops-engineer` | prevent |
+| Unsecured Credentials (T1552) | No plaintext passwords in files/scripts; credential mgmt tools; scan repos for secrets | `agents/cd/gitops-engineer` | prevent |
 | MFA Request Generation (T1621) | Number-matching/location-based MFA; alert on multiple denied requests | `agents/security/identity-access-engineer` | prevent |

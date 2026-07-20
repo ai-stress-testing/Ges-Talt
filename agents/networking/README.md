@@ -13,7 +13,7 @@ network policy honest.
   Advises during spec modeling, hands the running config to
   `network-engineer`.
 
-Reverse proxy / web serving / load balancing lives here (not in devops) —
+Reverse proxy / web serving / load balancing lives here (not in ci/cd) —
 it's a connectivity concern, and the OPSEC recon checklist already assigns
 reverse-proxy controls to this team. Same `agent.md` + `SPEC.md` convention
 as every other team; add a role when it owns a durable connectivity

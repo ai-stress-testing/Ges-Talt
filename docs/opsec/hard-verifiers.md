@@ -31,7 +31,7 @@ Each verifier below reads: **assert P — [method] — owner**. Method:
 - Assert deletion actually deletes: request erasure, then confirm the record is unrecoverable across **primary, replicas, backups, cache, and search index** — probe — `legal/privacy-engineer`. (The common gap: gone from Postgres, still in Elasticsearch.)
 - Assert retention deletes: insert a record older than its policy, confirm the reaper removed it — probe — `data/data-engineer`.
 - Assert cross-tenant isolation: tenant A's credential returns zero of tenant B's rows under fuzzed tenant IDs — ptest — `backend/backend-dev`.
-- Assert backups restore: periodic restore drill with checksum match — probe — `devops/sre`. (A backup you've never restored is a hope, not a backup.)
+- Assert backups restore: periodic restore drill with checksum match — probe — `cd/sre`. (A backup you've never restored is a hope, not a backup.)
 - Assert the audit log is append-only *and* hash-chained (each entry commits the prior) so deletion/tampering is detectable — probe — `security/threat-detection-engineer`.
 
 ## Securing APIs
@@ -43,7 +43,7 @@ Each verifier below reads: **assert P — [method] — owner**. Method:
 - Assert money/mutation endpoints honor an idempotency key: replay the same request, exactly one effect — probe — `backend/payments-billing-engineer`.
 - Assert error responses never leak stack traces / internal hostnames / SQL — probe with malformed input, scan response — `security/senior-secops`.
 - Assert every list endpoint caps page size (no unbounded scrape) — probe — `backend/api-platform-engineer`.
-- Assert no route past its sunset date is still live — static — `devops/lifecycle-manager`.
+- Assert no route past its sunset date is still live — static — `cd/lifecycle-manager`.
 - Assert a token's *used* scope ≤ *granted* scope ≤ *needed* scope (confused-deputy / scope creep) — static+probe — `security/identity-access-engineer`.
 
 ## Securing inputs
@@ -64,7 +64,7 @@ Each verifier below reads: **assert P — [method] — owner**. Method:
 - Assert SSRF-reachability is zero: server-side fetchers cannot reach internal/RFC1918/`169.254.169.254` metadata — probe — `security/appsec-engineer`. (Cloud-metadata SSRF.)
 - Assert service-to-service is mutually authenticated (mTLS); no plaintext internal traffic — probe — `networking/network-engineer`.
 - Assert every TLS listener negotiates only 1.2+, strong ciphers, valid non-expired cert, HSTS — static scan — `networking/network-engineer`.
-- Assert no cert is within N days of expiry — static — `devops/sre`. (The recurring self-inflicted outage.)
+- Assert no cert is within N days of expiry — static — `cd/sre`. (The recurring self-inflicted outage.)
 - Assert DNS query volume/entropy per host stays under threshold (tunneling/exfil) — probe/detect — `security/threat-detection-engineer`.
 
 ## Encryption
@@ -102,13 +102,13 @@ shaped. These classes fall through:
   package) — static — `security/appsec-engineer`.
 - **Denial-of-wallet** — assert every autoscaling / pay-per-call / AI-
   inference path has a hard budget cap (financial DoS, not traffic DoS) —
-  static+probe — `devops/finops-engineer`.
+  static+probe — `cd/finops-engineer`.
 - **Detection of absence** (dead-man's switch) — assert every expected
   security-telemetry source emitted within its heartbeat window; silence is
   the alert ("we stopped getting logs from that host and didn't notice") —
   probe — `security/threat-detection-engineer`.
 - **Config drift as a security event** — assert deployed config still
-  matches reviewed git (any drift = ungoverned change) — `devops/gitops-engineer`.
+  matches reviewed git (any drift = ungoverned change) — `cd/gitops-engineer`.
 - **Side-channel indistinguishability** — assert auth-failure responses are
   identical in time and body ("user not found" vs "wrong password" oracle) —
   probe — `security/appsec-engineer`.
@@ -121,7 +121,7 @@ shaped. These classes fall through:
   the machine that secures the machines.
 - **Ransomware resilience** — assert backups are immutable/WORM *and* a
   restore drill passed within N days (not just "backups exist") — probe —
-  `devops/sre`.
+  `cd/sre`.
 - **AI/ML input surface** — assert RAG-retrieved content is handled as data
   not instructions; assert output filtering on model responses; membership-
   inference resistance — `reason` (`ai/model-evaluator`).

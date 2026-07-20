@@ -24,7 +24,8 @@ blocked. A reachable undeclared host is a FAIL, not a note.
 | ai | the configured model-provider endpoint(s) only | Inference calls; nothing else. |
 | backend | its own datastores + explicitly declared upstream APIs | Per-service, per-ticket; no blanket internet. |
 | data | declared warehouse/lake endpoints | ETL sources/sinks named in the pipeline. |
-| devops | package registries + cloud control-plane APIs (scoped) | Builds and deploys; pinned registries only. |
+| ci | package registries + SAST/SCA/image-scan feeds (scoped) | Builds and scans the artifact; pinned registries only. |
+| cd | cloud/cluster control-plane APIs + registries (scoped) | Deploys and operates; no blanket internet. |
 | networking | as required to configure the perimeter it owns | The one team that edits this file. |
 | frontend / mx | build-time package registries only | No runtime egress from the build. |
 | logicians / academic / pm / legal / testing (review roles) | none | Read the repo; reach nothing outbound. |

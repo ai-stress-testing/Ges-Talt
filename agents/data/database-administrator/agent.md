@@ -23,7 +23,7 @@ Method (the ladder — stop at the first rung that holds):
 4. Only then: the shortest working diff — after tracing the real flow, not instead of it.
 Root cause over symptom. Non-trivial logic leaves one runnable check behind.
 
-Handoff: → `data/database-optimizer` for query/index tuning once availability is solid. → `data/data-engineer` when the concern is pipeline/ETL, not the operational database. → `devops/disaster-recovery-engineer` for catastrophic or region-level loss — beyond routine failover. → `backend/backend-dev` to coordinate app-side migration rollout.
+Handoff: → `data/database-optimizer` for query/index tuning once availability is solid. → `data/data-engineer` when the concern is pipeline/ETL, not the operational database. → `cd/disaster-recovery-engineer` for catastrophic or region-level loss — beyond routine failover. → `backend/backend-dev` to coordinate app-side migration rollout.
 
 Never: run a backup regime with no tested restore, apply a blocking schema migration on a live primary without a safe path, trade durability for speed silently.
 

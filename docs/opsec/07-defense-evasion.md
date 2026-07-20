@@ -13,7 +13,7 @@ network) that a hiding adversary can't avoid touching.
 |---|---|---|---|
 | Access Token Manipulation (T1134) | Monitor 4688/4672 via Sysmon; restrict SeDebugPrivilege/SeImpersonatePrivilege | `agents/security/threat-detection-engineer` | detect |
 | BITS Jobs (T1197) | BITS audit logging, Event ID 3; egress filtering | `agents/security/threat-detection-engineer` | detect |
-| Build Image on Host (T1612) | Restrict Docker API; monitor docker build; image scanning rejects untrusted Dockerfiles | `agents/devops/containerization-engineer` | prevent |
+| Build Image on Host (T1612) | Restrict Docker API; monitor docker build; image scanning rejects untrusted Dockerfiles | `agents/ci/containerization-engineer` | prevent |
 | Debugger Evasion (T1622) | Anti-debugging in EDR; monitor IsDebuggerPresent/NtQueryInformationProcess; sandbox | `agents/security/threat-detection-engineer` | detect |
 | Delay Execution (T1497.003) | Monitor long sleeps/time APIs; dynamic analysis accelerating sleep timers | `agents/security/threat-detection-engineer` | detect |
 | Deobfuscate/Decode Files or Information (T1140) | Content disarm & reconstruction; EDR script analysis for base64/XOR | `agents/security/threat-detection-engineer` | detect |
@@ -36,6 +36,6 @@ network) that a hiding adversary can't avoid touching.
 | System Script Proxy Execution (T1216) | Disable signed VB scripts (PubPrn/SyncAppvPublishingServer) via GPO; monitor cscript/wscript | `agents/security/senior-secops` | prevent |
 | Template Injection (T1221) | Scan Office docs for remote template refs/external OLE; block untrusted external domains | `agents/networking/network-engineer` | prevent |
 | Traffic Signaling (T1205) | NIDS for port knocking; monitor socket filter installs via kernel audit | `agents/networking/network-engineer` | detect |
-| Trusted Developer Utilities Proxy Execution (T1127) | Restrict MSBuild/ClickOnce to build servers; monitor command-line args | `agents/devops/gitops-engineer` | prevent |
+| Trusted Developer Utilities Proxy Execution (T1127) | Restrict MSBuild/ClickOnce to build servers; monitor command-line args | `agents/cd/gitops-engineer` | prevent |
 | Unused/Unsupported Cloud Regions (T1535) | Restrict resource creation to authorized regions; monitor CloudTrail/Azure for CreateInstance in unused regions | `agents/security/cloud-security-architect` | prevent |
 | Valid Accounts (T1078) | MFA + conditional access; monitor anomalous logins; least privilege | `agents/security/identity-access-engineer` | prevent |

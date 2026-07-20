@@ -17,7 +17,7 @@ an append-only log.
   and its delegation rules (route by altitude: `delivery-lead` for
   portfolio tradeoffs, `program-tracker` for multi-sprint milestones).
 - **Operational** — the implementer teams (backend, frontend, data,
-  devops, ai, mobile, platform, networking, security-implementers) plus
+  ci, cd, ai, mobile, networking, security-implementers) plus
   `logicians/` (static review) and `testing/` (empirical verification),
   each executing against acceptance criteria a sub-issue already fixed.
 
@@ -42,12 +42,12 @@ an append-only log.
 
 ## Taxonomy
 
-- Teams (15): academic, ai, backend, data, design, devops, frontend,
-  legal, logicians, mobile, networking, platform, pm, security, testing
-  — see `agents/INDEX.md` (generated, 72 agents total).
+- Teams (15): academic, ai, backend, cd, ci, data, design, frontend,
+  legal, logicians, mx, networking, pm, security, testing
+  — see `agents/INDEX.md` (generated, 95 agents total).
 - Role kinds (by tool grant, not team):
   - **implementer** — Read/Edit/Write/Bash(+Grep/Glob); ships diffs
-    (e.g. `backend/backend-dev`, `frontend/react-dev`, `devops/sre`).
+    (e.g. `backend/backend-dev`, `frontend/react-dev`, `cd/sre`).
   - **advisory-read-only** — Read/Grep/Glob only, no Write/Edit/Bash;
     reviews or consults without blast radius (e.g. all of `academic/`,
     `security/architect`, `legal/general-counsel`).

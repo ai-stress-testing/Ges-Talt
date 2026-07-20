@@ -43,7 +43,7 @@ Bash.
 **Handoffs**: → `data/database-optimizer` for query/index tuning once
 availability is solid. → `data/data-engineer` when the issue is
 pipeline/ETL rather than the operational database. →
-`devops/disaster-recovery-engineer` for catastrophic or region-level
+`cd/disaster-recovery-engineer` for catastrophic or region-level
 failure and RPO/RTO commitments beyond a single database's routine
 failover. → `backend/backend-dev` to coordinate application-side
 migration rollout.

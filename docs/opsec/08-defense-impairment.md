@@ -23,7 +23,7 @@ adversary cannot avoid triggering.
 | Modify Cloud Compute Infrastructure (T1578) | IaC w/ drift detection; restrict create/delete/revert instance perms | `agents/security/cloud-security-architect` | detect |
 | Modify Cloud Resource Hierarchy (T1666) | Least-privilege RBAC; audit hierarchy changes | `agents/security/cloud-security-architect` | prevent |
 | Modify Registry (T1112) | Registry auditing; ASR rules block critical-key mods | `agents/security/threat-detection-engineer` | detect |
-| Modify System Image (T1601) | Secure boot + firmware integrity; verify image hashes pre-deploy | `agents/devops/gitops-engineer` | prevent |
+| Modify System Image (T1601) | Secure boot + firmware integrity; verify image hashes pre-deploy | `agents/cd/gitops-engineer` | prevent |
 | Network Boundary Bridging (T1599) | Strict segmentation; monitor unauthorized NAT/routing changes | `agents/networking/network-engineer` | prevent |
 | Plist File Modification (T1647) | FIM on macOS plists; endpoint alerts | `agents/security/threat-detection-engineer` | detect |
 | Prevent Command History Logging (T1562.003) | Mandatory session logging shipped to remote SIEM | `agents/security/threat-detection-engineer` | detect |

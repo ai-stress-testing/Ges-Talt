@@ -18,7 +18,7 @@ restricted away.
 | Cloud Service Dashboard | MFA + session audit for consoles; IP allowlist | `agents/security/identity-access-engineer` | prevent |
 | Cloud Service Discovery | IAM read-only limits on critical services; audit logs | `agents/security/cloud-security-architect` | prevent |
 | Cloud Storage Object Discovery | Storage access logging; bucket policy denies anonymous listing | `agents/security/cloud-security-architect` | prevent |
-| Container & Resource Discovery | RBAC on orchestration APIs; runtime detection of kubectl get probes | `agents/devops/kubernetes-engineer` | detect |
+| Container & Resource Discovery | RBAC on orchestration APIs; runtime detection of kubectl get probes | `agents/cd/orchestration-engineer` | detect |
 | Debugger Evasion | Anti-debug checks; block debugging tools | `agents/security/threat-detection-engineer` | detect |
 | Device Driver Discovery | Restrict driver query; audit driverquery///proc/modules | `agents/security/senior-secops` | detect |
 | Domain Trust Discovery | Restrict nltest/LDAP trust enum to admins; monitor | `agents/security/identity-access-engineer` | detect |
@@ -45,5 +45,5 @@ restricted away.
 | System Owner/User Discovery | Restrict whoami/session queries; audit | `agents/security/identity-access-engineer` | detect |
 | System Service Discovery | Restrict sc query/systemctl | `agents/security/senior-secops` | prevent |
 | System Time Discovery | Trusted NTP; monitor time changes | `agents/security/threat-detection-engineer` | detect |
-| Virtual Machine Discovery | Obscure hypervisor artifacts; monitor VM enum (esxcli) | `agents/devops/kubernetes-engineer` | detect |
+| Virtual Machine Discovery | Obscure hypervisor artifacts; monitor VM enum (esxcli) | `agents/cd/orchestration-engineer` | detect |
 | Virtualization/Sandbox Evasion | Sandbox-detection-resistant analysis; monitor time-based checks | `agents/security/threat-detection-engineer` | detect |

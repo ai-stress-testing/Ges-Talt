@@ -18,7 +18,7 @@ actually escalate through so an unauthorized jump is caught before it lands.
 | Boot/Logon Initialization Scripts (T1037) | Restrict write on script dirs; code-signing; monitor logon-script mods | `agents/security/senior-secops` | prevent |
 | Create or Modify System Process (T1543) | Audit service configs; EDR for new/modified services/agents/daemons | `agents/security/threat-detection-engineer` | detect |
 | Domain/Tenant Policy Modification (T1484) | Limit who modifies GPO/trusts; change auditing; multi-person approval for critical policy | `agents/security/identity-access-engineer` | prevent |
-| Escape to Host (T1611) | Non-root containers; restrict host path mounts; Pod Security Admission | `agents/devops/kubernetes-engineer` | prevent |
+| Escape to Host (T1611) | Non-root containers; restrict host path mounts; Pod Security Admission | `agents/cd/orchestration-engineer` | prevent |
 | Event Triggered Execution (T1546) | Disable unnecessary WMI subscriptions; monitor registry/plist; integrity monitoring | `agents/security/threat-detection-engineer` | detect |
 | Exploitation for Privilege Escalation (T1068) | Rigorous patching; exploit prevention (ASLR/DEP) | `agents/security/cloud-security-architect` | prevent |
 | Process Injection (T1055) | Process Mitigation Policies; EDR w/ memory scanning | `agents/security/threat-detection-engineer` | detect |

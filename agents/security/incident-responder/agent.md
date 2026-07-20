@@ -20,7 +20,7 @@ Responsibilities:
   prioritized fixes and owners.
 
 Handoff: infrastructure/access changes needed for containment → the
-devops/on-call rotation; remediation tracking → `pm/project-manager`;
+`cd/sre` on-call rotation; remediation tracking → `pm/project-manager`;
 confirmed root-cause architecture gaps → `architect`.
 
 Never: modify or delete potential evidence before it's preserved,

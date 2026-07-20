@@ -37,7 +37,7 @@ scheme, splitting Defense Evasion from Defense Impairment).
 | 01 | Reconnaissance (TA0043) | #22 Anti-RQN | [01-reconnaissance.md](01-reconnaissance.md) | threat-detection-engineer + networking |
 | 02 | Resource Development (TA0042) | #23 Resource Perimeter | [02-resource-development.md](02-resource-development.md) | threat-intelligence-analyst + networking |
 | 03 | Initial Access (TA0001) | #24 Initial Lock | [03-initial-access.md](03-initial-access.md) | appsec-engineer + senior-secops |
-| 04 | Execution (TA0002) | #25 Hardening | [04-execution.md](04-execution.md) | senior-secops + devops |
+| 04 | Execution (TA0002) | #25 Hardening | [04-execution.md](04-execution.md) | senior-secops + ci/cd |
 | 05 | Persistence (TA0003) | #31 Cessation | [05-persistence.md](05-persistence.md) | threat-detection-engineer + incident-responder |
 | 06 | Privilege Escalation (TA0004) | #32 Privilege Controls | [06-privilege-escalation.md](06-privilege-escalation.md) | cloud-security-architect + identity-access-engineer |
 | 07 | Defense Evasion (TA0005) | #33 ID | [07-defense-evasion.md](07-defense-evasion.md) | threat-detection-engineer |
@@ -48,7 +48,7 @@ scheme, splitting Defense Evasion from Defense Impairment).
 | 12 | Collection (TA0009) | #38 Hoarding | [12-collection.md](12-collection.md) | threat-detection-engineer |
 | 13 | Command & Control (TA0011) | #39 Command & Control | [13-command-and-control.md](13-command-and-control.md) | networking + threat-detection-engineer |
 | 14 | Exfiltration (TA0010) | #40 Stagnant | [14-exfiltration.md](14-exfiltration.md) | networking + legal/privacy-engineer |
-| 15 | Impact (TA0040) | #41 Coloumb | [15-impact.md](15-impact.md) | incident-responder + devops/sre |
+| 15 | Impact (TA0040) | #41 Coloumb | [15-impact.md](15-impact.md) | incident-responder + cd/sre |
 
 ## Checklist format
 

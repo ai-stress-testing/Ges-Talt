@@ -46,7 +46,7 @@ infra vs. the network/detection layer).
   drafts candidate detection rules.
 - [`incident-responder/`](incident-responder/) — breach triage,
   containment, forensics, post-mortems. Handoffs are written generically
-  (devops/on-call, `pm/project-manager`) since this team doesn't assume
+  (`cd/sre` on-call, `pm/project-manager`) since this team doesn't assume
   which other teams exist elsewhere in the org.
 
 **Spec-time consultants** (advisory — pulled in during spec modeling per

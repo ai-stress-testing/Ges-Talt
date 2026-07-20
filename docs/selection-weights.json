@@ -36,10 +36,16 @@
     "score": 0.0
   },
   "logicians/software-architect": {
-    "mean_tokens": 79520.2,
+    "mean_tokens": 75295.8,
     "pass_rate": 1.0,
-    "sample_count": 4,
-    "score": 0.1214
+    "sample_count": 5,
+    "score": 0.1528
+  },
+  "networking/network-engineer": {
+    "mean_tokens": 53046.0,
+    "pass_rate": 1.0,
+    "sample_count": 1,
+    "score": 0.3181
   },
   "pm/team-operations": {
     "mean_tokens": 64574.3,
@@ -48,9 +54,9 @@
     "score": 0.2325
   },
   "security/architect": {
-    "mean_tokens": 67112.5,
+    "mean_tokens": 69244.4,
     "pass_rate": 1.0,
-    "sample_count": 2,
-    "score": 0.2136
+    "sample_count": 5,
+    "score": 0.1977
   }
 }
