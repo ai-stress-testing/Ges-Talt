@@ -51,3 +51,8 @@ Status: todo / in-progress / blocked / done.
 | GT-41 | OPSEC checklists, first 7 MITRE tactics (recon→defense-evasion) | 3 sonnet subagents | sprint-7-26-12-19 | done | #22–#25, #31–#33 |
 | GT-42 | OPSEC checklists, second half (cred-access→impact) | security team | sprint-7-26-12-19 | done | [#12](https://github.com/ai-stress-testing/Ges-Talt/issues/12) |
 | GT-43 | Hard-verifier registry: scripts/verifiers/ single-property machines gating the verdict loop (from hard-verifiers brainstorm) | security team + devops/devops-automator | (next) | todo | — |
+| GT-44 | Skills policy (#42) + 501-LoC audit lint (#43) | main session | sprint-7-26-12-19 | done | [#42](https://github.com/ai-stress-testing/Ges-Talt/issues/42), [#43](https://github.com/ai-stress-testing/Ges-Talt/issues/43) |
+| GT-45 | Security spec-time consultants: rbac-abac, rls, pq-crypto, side-channel (#50 consultants) | 2 sonnet subagents | sprint-7-26-12-19 | done | #44, #45, #46, #48, #50 |
+| GT-46 | security/red-team-critic (opus, read-only) + blue↔red pairing convention | sonnet subagent | sprint-7-26-12-19 | done | [#47](https://github.com/ai-stress-testing/Ges-Talt/issues/47) |
+| GT-47 | logicians/agent-evaluator (group-theory) + docs/evals per-team convention | sonnet subagent | sprint-7-26-12-19 | done | [#49](https://github.com/ai-stress-testing/Ges-Talt/issues/49) |
+| GT-48 | networking/nginx-specialist consultant (not devops) | sonnet subagent | sprint-7-26-12-19 | done | [#51](https://github.com/ai-stress-testing/Ges-Talt/issues/51) |

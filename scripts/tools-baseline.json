@@ -336,6 +336,11 @@
     "Read",
     "Write"
   ],
+  "logicians/agent-evaluator": [
+    "Glob",
+    "Grep",
+    "Read"
+  ],
   "logicians/code-reviewer": [
     "Glob",
     "Grep",
@@ -380,6 +385,12 @@
   "networking/network-engineer": [
     "Bash",
     "Edit",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "networking/nginx-specialist": [
     "Glob",
     "Grep",
     "Read",
@@ -486,7 +497,30 @@
     "Read",
     "Write"
   ],
+  "security/pq-crypto-consultant": [
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "security/rbac-abac-consultant": [
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "security/red-team-critic": [
+    "Glob",
+    "Grep",
+    "Read"
+  ],
   "security/regulated-data-specialist": [
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "security/rls-consultant": [
     "Glob",
     "Grep",
     "Read",
@@ -502,6 +536,12 @@
   ],
   "security/senior-secops": [
     "Edit",
+    "Glob",
+    "Grep",
+    "Read",
+    "Write"
+  ],
+  "security/side-channel-analyst": [
     "Glob",
     "Grep",
     "Read",

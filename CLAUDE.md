@@ -56,3 +56,7 @@ the setpoint, not just gate).
 - A role may carry an optional `DEPTH.md` loaded only on a depth trigger
   (`docs/depth-packs.md`) — depth without per-call token cost. Per-role
   selection scores from the ledger: `scripts/credit.py` → `docs/credit.md`.
+- Skills are rare and only for repeatable procedures (`agents/skills-policy.md`):
+  a role's `SKILL.md` must stay ≤500 LoC — `scripts/audit_skills.py` fails
+  CI on a violation. Charter = who; `DEPTH.md` = how it reasons; `SKILL.md`
+  = a procedure it runs. Most roles need no skill.

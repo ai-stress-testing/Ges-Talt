@@ -49,6 +49,26 @@ infra vs. the network/detection layer).
   (devops/on-call, `pm/project-manager`) since this team doesn't assume
   which other teams exist elsewhere in the org.
 
+**Spec-time consultants** (advisory — pulled in during spec modeling per
+issue #50, then hand implementation to the owning role):
+
+- [`rbac-abac-consultant/`](rbac-abac-consultant/) — designs the
+  access-control model (RBAC/ABAC/hybrid, least privilege, SoD) →
+  `identity-access-engineer` implements.
+- [`rls-consultant/`](rls-consultant/) — designs deny-by-default Row-Level
+  Security predicates for tenant/row isolation → backend/DBA implements.
+- [`pq-crypto-consultant/`](pq-crypto-consultant/) — hybrid classical+PQ
+  key exchange (X25519/P-256 + ML-KEM/Kyber) and migration path →
+  `secrets-crypto-engineer` implements.
+- [`side-channel-analyst/`](side-channel-analyst/) — flags timing/cache/
+  oracle/response-distinguishability leaks, specifies constant-time /
+  indistinguishable-response requirements → `testing/` measures, implementer fixes.
+- [`red-team-critic/`](red-team-critic/) — opus, read-only: presumes a
+  blue-team control already beaten and reasons to the concrete bypass (the
+  `logicians/falsifier` pattern aimed at defenses; the 1:1 blue↔red pairing
+  is in [`docs/opsec/red-team.md`](../../docs/opsec/red-team.md)). Distinct
+  from `penetration-tester` (active, authorized testing).
+
 **Skipped**: `blockchain-security-auditor` — smart-contract/DeFi audit
 work is off-mission for this enterprise-engineering workspace; no cloud/
 web-app system here has a smart-contract attack surface to credibly
@@ -64,8 +84,9 @@ through OPSEC** — the relevant tactic checklist is run before the output
 ships, as the security step of the verdict loop. `architect` runs it at
 design time, `senior-secops` at the PR gate, `threat-detection-engineer`
 builds the detections, `incident-responder` owns the response playbooks.
-The first seven tactics (Reconnaissance → Defense Evasion) are in place;
-the second half is the next security sprint.
+All 15 tactics (Reconnaissance → Impact) are in place, plus the efficacy
+verifiers (`docs/opsec/hard-verifiers.md`) and the standing red-team
+critique (`docs/opsec/red-team.md`).
 
 Add more roles the same way — one folder per role, `agent.md` + `SPEC.md`,
 narrowest tools and cheapest sufficient model, and a row added to this

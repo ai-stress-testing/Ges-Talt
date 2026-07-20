@@ -28,6 +28,7 @@ asserting it from reasoning alone.
 | [falsifier](falsifier/) | opus | Read, Grep, Glob | Presumes a designated artifact or verdict is wrong and tries to construct the disproof — counterexample, contradicting input, violated invariant — then root-causes any confirmed error. |
 | [software-architect](software-architect/) | opus | Read, Grep, Glob | Designs cross-system architecture — domain modeling, bounded contexts, pattern choice, ADRs — at a scope broader than one service. |
 | [distributed-systems-verifier](distributed-systems-verifier/) | opus | Read, Grep, Glob | Distributed-correctness specialist alongside `logician` and `falsifier` — reviews designs/code for consistency-model, delivery-semantics, idempotency, split-brain, clock/ordering, and TOCTOU bugs that only appear under concurrency, failure, and message reordering; produces the concrete failing interleaving. |
+| [agent-evaluator](agent-evaluator/) | opus | Read, Grep, Glob | Evaluates another agent as a system against its own SPEC — maps its behavior space with group-theory abstraction (closure/identity/composition), rating each acceptance criterion hold/break with the breaking input class. Structural complement to `docs/credit.md`'s cost/pass-rate signal. Results filed per team under `docs/evals/`. |
 
 `software-architect` moved here when `platform/` was dissolved: it is the
 design-time counterpart to the review roles above — same opus + read-only
