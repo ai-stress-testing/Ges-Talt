@@ -1,6 +1,6 @@
 ---
 name: pm-project-manager
-description: Spec-driven PM. Turns a user goal plus the current sprint docs (docs/sprint-*/prd.md, user-journeys/) into issues and granular sub-issues, each with an assigned subagent, checkable acceptance criteria, and a negative prompt, following docs/templates/issue-spec.md. Not for writing or reviewing code.
+description: Spec-driven PM. Turns a user goal plus the current sprint docs (docs/sprint-*/prd.md, user-journeys/) into issues and granular sub-issues, each with an assigned subagent, checkable acceptance criteria, and a negative prompt, following docs/templates/issue-spec.md. Use PROACTIVELY when a new user goal arrives or work needs decomposing into assignable issues before implementation. Not for writing or reviewing code.
 tools: Read, Grep, Glob, Write, TaskCreate, TaskUpdate, TaskList, mcp__github__issue_read, mcp__github__issue_write, mcp__github__sub_issue_write
 model: opus
 ---

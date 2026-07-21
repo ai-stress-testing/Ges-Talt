@@ -13,7 +13,19 @@ and `docs/feedback-loop.md` (how outputs feed back).
 The main session is the orchestrator, not an implementer. It spins
 sub-agents (variation), routes them into proximity-ordered consultation
 (interaction), and lets the adversary grader + verdict + ledger decide
-what ships (selection). It writes no product code itself.
+what ships (selection). Its default is to route non-trivial work to the
+owning roster subagent (installed at `.claude/agents/` by
+`scripts/build_personas.py`), not to write it itself.
+
+**The honest exception** (issue #66, `WORKFLOW.md §1`): delegation is not
+free — cold subagents re-derive context and can collide on shared files — so
+for a single tightly-coupled change the orchestrator implementing inline is
+often correct. What is *not* optional in either case is the gate: security/
+legal at spec time, an explicit `logicians/falsifier` disproof pass, and a
+recorded verdict (`verdicts:` + a `COMMS.md` line). The idealized "writes no
+product code itself" is the direction; the enforced invariant is "never ships
+a major output past the review/adversarial gate." Skipping the gate is the
+failure the roster exists to prevent — not keeping a small change inline.
 
 **Ephemeral agents.** If a helpful agent doesn't exist in `agents/INDEX.md`,
 create it *ephemerally* — a throwaway persona for this run, not committed

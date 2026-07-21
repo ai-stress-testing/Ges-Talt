@@ -42,6 +42,39 @@ closing `COMMS.md` attribution and closes the GitHub issue with
 is unfinished work, not a formality — the loop's terminal state is a
 closed issue, not a green verdict. A FAIL never closes; it hands back.
 
+**The gate is implementer-agnostic** (issue #66). The verdict loop is not a
+thing that only happens when work is *delegated*. Whoever produces a major
+output — a delegated subagent **or the orchestrator writing inline** — the
+review/adversarial gate runs before it ships, and is *recorded*:
+
+- **Consultation-proximity at spec time** — security (OPSEC) and legal
+  constraints enter before implementation, in the proximity order of
+  `ORCHESTRATION.md`. Recorded, not assumed.
+- **The adversarial pass** — an explicit `logicians/falsifier` "presume this
+  is wrong, construct the disproof" pass before any PASS is declared; its
+  result is written down (PASS with attempts listed, or the counterexample).
+  `logicians/software-architect` joins where structure is at stake.
+- **The recording** — the outcome lands in the sprint-log run-manifest's
+  `verdicts:` field and a `COMMS.md` attribution line. "I considered it
+  informally" does not count; the criterion is the artifact. `§5`'s
+  `verdict_recorded` verifier gates exactly this.
+
+*Worked example* — the run that added the `verdict_recorded` verifier
+(GT-64) ran a falsifier pass on it: "presume it never fails." A fixture with
+an empty `verdicts:` field was constructed; the verifier passed when it
+should have failed (a `\s*` in the regex swallowed the newline and captured
+the closing fence). The disproof was the counterexample; the fix was
+horizontal-whitespace matching; the run-manifest recorded
+`verdicts: verify.py PASS (falsifier caught + fixed an empty-verdicts miss)`.
+That is the gate doing its job — and it is the part most easily skipped.
+
+**The caveat, so this stays followable.** Delegation is not free — cold
+subagents re-derive context, cost tokens, and can collide on shared files.
+Keeping a single tightly-coupled change inline is often the right call and is
+*not* a violation. This is not "fan out everything." The non-negotiable is the
+**gate**, not the delegation: skipping the adversarial/consultation pass on a
+major output is the failure; implementing a small change yourself is not.
+
 ## 2. Delegation rules (de-chokepoint the PM)
 
 The PM does not personally re-review work that already has a

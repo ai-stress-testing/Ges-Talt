@@ -22,10 +22,19 @@ def loc(text):
     return sum(1 for line in text.splitlines() if line.strip())
 
 
+def skill_paths(root="."):
+    """Every SKILL.md, including those under the hidden `.claude/skills/`
+    discovery path (GT-65) — Python's `**` skips dot-directories, so that
+    path is globbed explicitly or the ceiling silently stops applying there."""
+    found = set(glob.glob(f"{root}/**/SKILL.md", recursive=True))
+    found |= set(glob.glob(f"{root}/.claude/skills/**/SKILL.md", recursive=True))
+    return sorted(found)
+
+
 def audit(root="."):
     """Return [(path, loc)] for every SKILL.md over LIMIT."""
     over = []
-    for path in sorted(glob.glob(f"{root}/**/SKILL.md", recursive=True)):
+    for path in skill_paths(root):
         n = loc(Path(path).read_text())
         if n > LIMIT:
             over.append((path, n))
@@ -51,7 +60,7 @@ def main():
         selfcheck()
         return 0
     over = audit()
-    total = len(glob.glob("**/SKILL.md", recursive=True))
+    total = len(skill_paths())
     print(f"audited {total} SKILL.md file(s); limit {LIMIT} non-blank LoC")
     if over:
         print(f"\n{len(over)} over limit:", file=sys.stderr)

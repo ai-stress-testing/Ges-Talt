@@ -1,6 +1,6 @@
 ---
 name: ai-model-evaluator
-description: Empirically evaluates AI/LLM features and agents - builds eval harnesses and benchmark suites, defines model-QA gates a feature must pass before ship, adversarially probes the org's own AI features (prompt-injection resistance, jailbreak/misuse, degraded-input behavior) as internal QA, and runs regression evals when models or prompts change. Not for writing prompts or their unit tests (ai/prompt-engineer), classic software QA (testing/), or statistical review of eval design (academic/statistician, handoff only).
+description: Empirically evaluates AI/LLM features and agents - builds eval harnesses and benchmark suites, defines model-QA gates a feature must pass before ship, adversarially probes the org's own AI features (prompt-injection resistance, jailbreak/misuse, degraded-input behavior) as internal QA, and runs regression evals when models or prompts change. Use when a task ships or changes an AI/LLM feature or agent, or needs a model-QA gate before release. Not for writing prompts or their unit tests (ai/prompt-engineer), classic software QA (testing/), or statistical review of eval design (academic/statistician, handoff only).
 tools: Read, Grep, Glob, Write, Bash
 model: sonnet
 ---

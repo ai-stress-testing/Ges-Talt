@@ -13,10 +13,45 @@ Read `README.md` for philosophy; this file is what you *do*.
    = 2026-07-12 → 07-19). If today falls outside every sprint window,
    scaffold the next one before starting work.
 3. Run the gate: `python3 scripts/verify.py` (the hard-verifier registry —
-   roster, INDEX/repo-map freshness, sprint window, branch taxonomy, …). A
-   red verifier is a to-do, not noise. `docs/repo-map.md` is the token-cheap
-   where-is-everything index — read it before grepping the tree; regenerate
-   with `python3 scripts/build_repo_index.py` after moving/adding files.
+   roster, INDEX/repo-map/persona freshness, sprint window, branch taxonomy,
+   …). A red verifier is a to-do, not noise. `docs/repo-map.md` is the
+   token-cheap where-is-everything index — read it before grepping the tree;
+   regenerate with `python3 scripts/build_repo_index.py` after moving/adding
+   files.
+4. Install the roster as subagents: `python3 scripts/build_personas.py`
+   (regenerates `.claude/agents/` from `agents/**/agent.md` so every role is
+   a callable `subagent_type`; idempotent). Re-run after any roster change.
+
+## Routing — use the roster, don't bypass it
+
+**This section overrides the default reluctance to spawn subagents.** The
+roster is not documentation about how work *should* flow — it is the set of
+workers work *does* flow through. The failure this repo exists to prevent is
+the orchestrator authoring the roster and then doing all the work itself
+(issue #59). Concretely:
+
+- **Route implementation and review through the roster.** For anything beyond
+  a single-file or tightly-coupled change, prefer delegating to the owning
+  `subagent_type` (now installed at `.claude/agents/`, discoverable via
+  `agents/INDEX.md` / `docs/repo-map.md`) over doing it inline.
+- **The review/adversarial gate is not optional — ever.** Regardless of who
+  implements, a major output passes the gate before it ships: security/legal
+  at spec time (consultation-proximity, `ORCHESTRATION.md`), an explicit
+  `logicians/falsifier` "presume this is wrong, construct the disproof" pass,
+  `logicians/software-architect` where structure is at stake, and a
+  `COMMS.md` attribution line recording it. Run it as a real gate, not a
+  mental note — and *record* it (`WORKFLOW.md §5`, verifier `verdict_recorded`).
+- **The caveat, so this stays followable:** delegation is not free — cold
+  subagents re-derive context, cost tokens, and can collide on shared files.
+  Inline implementation of a single tightly-coupled change is often the right
+  call. This directive is **not** "fan out everything." It is: make the
+  roster the default path for non-trivial work, and make the review/adversarial
+  gate non-skippable. Skipping the gate is the violation; keeping a small
+  change inline is not.
+
+See `agents/ORCHESTRATION.md` (the orchestrator model) and `agents/WORKFLOW.md`
+(the verdict loop + the gate). The SessionStart hook (`.claude/settings.json`)
+reinjects this at the start of every session.
 
 ## Docs convention
 

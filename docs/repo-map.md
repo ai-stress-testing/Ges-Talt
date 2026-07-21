@@ -41,12 +41,13 @@ Agent roster detail is in [`agents/INDEX.md`](../agents/INDEX.md).
 |---|---|
 | `audit_skills.py` | Audit SKILL.md files for the 500-LoC ceiling (issue #43). |
 | `build_index.py` | Generate agents/INDEX.md from agent.md frontmatter, with roster lint. |
+| `build_personas.py` | Generate .claude/agents/<team>-<role>.md from the roster (GT-60). |
 | `build_repo_index.py` | Generate docs/repo-map.md — a compact where-is-everything index. |
 | `credit.py` | Compute per-role selection scores from docs/agent-ledger.jsonl (GT-32). |
 | `init_docs.py` | Scaffold the Ges-Talt docs convention into a repo. Idempotent. |
 | `verify.py` | Hard-verifier registry runner (GT-43). |
 | `verify_comms.py` | Verify agent attribution lines (agents/COMMS.md convention). |
-| `verifiers/` | 11 single-property machines run by `verify.py` — see `verify.py --list`. |
+| `verifiers/` | 14 single-property machines run by `verify.py` — see `verify.py --list`. |
 
 ## Environments (`environments/`)
 
@@ -64,6 +65,7 @@ Agent roster detail is in [`agents/INDEX.md`](../agents/INDEX.md).
 
 | Doc | Purpose |
 |---|---|
+| `agent-triggering.md` | Writing descriptions that actually trigger |
 | `backlog.md` | Backlog |
 | `branching.md` | Branching + worktree convention |
 | `credit.md` | Credit — the selection score (GT-32) |
@@ -82,5 +84,5 @@ Agent roster detail is in [`agents/INDEX.md`](../agents/INDEX.md).
 | `docs/opsec/` | OPSEC — security management |
 | `docs/reviews/` | 2 file(s) |
 | `docs/sprint-7-26-12-19/` | 19 file(s) |
-| `docs/sprint-7-26-20-27/` | 7 file(s) |
+| `docs/sprint-7-26-20-27/` | 8 file(s) |
 | `docs/templates/` | 5 file(s) |

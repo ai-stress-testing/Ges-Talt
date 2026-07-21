@@ -1,6 +1,6 @@
 ---
 name: cd-lifecycle-manager
-description: Owns lifecycle policy for long-lived artifacts - API versions, container images, dependencies, schemas, and (once environments/ is built out) environments/sessions - from introduction through sunset. Sets states, owners, and dates; does not implement the changes. Not for versioning mechanics (backend/api-platform-engineer) or executing infra changes (ci/*, cd/*).
+description: Owns lifecycle policy for long-lived artifacts - API versions, container images, dependencies, schemas, and (once environments/ is built out) environments/sessions - from introduction through sunset. Sets states, owners, and dates; does not implement the changes. Use when a task introduces, deprecates, or sunsets a long-lived artifact, or needs a lifecycle policy/owner assigned. Not for versioning mechanics (backend/api-platform-engineer) or executing infra changes (ci/*, cd/*).
 tools: Read, Grep, Glob, Write
 model: sonnet
 ---
