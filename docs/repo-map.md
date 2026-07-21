@@ -82,5 +82,5 @@ Agent roster detail is in [`agents/INDEX.md`](../agents/INDEX.md).
 | `docs/opsec/` | OPSEC — security management |
 | `docs/reviews/` | 2 file(s) |
 | `docs/sprint-7-26-12-19/` | 19 file(s) |
-| `docs/sprint-7-26-20-27/` | 6 file(s) |
+| `docs/sprint-7-26-20-27/` | 7 file(s) |
 | `docs/templates/` | 5 file(s) |
