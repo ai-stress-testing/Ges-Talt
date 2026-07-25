@@ -20,3 +20,8 @@
 {"task": "red-team-critic role + red-team.md convention (#47)", "role": "security/architect", "model": "sonnet", "tokens": 83065, "sprint": "sprint-7-26-12-19", "verdict": "PASS", "retries": 0}
 {"task": "logicians/agent-evaluator + evals convention (#49)", "role": "logicians/software-architect", "model": "sonnet", "tokens": 58398, "sprint": "sprint-7-26-12-19", "verdict": "PASS", "retries": 0}
 {"task": "networking/nginx-specialist consultant (#51)", "role": "networking/network-engineer", "model": "sonnet", "tokens": 53046, "sprint": "sprint-7-26-12-19", "verdict": "PASS", "retries": 0}
+{"task": "Hermes backend service + minimal chat UI (docker-hermes)", "role": "backend/backend-dev", "model": "sonnet", "tokens": 47846, "sprint": "sprint-7-26-20-27", "verdict": "PASS", "retries": 0}
+{"task": "Hermes Docker/compose containerization (docker-hermes)", "role": "ci/containerization-engineer", "model": "sonnet", "tokens": 90892, "sprint": "sprint-7-26-20-27", "verdict": "PASS", "retries": 0}
+{"task": "Hermes connector falsifier pass, attempt 1 (docker-hermes)", "role": "logicians/falsifier", "model": "opus", "tokens": 52477, "sprint": "sprint-7-26-20-27", "verdict": "PASS", "retries": 0}
+{"task": "Hermes connector appsec review (docker-hermes)", "role": "security/appsec-engineer", "model": "sonnet", "tokens": 54914, "sprint": "sprint-7-26-20-27", "verdict": "PASS", "retries": 0}
+{"task": "Hermes connector falsifier re-verify, attempt 2 (docker-hermes)", "role": "logicians/falsifier", "model": "opus", "tokens": 37184, "sprint": "sprint-7-26-20-27", "verdict": "PASS", "retries": 1}

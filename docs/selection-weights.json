@@ -3,31 +3,43 @@
     "mean_tokens": 54575.0,
     "pass_rate": null,
     "sample_count": 1,
-    "score": 0.4568
+    "score": 0.4316
+  },
+  "backend/backend-dev": {
+    "mean_tokens": 47846.0,
+    "pass_rate": 1.0,
+    "sample_count": 1,
+    "score": 0.4788
+  },
+  "ci/containerization-engineer": {
+    "mean_tokens": 90892.0,
+    "pass_rate": 1.0,
+    "sample_count": 1,
+    "score": 0.1766
   },
   "design/technical-writer": {
     "mean_tokens": 64751.0,
     "pass_rate": null,
     "sample_count": 1,
-    "score": 0.3811
+    "score": 0.3601
   },
   "design/ux-architect": {
     "mean_tokens": 83038.0,
     "pass_rate": null,
     "sample_count": 1,
-    "score": 0.2452
+    "score": 0.2317
   },
   "devops/devops-automator": {
     "mean_tokens": 72961.3,
     "pass_rate": 1.0,
     "sample_count": 3,
-    "score": 0.1701
+    "score": 0.3025
   },
   "devops/lifecycle-manager": {
     "mean_tokens": 48758.0,
     "pass_rate": null,
     "sample_count": 1,
-    "score": 0.5
+    "score": 0.4724
   },
   "logicians/code-reviewer": {
     "mean_tokens": 116034.0,
@@ -35,28 +47,40 @@
     "sample_count": 1,
     "score": 0.0
   },
+  "logicians/falsifier": {
+    "mean_tokens": 44830.5,
+    "pass_rate": 1.0,
+    "sample_count": 2,
+    "score": 0.2
+  },
   "logicians/software-architect": {
     "mean_tokens": 75295.8,
     "pass_rate": 1.0,
     "sample_count": 5,
-    "score": 0.1528
+    "score": 0.2861
   },
   "networking/network-engineer": {
     "mean_tokens": 53046.0,
     "pass_rate": 1.0,
     "sample_count": 1,
-    "score": 0.3181
+    "score": 0.4423
   },
   "pm/team-operations": {
     "mean_tokens": 64574.3,
     "pass_rate": 1.0,
     "sample_count": 3,
-    "score": 0.2325
+    "score": 0.3614
+  },
+  "security/appsec-engineer": {
+    "mean_tokens": 54914.0,
+    "pass_rate": 1.0,
+    "sample_count": 1,
+    "score": 0.4292
   },
   "security/architect": {
     "mean_tokens": 69244.4,
     "pass_rate": 1.0,
     "sample_count": 5,
-    "score": 0.1977
+    "score": 0.3286
   }
 }

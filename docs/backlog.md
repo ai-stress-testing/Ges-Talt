@@ -78,3 +78,4 @@ Status: todo / in-progress / blocked / done.
 | GT-70 | scripts/new_sprint_log.py — stamp dated sprint-log entry from template w/ run-manifest header prefilled | pm/program-tracker | sprint-7-26-20-27 | todo | [#70](https://github.com/ai-stress-testing/Ges-Talt/issues/70) |
 | GT-71 | scripts/ship.py — push dev + fast-forward main with backoff, guarded (never force) | ci/pipeline-engineer | sprint-7-26-20-27 | todo | [#71](https://github.com/ai-stress-testing/Ges-Talt/issues/71) |
 | GT-72 | scripts/backlog.py — add row / flip status in canonical table (lowest priority; content is prose) | pm/project-manager | sprint-7-26-20-27 | todo | [#72](https://github.com/ai-stress-testing/Ges-Talt/issues/72) |
+| GT-73 | Hermes Local LM Studio Connector MVP (backend + UI + Docker Compose stack, `docker-hermes` repo) | backend/backend-dev, ci/containerization-engineer | sprint-7-26-20-27 | done | — |
