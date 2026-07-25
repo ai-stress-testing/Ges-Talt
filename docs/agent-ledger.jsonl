@@ -25,3 +25,9 @@
 {"task": "Hermes connector falsifier pass, attempt 1 (docker-hermes)", "role": "logicians/falsifier", "model": "opus", "tokens": 52477, "sprint": "sprint-7-26-20-27", "verdict": "PASS", "retries": 0}
 {"task": "Hermes connector appsec review (docker-hermes)", "role": "security/appsec-engineer", "model": "sonnet", "tokens": 54914, "sprint": "sprint-7-26-20-27", "verdict": "PASS", "retries": 0}
 {"task": "Hermes connector falsifier re-verify, attempt 2 (docker-hermes)", "role": "logicians/falsifier", "model": "opus", "tokens": 37184, "sprint": "sprint-7-26-20-27", "verdict": "PASS", "retries": 1}
+{"task": "Nous Hermes agent harness, discarded artifact (docker-hermes)", "role": "ai/ai-engineer", "model": "sonnet", "tokens": 51100, "sprint": "sprint-7-26-20-27", "verdict": "PASS", "retries": 0}
+{"task": "Nous Hermes sandbox containerization, discarded artifact (docker-hermes)", "role": "ci/containerization-engineer", "model": "sonnet", "tokens": 26543, "sprint": "sprint-7-26-20-27", "verdict": "PASS", "retries": 0}
+{"task": "Nous Hermes sandbox falsifier, round 1 on discarded artifact (docker-hermes)", "role": "logicians/falsifier", "model": "opus", "tokens": 44365, "sprint": "sprint-7-26-20-27", "verdict": "PASS", "retries": 0}
+{"task": "Nous Hermes sandbox appsec, round 1 on discarded artifact (docker-hermes)", "role": "security/appsec-engineer", "model": "sonnet", "tokens": 36614, "sprint": "sprint-7-26-20-27", "verdict": "PASS", "retries": 0}
+{"task": "Real nousresearch/hermes-agent deployment falsifier, round 2 (docker-hermes)", "role": "logicians/falsifier", "model": "opus", "tokens": 32167, "sprint": "sprint-7-26-20-27", "verdict": "PASS", "retries": 0}
+{"task": "Real nousresearch/hermes-agent deployment appsec, round 2 (docker-hermes)", "role": "security/appsec-engineer", "model": "sonnet", "tokens": 24435, "sprint": "sprint-7-26-20-27", "verdict": "PASS", "retries": 0}

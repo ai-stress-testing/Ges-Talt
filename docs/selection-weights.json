@@ -1,45 +1,51 @@
 {
+  "ai/ai-engineer": {
+    "mean_tokens": 51100.0,
+    "pass_rate": 1.0,
+    "sample_count": 1,
+    "score": 0.4196
+  },
   "ai/model-evaluator": {
     "mean_tokens": 54575.0,
     "pass_rate": null,
     "sample_count": 1,
-    "score": 0.4316
+    "score": 0.3971
   },
   "backend/backend-dev": {
     "mean_tokens": 47846.0,
     "pass_rate": 1.0,
     "sample_count": 1,
-    "score": 0.4788
+    "score": 0.4406
   },
   "ci/containerization-engineer": {
-    "mean_tokens": 90892.0,
+    "mean_tokens": 58717.5,
     "pass_rate": 1.0,
-    "sample_count": 1,
-    "score": 0.1766
+    "sample_count": 2,
+    "score": 0.3704
   },
   "design/technical-writer": {
     "mean_tokens": 64751.0,
     "pass_rate": null,
     "sample_count": 1,
-    "score": 0.3601
+    "score": 0.3314
   },
   "design/ux-architect": {
     "mean_tokens": 83038.0,
     "pass_rate": null,
     "sample_count": 1,
-    "score": 0.2317
+    "score": 0.2132
   },
   "devops/devops-automator": {
     "mean_tokens": 72961.3,
     "pass_rate": 1.0,
     "sample_count": 3,
-    "score": 0.3025
+    "score": 0.2783
   },
   "devops/lifecycle-manager": {
     "mean_tokens": 48758.0,
     "pass_rate": null,
     "sample_count": 1,
-    "score": 0.4724
+    "score": 0.4347
   },
   "logicians/code-reviewer": {
     "mean_tokens": 116034.0,
@@ -48,39 +54,39 @@
     "score": 0.0
   },
   "logicians/falsifier": {
-    "mean_tokens": 44830.5,
+    "mean_tokens": 41548.2,
     "pass_rate": 1.0,
-    "sample_count": 2,
-    "score": 0.2
+    "sample_count": 4,
+    "score": 0.1813
   },
   "logicians/software-architect": {
     "mean_tokens": 75295.8,
     "pass_rate": 1.0,
     "sample_count": 5,
-    "score": 0.2861
+    "score": 0.2632
   },
   "networking/network-engineer": {
     "mean_tokens": 53046.0,
     "pass_rate": 1.0,
     "sample_count": 1,
-    "score": 0.4423
+    "score": 0.407
   },
   "pm/team-operations": {
     "mean_tokens": 64574.3,
     "pass_rate": 1.0,
     "sample_count": 3,
-    "score": 0.3614
+    "score": 0.3325
   },
   "security/appsec-engineer": {
-    "mean_tokens": 54914.0,
+    "mean_tokens": 38654.3,
     "pass_rate": 1.0,
-    "sample_count": 1,
-    "score": 0.4292
+    "sample_count": 3,
+    "score": 0.5
   },
   "security/architect": {
     "mean_tokens": 69244.4,
     "pass_rate": 1.0,
     "sample_count": 5,
-    "score": 0.3286
+    "score": 0.3023
   }
 }
