@@ -3,31 +3,31 @@
     "mean_tokens": 54575.0,
     "pass_rate": null,
     "sample_count": 1,
-    "score": 0.4568
+    "score": 0.297
   },
   "design/technical-writer": {
     "mean_tokens": 64751.0,
     "pass_rate": null,
     "sample_count": 1,
-    "score": 0.3811
+    "score": 0.2478
   },
   "design/ux-architect": {
     "mean_tokens": 83038.0,
     "pass_rate": null,
     "sample_count": 1,
-    "score": 0.2452
+    "score": 0.1594
   },
   "devops/devops-automator": {
     "mean_tokens": 72961.3,
     "pass_rate": 1.0,
     "sample_count": 3,
-    "score": 0.1701
+    "score": 0.5581
   },
   "devops/lifecycle-manager": {
     "mean_tokens": 48758.0,
     "pass_rate": null,
     "sample_count": 1,
-    "score": 0.5
+    "score": 0.3251
   },
   "logicians/code-reviewer": {
     "mean_tokens": 116034.0,
@@ -39,24 +39,30 @@
     "mean_tokens": 75295.8,
     "pass_rate": 1.0,
     "sample_count": 5,
-    "score": 0.1528
+    "score": 0.5468
   },
   "networking/network-engineer": {
     "mean_tokens": 53046.0,
     "pass_rate": 1.0,
     "sample_count": 1,
-    "score": 0.3181
+    "score": 0.6544
   },
   "pm/team-operations": {
     "mean_tokens": 64574.3,
     "pass_rate": 1.0,
     "sample_count": 3,
-    "score": 0.2325
+    "score": 0.5987
   },
   "security/architect": {
     "mean_tokens": 69244.4,
     "pass_rate": 1.0,
     "sample_count": 5,
-    "score": 0.1977
+    "score": 0.5761
+  },
+  "security/red-team-critic": {
+    "mean_tokens": 12557.0,
+    "pass_rate": 0.0,
+    "sample_count": 1,
+    "score": -0.15
   }
 }

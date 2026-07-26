@@ -20,3 +20,4 @@
 {"task": "red-team-critic role + red-team.md convention (#47)", "role": "security/architect", "model": "sonnet", "tokens": 83065, "sprint": "sprint-7-26-12-19", "verdict": "PASS", "retries": 0}
 {"task": "logicians/agent-evaluator + evals convention (#49)", "role": "logicians/software-architect", "model": "sonnet", "tokens": 58398, "sprint": "sprint-7-26-12-19", "verdict": "PASS", "retries": 0}
 {"task": "networking/nginx-specialist consultant (#51)", "role": "networking/network-engineer", "model": "sonnet", "tokens": 53046, "sprint": "sprint-7-26-12-19", "verdict": "PASS", "retries": 0}
+{"task": "red-team the API hardening checklist (#7/#56) for coverage gaps", "role": "security/red-team-critic", "model": "opus", "tokens": 12557, "sprint": "sprint-7-26-20-27", "verdict": "FAIL", "retries": 0}

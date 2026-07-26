@@ -27,6 +27,15 @@ infra vs. the network/detection layer).
 - [`senior-secops/`](senior-secops/) — PR-level gate: secrets/sensitive-
   data scan first, then implements or audits controls (auth, headers,
   CORS, rate limiting, CSP, logging) against the org's security standard.
+- [`api-security-verifier/`](api-security-verifier/) — the dedicated API
+  verification (APIs are critical-path, issue #74): runs the
+  `api-hardening-review` skill item-by-item and returns a PASS/FAIL/N-A
+  verdict with evidence across authorization/BOLA, transport/crypto, tokens,
+  I/O hygiene, headers, rate limiting, geo scoring, and canary/deception.
+  Read-only — hands runtime probes to `testing/api-tester`, fixes to the
+  owning implementer, adversarial depth to `red-team-critic`/`falsifier`.
+  Distilled from issues [#7](https://github.com/ai-stress-testing/Ges-Talt/issues/7)
+  and [#56](https://github.com/ai-stress-testing/Ges-Talt/issues/56).
 - [`compliance-auditor/`](compliance-auditor/) — SOC 2 / ISO 27001 /
   HIPAA / PCI-DSS readiness assessment, gap tracking, evidence packages.
 - [`regulated-data-specialist/`](regulated-data-specialist/) — technical

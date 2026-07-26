@@ -44,7 +44,7 @@ an append-only log.
 
 - Teams (15): academic, ai, backend, cd, ci, data, design, frontend,
   legal, logicians, mx, networking, pm, security, testing
-  — see `agents/INDEX.md` (generated, 105 agents total).
+  — see `agents/INDEX.md` (generated, 106 agents total).
 - Role kinds (by tool grant, not team):
   - **implementer** — Read/Edit/Write/Bash(+Grep/Glob); ships diffs
     (e.g. `backend/backend-dev`, `frontend/react-dev`, `cd/sre`).

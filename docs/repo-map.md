@@ -32,7 +32,7 @@ Agent roster detail is in [`agents/INDEX.md`](../agents/INDEX.md).
 | [`mx`](agents/mx/) | 3 | MX — Multi-Experience |
 | [`networking`](agents/networking/) | 4 | Networking Team |
 | [`pm`](agents/pm/) | 7 | PM Team |
-| [`security`](agents/security/) | 20 | Security Team |
+| [`security`](agents/security/) | 21 | Security Team |
 | [`testing`](agents/testing/) | 8 | Testing |
 
 ## Scripts (`scripts/`)
@@ -84,5 +84,5 @@ Agent roster detail is in [`agents/INDEX.md`](../agents/INDEX.md).
 | `docs/opsec/` | OPSEC — security management |
 | `docs/reviews/` | 2 file(s) |
 | `docs/sprint-7-26-12-19/` | 19 file(s) |
-| `docs/sprint-7-26-20-27/` | 10 file(s) |
+| `docs/sprint-7-26-20-27/` | 11 file(s) |
 | `docs/templates/` | 5 file(s) |
