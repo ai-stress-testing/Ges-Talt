@@ -1,7 +1,14 @@
 # Ges-Talt
 
+[![gate](https://github.com/ai-stress-testing/ges-talt/actions/workflows/gate.yml/badge.svg)](https://github.com/ai-stress-testing/ges-talt/actions/workflows/gate.yml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![deps: stdlib-only](https://img.shields.io/badge/deps-stdlib--only-brightgreen.svg)](docs/for-ai-agents.md)
+
 Personal Claude Code staging environment: agents, skills, and the config that
 runs them.
+
+New here (human or agent)? Start with **[`docs/for-ai-agents.md`](docs/for-ai-agents.md)**
+— architecture, setup, common commands, and troubleshooting.
 
 ## Philosophy
 

@@ -1,0 +1,19 @@
+name: gate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      # --check verifies without regenerating: a green run asserts the derived
+      # files (INDEX, repo-map, personas) are already in sync AND every lint +
+      # verifier passes. This is the T1 tier (docs/testing-tiers.md) and the
+      # source of the build badge in README.md.
+      - run: python3 scripts/gate.py --check

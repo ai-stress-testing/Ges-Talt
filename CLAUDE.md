@@ -73,6 +73,23 @@ reinjects this at the start of every session.
 - `docs/sprint-*/user-journeys/` — one file per journey
   (template: `docs/templates/user-journey.md`).
 
+**Delivery conventions the agency hands to a target repo** (the SDLC
+hand-off kit, #79–#92 — templates/conventions/verifiers, not filled-in
+artifacts for this meta-repo):
+- `docs/definition-of-done.md` — the one named DoD (cross-refs the gates,
+  risk-tiered per #74); `docs/traceability.md` — the requirement→test chain
+  (verifier `traceability`); `docs/doc-metadata.md` — the `owner`/
+  `last_validated` marker (verifier `doc_freshness`).
+- `docs/prioritization.md`, `docs/blueprinting.md`, `docs/testing-tiers.md`,
+  `docs/risk-register.md`, `docs/accountability.md` — the PM/design/testing/
+  risk/ownership conventions.
+- `docs/templates/` — `adr.md` (+ `scripts/new_adr.py` → `docs/adr/`),
+  `srs.md`, `design-spec.md`, `erd.md`, `release-decision.md`,
+  `risk-assessment.md`, `vulnerability-assessment.md`, `customer-feedback.md`.
+- `.claude/skills/release-readiness` — the go/no-go gate procedure.
+- New to the repo? Read `docs/for-ai-agents.md` (architecture, setup,
+  commands, troubleshooting).
+
 ## Workflow (spec-driven)
 
 A user goal enters through `agents/pm/project-manager` (opus,

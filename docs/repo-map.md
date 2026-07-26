@@ -49,11 +49,12 @@ Agent roster detail is in [`agents/INDEX.md`](../agents/INDEX.md).
 | `extract_text.py` | Extract text from a PDF, trying whichever extractor is actually installed. |
 | `gate.py` | One command runs the whole regenerate+verify pipeline, in order (#68). |
 | `init_docs.py` | Scaffold the Ges-Talt docs convention into a repo. Idempotent. |
+| `new_adr.py` | Stamp a new Architecture Decision Record + rebuild the ADR index (#81). |
 | `new_sprint_log.py` | Stamp a new sprint-log entry from the template (issue #70). |
 | `ship.py` | Push the current branch to origin, guarded (issue #71). |
 | `verify.py` | Hard-verifier registry runner (GT-43). |
 | `verify_comms.py` | Verify agent attribution lines (agents/COMMS.md convention). |
-| `verifiers/` | 14 single-property machines run by `verify.py` — see `verify.py --list`. |
+| `verifiers/` | 16 single-property machines run by `verify.py` — see `verify.py --list`. |
 
 ## Environments (`environments/`)
 
@@ -71,24 +72,34 @@ Agent roster detail is in [`agents/INDEX.md`](../agents/INDEX.md).
 
 | Doc | Purpose |
 |---|---|
+| `accountability.md` | Accountability layer (#92, adopted from #78) |
 | `agent-triggering.md` | Writing descriptions that actually trigger |
 | `backlog.md` | Backlog |
+| `blueprinting.md` | Blueprinting — communicating system intent before implementation (#83) |
 | `branching.md` | Branching + worktree convention |
 | `credit.md` | Credit — the selection score (GT-32) |
+| `definition-of-done.md` | Definition of Done (#86) |
 | `depth-packs.md` | Depth packs — depth without a per-call token tax |
+| `doc-metadata.md` | Doc metadata + staleness (#89) |
 | `enterprise.md` | Enterprise Doc — Ges-Talt |
 | `feedback-loop.md` | From feedforward to feedback |
 | `fitness-functions.md` | Architectural fitness functions |
+| `for-ai-agents.md` | README for AI agents + operational readiness (#88) |
 | `model-tiers.md` | Model tiers (GT-33) |
+| `prioritization.md` | Prioritization — a documented framework before sub-issues are cut (#85) |
 | `repo-map.md` | Repo map |
+| `risk-register.md` | Unified risk register (#90) |
 | `routines-ideas.md` | Routines — brainstorm |
+| `testing-tiers.md` | Testing tiers — risk-based, cost-aware (#87) |
+| `traceability.md` | Traceability — closing the downstream half (#80) |
 | `triage-enterprise-enhancements.md` | Triage — Enterprise Enhancements (issue #16) |
 
 | Doc dir | Contents |
 |---|---|
+| `docs/adr/` | Architecture Decision Records |
 | `docs/evals/` | Agent evals — one directory per team |
 | `docs/opsec/` | OPSEC — security management |
 | `docs/reviews/` | 3 file(s) |
 | `docs/sprint-7-26-12-19/` | 19 file(s) |
-| `docs/sprint-7-26-20-27/` | 13 file(s) |
-| `docs/templates/` | 5 file(s) |
+| `docs/sprint-7-26-20-27/` | 14 file(s) |
+| `docs/templates/` | 13 file(s) |

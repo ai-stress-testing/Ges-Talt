@@ -160,10 +160,20 @@ properties it touches are green, the same way `build_index.py` /
 Seed registry (run `python3 scripts/verify.py --list`): roster pairing,
 reason-tier read-only boundary, handoff-reference resolution, INDEX
 freshness, ledger well-formedness, tools-baseline containment, current
-sprint window, branch taxonomy (`docs/branching.md`), and repo-map
-freshness. These secure the agent org itself (`hard-verifiers.md`: "the
-machine that secures the machines"); target repos drop their own
-domain verifiers into the same `scripts/verifiers/` registry.
+sprint window, branch taxonomy (`docs/branching.md`), repo-map
+freshness, **downstream traceability** (`traceability` — every
+requirement/AC terminates in a test, `docs/traceability.md`), and
+**doc freshness** (`doc_freshness` — governed convention docs carry a
+non-stale `owner`/`last_validated` marker, `docs/doc-metadata.md`). These
+secure the agent org itself (`hard-verifiers.md`: "the machine that
+secures the machines"); target repos drop their own domain verifiers into
+the same `scripts/verifiers/` registry.
+
+The consolidated **Definition of Done** (`docs/definition-of-done.md`)
+names, in one place, every gate a major output clears — this verifier gate,
+the risk-tiered §1 review, traceability, and the recorded verdict. For a
+release, the go/no-go is recorded via the `release-readiness` skill
+(`docs/templates/release-decision.md`).
 
 ## 6. Pre-PR comprehension check (issue #73)
 

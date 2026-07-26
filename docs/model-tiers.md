@@ -1,3 +1,4 @@
+<!-- owner: ai/multi-agent-systems-architect · last_validated: 2026-07-26 -->
 # Model tiers (GT-33)
 
 ## Why
@@ -20,6 +21,7 @@ the tier resolves to a concrete model in one place. Provider sovereignty
 | `reason` | `claude-opus-4-8` | reasoning-bound roles: static review, architecture, threat modeling |
 | `build` | `claude-sonnet-5` | implementation roles — the common case |
 | `cheap` | `claude-haiku-4-5-20251001` | high-volume/low-complexity roles |
+| `local` | `qwen-3.5-32b-local` | air-gapped/local SLM work: bulk extraction, summarization, pattern-level remediation (#91) |
 
 Aliases (readable shorthands, resolve to the same current ids):
 `opus` → `claude-opus-4-8`, `sonnet` → `claude-sonnet-5`,
@@ -49,6 +51,42 @@ literal string "opus", so it survives a generation bump).
 (`model: sonnet` -> `model: build`). All other roles keep their concrete
 model id for now; migrating the rest of the roster is a follow-on, not
 part of this change.
+
+## Escalation ladder (#91, adopted from #78)
+
+#78's alternative org repeats the *same function* at 4–5 model tiers (sr/mid/
+jr/entry → fable/qwen/terra/luna). That is the insight worth taking — **cheaper
+model tiers for cheaper work** — without the cost: 4–5 roles per function is
+duplication and a chokepoint. Ges-Talt adopts the *granularity* **within a
+single role**, not by cloning the role.
+
+**The convention.** A role may route a task to the **cheapest tier that can do
+it and escalate only on complexity**, rather than pinning one model for every
+invocation:
+
+```
+local  →  cheap  →  build  →  reason
+(bulk)    (haiku)   (sonnet)  (opus)
+```
+
+- **Default down.** Start at the cheapest tier the task plausibly fits (a
+  bulk-extraction pass starts at `local`/`cheap`, not `build`).
+- **Escalate on a trigger, not by default.** Escalate one rung when the task
+  exhibits a complexity signal — ambiguity, a failed cheaper attempt, a
+  critical-path blast radius (which also pulls in the #74 review tier), or a
+  `DEPTH.md` depth trigger (`docs/depth-packs.md`). An always-escalating role
+  is a *miscalibration*, visible in the ledger.
+- **Measured, self-correcting.** Every escalation is a real delegated run in
+  `docs/agent-ledger.jsonl`; `scripts/credit.py` → `docs/credit.md` surfaces a
+  role whose escalation frequency doesn't match its work, so the ladder tunes
+  itself through the feedback loop (`docs/feedback-loop.md`) instead of being
+  asserted once.
+
+**What this is not.** Not 4–5 roles per function (#78's duplication — rejected).
+Not a requirement that local infra exist: the `local` tier is a declarable
+abstraction now; provisioning a real local model is a follow-on, and until then
+a role that would use `local` falls back to `cheap` without any roster change
+(one edit in `models.toml`).
 
 ## Ownership
 

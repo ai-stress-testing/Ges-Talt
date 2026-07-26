@@ -5,6 +5,25 @@
 **Goal**: one sentence tying this issue to the user goal it serves. If it
 doesn't trace to the PRD or a user journey, it doesn't get created.
 
+## RACI (#84)
+
+Formalizes the roles the mesh already implies — record them, don't leave them
+tacit. Every initiative names its **Accountable** head (`docs/accountability.md`)
+so the "A" resolves without inventing a manager tier.
+
+| Role | Who | Notes |
+|---|---|---|
+| **Responsible** (does the work) | `agents/<team>/<role>` (the assignee) | one per sub-issue |
+| **Accountable** (owns the outcome) | `security/architect` (CISO) / `legal/general-counsel` (CLO) / `pm/delivery-lead` (delivery) — pick the domain head | exactly one A |
+| **Consulted** (2-way) | the consultation-proximity clique for this work (`agents/ORCHESTRATION.md`) — e.g. `security/*`, `legal/*` at spec time | record it, it's the C |
+| **Informed** (1-way) | status-report recipients (`pm/program-tracker`, the owner) | |
+
+**Named ownership** (per initiative, maps onto existing roster roles):
+Executive Sponsor = repo owner · Product Owner = `pm/project-manager` ·
+Engineering Lead = `logicians/software-architect` (or `backend/backend-architect`
+for a backend-scoped initiative) · Design Lead = `design/ux-architect` ·
+Marketing/launch = `design/brand-guardian` (if applicable).
+
 ## Spec
 
 What must be true when this issue closes — contracts, constraints,

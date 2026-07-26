@@ -25,6 +25,15 @@ reason = "claude-opus-4-8"
 build = "claude-sonnet-5"
 # cheap  - high-volume / low-complexity roles (extraction, summarization).
 cheap = "claude-haiku-4-5-20251001"
+# local  - high-volume, low-complexity work that can run on an air-gapped /
+#          local SLM (bulk extraction, summarization, pattern-level data
+#          remediation — ai/ai-data-remediation-engineer already references
+#          local/air-gapped SLMs). The bottom rung of the escalation ladder
+#          (docs/model-tiers.md, #91): route here first for cheap work, escalate
+#          on complexity. A tier abstraction that may precede provisioning — the
+#          id is a placeholder until local infra exists; nothing requires the
+#          model to be reachable for the tier to be declarable.
+local = "qwen-3.5-32b-local"
 
 [aliases]
 # Human-readable shorthands still valid in frontmatter; they resolve to the
@@ -34,3 +43,6 @@ opus = "claude-opus-4-8"
 sonnet = "claude-sonnet-5"
 haiku = "claude-haiku-4-5-20251001"
 fable = "claude-fable-5"
+# `local` doubles as a readable alias so a role can write `model: local` and
+# the roster displays "local" rather than the raw placeholder id.
+local = "qwen-3.5-32b-local"
