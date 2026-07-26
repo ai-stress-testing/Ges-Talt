@@ -3,73 +3,73 @@
     "mean_tokens": 54575.0,
     "pass_rate": null,
     "sample_count": 1,
-    "score": 0.297
+    "score": 0.2917
   },
   "ci/pipeline-engineer": {
     "mean_tokens": 113424.0,
     "pass_rate": 1.0,
     "sample_count": 1,
-    "score": 0.3626
+    "score": 0.35
   },
   "data/data-engineer": {
     "mean_tokens": 51384.0,
     "pass_rate": 1.0,
     "sample_count": 1,
-    "score": 0.6624
+    "score": 0.6575
   },
   "design/technical-writer": {
     "mean_tokens": 64751.0,
     "pass_rate": null,
     "sample_count": 1,
-    "score": 0.2478
+    "score": 0.2413
   },
   "design/ux-architect": {
     "mean_tokens": 83038.0,
     "pass_rate": null,
     "sample_count": 1,
-    "score": 0.1594
+    "score": 0.1506
   },
   "devops/devops-automator": {
     "mean_tokens": 72961.3,
     "pass_rate": 1.0,
     "sample_count": 3,
-    "score": 0.5581
+    "score": 0.5506
   },
   "devops/lifecycle-manager": {
     "mean_tokens": 48758.0,
     "pass_rate": null,
     "sample_count": 1,
-    "score": 0.3251
+    "score": 0.3206
   },
   "logicians/code-reviewer": {
-    "mean_tokens": 116034.0,
-    "pass_rate": null,
-    "sample_count": 1,
-    "score": 0.0
+    "mean_tokens": 88753.5,
+    "pass_rate": 1.0,
+    "sample_count": 2,
+    "score": 0.4723
   },
   "logicians/software-architect": {
-    "mean_tokens": 75295.8,
+    "mean_tokens": 73338.5,
     "pass_rate": 1.0,
-    "sample_count": 5,
-    "score": 0.5468
+    "sample_count": 6,
+    "score": 0.5487
   },
   "networking/network-engineer": {
     "mean_tokens": 53046.0,
     "pass_rate": 1.0,
     "sample_count": 1,
-    "score": 0.6544
+    "score": 0.6493
   },
   "pm/team-operations": {
-    "mean_tokens": 64574.3,
+    "mean_tokens": 62897.5,
     "pass_rate": 1.0,
-    "sample_count": 3,
-    "score": 0.5987
+    "sample_count": 4,
+    "score": 0.6005
   },
   "security/architect": {
     "mean_tokens": 69244.4,
     "pass_rate": 1.0,
     "sample_count": 5,
-    "score": 0.5761
+    "score": 0.569
   },
   "security/red-team-critic": {
     "mean_tokens": 12557.0,

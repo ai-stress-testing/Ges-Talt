@@ -23,3 +23,6 @@
 {"task": "red-team the API hardening checklist (#7/#56) for coverage gaps", "role": "security/red-team-critic", "model": "opus", "tokens": 12557, "sprint": "sprint-7-26-20-27", "verdict": "FAIL", "retries": 0}
 {"task": "scripts/extract_text.py + setup-tools.sh (#69, PDF->text + provisioning)", "role": "data/data-engineer", "model": "sonnet", "tokens": 51384, "sprint": "sprint-7-26-20-27", "verdict": "PASS", "retries": 0}
 {"task": "scripts/gate.py + ship.py + new_sprint_log.py + backlog.py + _cli.py (#68/#70/#71/#72)", "role": "ci/pipeline-engineer", "model": "sonnet", "tokens": 113424, "sprint": "sprint-7-26-20-27", "verdict": "PASS", "retries": 0}
+{"task": "audit agency vs Intake checklist (#75) — gap analysis", "role": "pm/team-operations", "model": "sonnet", "tokens": 57867, "sprint": "sprint-7-26-20-27", "verdict": "PASS", "retries": 0}
+{"task": "audit agency vs Design/Systems checklist (#76) — gap analysis", "role": "logicians/software-architect", "model": "opus", "tokens": 63552, "sprint": "sprint-7-26-20-27", "verdict": "PASS", "retries": 0}
+{"task": "audit agency vs Dev/Release checklist (#77) — gap analysis", "role": "logicians/code-reviewer", "model": "opus", "tokens": 61473, "sprint": "sprint-7-26-20-27", "verdict": "PASS", "retries": 0}
