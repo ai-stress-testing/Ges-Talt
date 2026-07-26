@@ -50,6 +50,33 @@ Teams can nest sub-roles (see `agents/frontend/`: `designer/` and
 `backend/`, `networking/`, and `logicians/` were started here — one role is
 enough to start; add siblings as the subclass grows.
 
+## What interacting with Ges-Talt might look like
+
+A goal comes in; the orchestrator names the owning role, routes to it, and
+records the verdict. Kept deliberately small:
+
+```
+you ▸ Add rate limiting to the public API.
+
+Ges-Talt ▸ APIs are critical-path (#74), so this routes to the API owner
+           and gets the hardening gate, not a rubber stamp.
+
+           → Agent(subagent_type="backend-api-platform-engineer",
+                   "add token-bucket rate limiting to the public API")
+           ← implemented: per-key limiter + 429s + retry-after   (sonnet, 41,203 tok)
+
+           → Skill("api-hardening-review")   # required gate for an API
+           ← PASS 22/23 · 1 FAIL: limiter trusts a client X-Forwarded-For header
+
+           Fixed the spoofable header, re-ran: PASS 23/23. Verdict recorded
+           (ledger + run-manifest). gate.py green. Want me to open a PR?
+```
+
+The shape is always the same: **route to the role that owns it → gate at a
+depth that matches the blast radius → record the outcome.** A lower-risk
+change skips the falsifier/hardening pass and takes the lint/test gate
+(`scripts/gate.py`) instead — same loop, cheaper rung.
+
 ## Provenance
 
 Structural inspiration from two of my other repos:
