@@ -34,13 +34,17 @@ the orchestrator authoring the roster and then doing all the work itself
   a single-file or tightly-coupled change, prefer delegating to the owning
   `subagent_type` (now installed at `.claude/agents/`, discoverable via
   `agents/INDEX.md` / `docs/repo-map.md`) over doing it inline.
-- **The review/adversarial gate is not optional — ever.** Regardless of who
-  implements, a major output passes the gate before it ships: security/legal
-  at spec time (consultation-proximity, `ORCHESTRATION.md`), an explicit
-  `logicians/falsifier` "presume this is wrong, construct the disproof" pass,
-  `logicians/software-architect` where structure is at stake, and a
-  `COMMS.md` attribution line recording it. Run it as a real gate, not a
-  mental note — and *record* it (`WORKFLOW.md §5`, verifier `verdict_recorded`).
+- **A major output carries a recorded, risk-appropriate verdict.** Regardless
+  of who implements, before it ships: security/legal at spec time
+  (consultation-proximity, `ORCHESTRATION.md`), then a review pass whose depth
+  scales with blast radius (issue #74) — the `logicians/falsifier` "presume
+  this is wrong" pass for **critical systems** (auth, API, payments, crypto/
+  secrets, irreversible/data-loss ops), and the linter/test-suite gate
+  (`scripts/verify.py` + `testing/`, Playwright E2E where a UI/flow is
+  involved) standing in for everything else. Record the outcome either way (a
+  `COMMS.md` line + the run-manifest `verdicts:` field; `WORKFLOW.md §5`,
+  verifier `verdict_recorded`). Don't spend the opus falsifier on a routine
+  change a linter covers, and don't ship a major output with no verdict.
 - **The caveat, so this stays followable:** delegation is not free — cold
   subagents re-derive context, cost tokens, and can collide on shared files.
   Inline implementation of a single tightly-coupled change is often the right

@@ -50,14 +50,28 @@ review/adversarial gate runs before it ships, and is *recorded*:
 - **Consultation-proximity at spec time** — security (OPSEC) and legal
   constraints enter before implementation, in the proximity order of
   `ORCHESTRATION.md`. Recorded, not assumed.
-- **The adversarial pass** — an explicit `logicians/falsifier` "presume this
-  is wrong, construct the disproof" pass before any PASS is declared; its
-  result is written down (PASS with attempts listed, or the counterexample).
-  `logicians/software-architect` joins where structure is at stake.
-- **The recording** — the outcome lands in the sprint-log run-manifest's
-  `verdicts:` field and a `COMMS.md` attribution line. "I considered it
-  informally" does not count; the criterion is the artifact. `§5`'s
-  `verdict_recorded` verifier gates exactly this.
+- **The review pass, risk-tiered** (issue #74) — the *depth* of review scales
+  with blast radius, because the `logicians/falsifier` pass is expensive
+  (opus, adversarial) and firing it on every change is the over-triggering the
+  owner flagged:
+  - **Critical systems** — authentication/authorization, API boundaries,
+    payments/billing, crypto/secrets, irreversible or data-loss operations —
+    get the explicit `logicians/falsifier` "presume this is wrong, construct
+    the disproof" pass, result written down (PASS with attempts listed, or the
+    counterexample). `logicians/software-architect` joins where structure is
+    at stake.
+  - **Lower-risk changes** — the linter/test-suite gate stands in for the
+    falsifier: `scripts/verify.py` (+ `scripts/gate.py` once it lands) plus
+    the relevant `testing/` role. Prefer **Playwright E2E**
+    (`testing/test-automation-engineer`) as the empirical gate wherever a
+    UI/flow is involved — use it in more cases, not fewer. No falsifier pass
+    is required for these; the gate's PASS is the verdict.
+- **The recording** — either way the outcome lands in the sprint-log
+  run-manifest's `verdicts:` field and a `COMMS.md` attribution line ("lint +
+  Playwright PASS" is a valid recorded verdict; a falsifier verdict is not
+  mandatory for non-critical work). "I considered it informally" does not
+  count; the criterion is the artifact. `§5`'s `verdict_recorded` verifier
+  gates that *a* verdict is recorded, not which tier produced it.
 
 *Worked example* — the run that added the `verdict_recorded` verifier
 (GT-64) ran a falsifier pass on it: "presume it never fails." A fixture with
@@ -71,9 +85,12 @@ That is the gate doing its job — and it is the part most easily skipped.
 **The caveat, so this stays followable.** Delegation is not free — cold
 subagents re-derive context, cost tokens, and can collide on shared files.
 Keeping a single tightly-coupled change inline is often the right call and is
-*not* a violation. This is not "fan out everything." The non-negotiable is the
-**gate**, not the delegation: skipping the adversarial/consultation pass on a
-major output is the failure; implementing a small change yourself is not.
+*not* a violation. This is not "fan out everything." The non-negotiable is
+that a major output carries a **recorded, risk-appropriate verdict** — the
+falsifier for critical systems, the lint/test gate otherwise (issue #74). The
+failure is shipping a major output with *no* recorded verdict, or spending the
+opus falsifier on a change a linter already covers; implementing a small
+change yourself, or gating a routine one with lint+test, is not.
 
 ## 2. Delegation rules (de-chokepoint the PM)
 
@@ -147,3 +164,27 @@ sprint window, branch taxonomy (`docs/branching.md`), and repo-map
 freshness. These secure the agent org itself (`hard-verifiers.md`: "the
 machine that secures the machines"); target repos drop their own
 domain verifiers into the same `scripts/verifiers/` registry.
+
+## 6. Pre-PR comprehension check (issue #73)
+
+Before opening a pull request (or pushing a substantial change), the agent
+poses a short **multiple-choice quiz** to the human on what the change does —
+the anti-slop, human-in-the-loop gate. Owned by
+`pm/ticket-workflow-steward` (it sits on the PR path, alongside branch/commit
+convention).
+
+- **3–5 questions**, multiple choice, drawn from the actual diff. Two kinds:
+  (a) *what changed* — a small "read this hunk, what does it now do?"
+  LeetCode-style question grounded in the real code; (b) *why* — a decision
+  the change made and the alternative it rejected (the load-bearing call, not
+  trivia). One correct answer each, plausible distractors.
+- **Purpose is understanding, not a grade.** The point is to force the human
+  to engage with what's being merged so AI slop doesn't sail through
+  unread, and to build the reviewer's instinct for the codebase. A wrong
+  answer is a signal to slow down and read, not a blocker.
+- **Scope to substance.** Skip it for a docs typo or a mechanical rename; run
+  it when the diff carries real logic or a decision worth understanding —
+  the same "major output" bar as the review gate (§1).
+- **Not a script.** Generating good questions from a diff is judgment, not
+  deterministic scaffolding (`issue #67` non-goals) — the agent authors the
+  quiz per change; it is not `scripts/`-automated.
