@@ -39,12 +39,18 @@ Agent roster detail is in [`agents/INDEX.md`](../agents/INDEX.md).
 
 | Script | Purpose |
 |---|---|
+| `_cli.py` | Shared plumbing for the scripts/*.py operator tools (issue #67 epic). |
 | `audit_skills.py` | Audit SKILL.md files for the 500-LoC ceiling (issue #43). |
+| `backlog.py` | Add or flip a row in docs/backlog.md, byte-precise (issue #72). |
 | `build_index.py` | Generate agents/INDEX.md from agent.md frontmatter, with roster lint. |
 | `build_personas.py` | Generate .claude/agents/<team>-<role>.md from the roster (GT-60). |
 | `build_repo_index.py` | Generate docs/repo-map.md — a compact where-is-everything index. |
 | `credit.py` | Compute per-role selection scores from docs/agent-ledger.jsonl (GT-32). |
+| `extract_text.py` | Extract text from a PDF, trying whichever extractor is actually installed. |
+| `gate.py` | One command runs the whole regenerate+verify pipeline, in order (#68). |
 | `init_docs.py` | Scaffold the Ges-Talt docs convention into a repo. Idempotent. |
+| `new_sprint_log.py` | Stamp a new sprint-log entry from the template (issue #70). |
+| `ship.py` | Push the current branch to origin, guarded (issue #71). |
 | `verify.py` | Hard-verifier registry runner (GT-43). |
 | `verify_comms.py` | Verify agent attribution lines (agents/COMMS.md convention). |
 | `verifiers/` | 14 single-property machines run by `verify.py` — see `verify.py --list`. |
@@ -84,5 +90,5 @@ Agent roster detail is in [`agents/INDEX.md`](../agents/INDEX.md).
 | `docs/opsec/` | OPSEC — security management |
 | `docs/reviews/` | 2 file(s) |
 | `docs/sprint-7-26-12-19/` | 19 file(s) |
-| `docs/sprint-7-26-20-27/` | 11 file(s) |
+| `docs/sprint-7-26-20-27/` | 12 file(s) |
 | `docs/templates/` | 5 file(s) |

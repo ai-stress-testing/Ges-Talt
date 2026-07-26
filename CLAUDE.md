@@ -12,15 +12,21 @@ Read `README.md` for philosophy; this file is what you *do*.
    (month, 2-digit year, start day, end day — e.g. `sprint-7-26-12-19`
    = 2026-07-12 → 07-19). If today falls outside every sprint window,
    scaffold the next one before starting work.
-3. Run the gate: `python3 scripts/verify.py` (the hard-verifier registry —
-   roster, INDEX/repo-map/persona freshness, sprint window, branch taxonomy,
-   …). A red verifier is a to-do, not noise. `docs/repo-map.md` is the
-   token-cheap where-is-everything index — read it before grepping the tree;
-   regenerate with `python3 scripts/build_repo_index.py` after moving/adding
-   files.
-4. Install the roster as subagents: `python3 scripts/build_personas.py`
-   (regenerates `.claude/agents/` from `agents/**/agent.md` so every role is
-   a callable `subagent_type`; idempotent). Re-run after any roster change.
+3. Run the gate — one command: `python3 scripts/gate.py` (regenerates INDEX,
+   personas, and repo-map, then runs every lint + the hard-verifier registry,
+   failures-first; `--check` verifies without regenerating). A red verifier is
+   a to-do, not noise. `docs/repo-map.md` is the token-cheap
+   where-is-everything index — read it before grepping the tree.
+4. `gate.py` already regenerates the personas at `.claude/agents/` (via
+   `build_personas.py`) so every role is a callable `subagent_type`. Run it
+   after any roster change.
+5. Tooling provisioning: `scripts/setup-tools.sh` installs the PDF-extraction
+   toolchain (`poppler-utils`/`pdfminer.six`) so `scripts/extract_text.py`
+   never dead-ends; the environment setup step should run it. Read a PDF/binary
+   with `python3 scripts/extract_text.py <path>` instead of failing on it.
+   Other one-command helpers: `scripts/new_sprint_log.py <slug>` (stamp the
+   sprint-log entry), `scripts/backlog.py add|done` (backlog rows),
+   `scripts/ship.py [--main]` (push dev + fast-forward main, guarded).
 
 ## Routing — use the roster, don't bypass it
 

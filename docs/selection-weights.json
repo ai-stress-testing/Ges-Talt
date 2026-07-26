@@ -5,6 +5,18 @@
     "sample_count": 1,
     "score": 0.297
   },
+  "ci/pipeline-engineer": {
+    "mean_tokens": 113424.0,
+    "pass_rate": 1.0,
+    "sample_count": 1,
+    "score": 0.3626
+  },
+  "data/data-engineer": {
+    "mean_tokens": 51384.0,
+    "pass_rate": 1.0,
+    "sample_count": 1,
+    "score": 0.6624
+  },
   "design/technical-writer": {
     "mean_tokens": 64751.0,
     "pass_rate": null,

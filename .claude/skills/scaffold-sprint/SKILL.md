@@ -30,11 +30,14 @@ working. Steps only. Run from the repo root.
 
 3. Open a sprint-log entry for this session from the template:
    ```
-   docs/sprint-<current>/sprint-log/<yyyy-mm-dd>-<slug>.md
+   python3 scripts/new_sprint_log.py <slug> [--prompt "..."]   # issue #70
    ```
-   Copy `docs/templates/sprint-log-entry.md`, fill the run-manifest header
-   (run-id, prompt, agents, specs, verdicts, commits), and write the prose
-   before ending substantial work.
+   This stamps `docs/sprint-<current>/sprint-log/<yyyy-mm-dd>-<slug>.md` from
+   the template with the run-manifest header prefilled (run-id, prompt, current
+   sprint auto-detected), leaving `verdicts:`/`commits:` as placeholders for
+   you to fill. It refuses to overwrite an existing entry. Then write the prose
+   (Done / Decisions / Blocked) and fill `verdicts:` before ending substantial
+   work.
 
 ## Done when
 

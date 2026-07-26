@@ -10,27 +10,19 @@ not knowledge — the steps. Run from the repo root.
 
 ## Steps
 
-1. Regenerate the derived files (order matters — content feeds the maps):
+1. Run the whole pipeline in one command (issue #68):
    ```
-   python3 scripts/build_index.py            # agents/INDEX.md (+ roster lint)
-   python3 scripts/build_personas.py         # .claude/agents/ (subagents)
-   python3 scripts/build_repo_index.py       # docs/repo-map.md (last)
+   python3 scripts/gate.py          # regenerate (INDEX, personas, repo-map)
+                                    # then lint + verifier registry, failures-first
    ```
-   If `build_index.py` exits non-zero, stop and fix the lint before continuing —
-   a red roster lint blocks everything downstream.
+   It regenerates the derived files in order, then runs `verify_comms`,
+   `credit`, `audit_skills`, and `verify.py`; it prints failures first and
+   exits non-zero if anything failed. Fail-fast on `build_index` (a red roster
+   lint blocks the rest). A FAIL is a to-do, not noise — fix it and re-run
+   (regeneration is often the fix). Use `python3 scripts/gate.py --check` to
+   verify without regenerating (CI / clean-tree assertion).
 
-2. Run the lints and the verifier gate:
-   ```
-   python3 scripts/verify_comms.py
-   python3 scripts/credit.py
-   python3 scripts/audit_skills.py
-   python3 scripts/verify.py                  # the hard-verifier registry
-   ```
-   `verify.py` exits non-zero on any FAIL and prints failures first. A FAIL is
-   a to-do, not noise: fix it, then re-run from step 1 (regeneration may be the
-   fix — e.g. a stale INDEX/repo-map/persona verifier).
-
-3. Record the outcome in the current sprint-log entry's run-manifest header
+2. Record the outcome in the current sprint-log entry's run-manifest header
    (`docs/templates/sprint-log-entry.md`): put the gate result in the
    `verdicts:` field — e.g. `verdicts: build_index PASS; verify.py N/N PASS`.
    An empty `verdicts:` field FAILs `verdict_recorded`; the gate result is
