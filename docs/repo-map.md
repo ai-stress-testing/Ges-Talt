@@ -99,7 +99,9 @@ Agent roster detail is in [`agents/INDEX.md`](../agents/INDEX.md).
 | `docs/adr/` | Architecture Decision Records |
 | `docs/evals/` | Agent evals — one directory per team |
 | `docs/opsec/` | OPSEC — security management |
+| `docs/products/` | 1 file(s) |
 | `docs/reviews/` | 3 file(s) |
 | `docs/sprint-7-26-12-19/` | 19 file(s) |
 | `docs/sprint-7-26-20-27/` | 14 file(s) |
+| `docs/sprint-8-26-1-8/` | 1 file(s) |
 | `docs/templates/` | 13 file(s) |
